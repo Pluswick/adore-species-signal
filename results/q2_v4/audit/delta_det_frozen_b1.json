@@ -1,0 +1,20 @@
+{
+  "spec": "§4δ_det = √(mean s_c²); s_c = block-bootstrap(2000, block=smiles) SD of RMSE; LightGBM main tiers, discovery×group×warm; naive excluded.",
+  "scale": "sample-variation (bootstrap SD; NOT re-run noise)",
+  "C": 6,
+  "delta_det": 0.07408183904600478,
+  "per_condition": {
+    "t0": 0.07865937099351804,
+    "t1p": 0.07582388716525608,
+    "t2": 0.07056503069680918,
+    "t3a": 0.07546446173411145,
+    "t3b": 0.06808758698593918,
+    "t4": 0.07537855600271821
+  },
+  "frozen_utc": "2026-08-11T13:47:28.729652+00:00",
+  "delta_break_protocol": "§4δ-break applies equally to δ_det.",
+  "pre_freeze_evidence": {
+    "comparison_output_file_count": 0,
+    "note": "frozen before any comparison output exists."
+  }
+}

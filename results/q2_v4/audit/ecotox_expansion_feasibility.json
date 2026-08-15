@@ -1,0 +1,1109 @@
+{
+  "title": "ECOTOX expansion feasibility (STEP A coverage + STEP B performance-expansion). No training.",
+  "ecotox_release": "2026-06 (ecotox_ascii_06_11_2026); P/A203 derive from ECOTOX 2022-09",
+  "join_key_formats": "underscore {ADORE mortality, phylo matrix} vs space {ECOTOX raw, DEB}; normalized in join audit",
+  "stepA_definition": "results.endpoint in {LC50,EC50} AND tests.organism_habitat=='Water', joined species.txt taxonomy.",
+  "join_audit": {
+    "normalization_rules": "ECOTOX latin_name: strip, collapse whitespace. To phylo(underscore): space->'_'. Subspecies/authority: fall back to first two tokens (genus species). Case preserved. To DEB(space): 2-token space form. Synonyms available (species_synonyms.txt) but primary = direct/2-token.",
+    "n_ecotox_distinct_species": 29630,
+    "phylo": {
+      "direct": 673,
+      "via_2token": 54,
+      "fail": 28903,
+      "success_rate": 0.02453594330070874
+    },
+    "deb": {
+      "direct": 302,
+      "via_2token": 0,
+      "fail": 29328,
+      "success_rate": 0.010192372595342558
+    },
+    "phylo_matrix_size": 853,
+    "deb_name_count": 284,
+    "degeneracy_check": {
+      "phylo_matched": 727,
+      "phylo_matrix_size": 853,
+      "note": "matched should be <= matrix size and NOT coincidentally equal to matrix size or to n_species"
+    },
+    "top50_phylo_fail_by_records": [
+      {
+        "species": "Raphidocelis_subcapitata",
+        "efull_records": 3098
+      },
+      {
+        "species": "Ceriodaphnia_dubia",
+        "efull_records": 2302
+      },
+      {
+        "species": "Xenopus_laevis",
+        "efull_records": 1587
+      },
+      {
+        "species": "Hyalella_azteca",
+        "efull_records": 1535
+      },
+      {
+        "species": "Aedes_aegypti",
+        "efull_records": 1421
+      },
+      {
+        "species": "Americamysis_bahia",
+        "efull_records": 1399
+      },
+      {
+        "species": "Culex_quinquefasciatus",
+        "efull_records": 1114
+      },
+      {
+        "species": "Chironomus_riparius",
+        "efull_records": 916
+      },
+      {
+        "species": "Palaemon_pugio",
+        "efull_records": 854
+      },
+      {
+        "species": "Lemna_gibba",
+        "efull_records": 836
+      },
+      {
+        "species": "Lemna_minor",
+        "efull_records": 835
+      },
+      {
+        "species": "Crassostrea_virginica",
+        "efull_records": 790
+      },
+      {
+        "species": "Skeletonema_costatum",
+        "efull_records": 769
+      },
+      {
+        "species": "Tubifex_tubifex",
+        "efull_records": 688
+      },
+      {
+        "species": "Algae",
+        "efull_records": 665
+      },
+      {
+        "species": "Desmodesmus_subspicatus",
+        "efull_records": 647
+      },
+      {
+        "species": "Brachionus_calyciflorus",
+        "efull_records": 577
+      },
+      {
+        "species": "Chironomus_plumosus",
+        "efull_records": 555
+      },
+      {
+        "species": "Chironomus_tentans",
+        "efull_records": 552
+      },
+      {
+        "species": "Chlorella_pyrenoidosa",
+        "efull_records": 491
+      },
+      {
+        "species": "Lampsilis_siliquoidea",
+        "efull_records": 444
+      },
+      {
+        "species": "Artemia_sp.",
+        "efull_records": 417
+      },
+      {
+        "species": "Tetrahymena_pyriformis",
+        "efull_records": 415
+      },
+      {
+        "species": "Spirostomum_ambiguum",
+        "efull_records": 403
+      },
+      {
+        "species": "Crassostrea_gigas",
+        "efull_records": 399
+      },
+      {
+        "species": "Dugesia_japonica",
+        "efull_records": 399
+      },
+      {
+        "species": "Aedes_albopictus",
+        "efull_records": 390
+      },
+      {
+        "species": "Scenedesmus_quadricauda",
+        "efull_records": 376
+      },
+      {
+        "species": "Pteronarcys_californica",
+        "efull_records": 375
+      },
+      {
+        "species": "Mytilus_galloprovincialis",
+        "efull_records": 365
+      },
+      {
+        "species": "Mytilus_edulis",
+        "efull_records": 351
+      },
+      {
+        "species": "Culex_pipiens",
+        "efull_records": 349
+      },
+      {
+        "species": "Scenedesmus_acutus_var._acutus",
+        "efull_records": 331
+      },
+      {
+        "species": "Rasbora_heteromorpha",
+        "efull_records": 330
+      },
+      {
+        "species": "Acartia_tonsa",
+        "efull_records": 328
+      },
+      {
+        "species": "Selenastrum_capricornutum",
+        "efull_records": 322
+      },
+      {
+        "species": "Rhinella_arenarum",
+        "efull_records": 306
+      },
+      {
+        "species": "Anopheles_stephensi",
+        "efull_records": 304
+      },
+      {
+        "species": "Tetrahymena_thermophila",
+        "efull_records": 301
+      },
+      {
+        "species": "Culex_pipiens_ssp._pallens",
+        "efull_records": 300
+      },
+      {
+        "species": "Brachionus_plicatilis",
+        "efull_records": 299
+      },
+      {
+        "species": "Litopenaeus_vannamei",
+        "efull_records": 299
+      },
+      {
+        "species": "Anabaena_flosaquae",
+        "efull_records": 298
+      },
+      {
+        "species": "Lymnaea_stagnalis",
+        "efull_records": 283
+      },
+      {
+        "species": "Lymnaea_acuminata",
+        "efull_records": 278
+      },
+      {
+        "species": "Dreissena_polymorpha",
+        "efull_records": 276
+      },
+      {
+        "species": "Lumbriculus_variegatus",
+        "efull_records": 272
+      },
+      {
+        "species": "Corophium_volutator",
+        "efull_records": 263
+      },
+      {
+        "species": "Thamnocephalus_platyurus",
+        "efull_records": 260
+      },
+      {
+        "species": "Philodina_acuticornis",
+        "efull_records": 258
+      }
+    ],
+    "eyeball_20": [
+      {
+        "latin_name": "Sarasinula sp.",
+        "sp_us": "Sarasinula_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Nephus quadrimaculatus",
+        "sp_us": "Nephus_quadrimaculatus",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Frenesia sp.",
+        "sp_us": "Frenesia_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Parus ater",
+        "sp_us": "Parus_ater",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Anthemis cotula",
+        "sp_us": "Anthemis_cotula",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Echinacea pallida",
+        "sp_us": "Echinacea_pallida",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Alyssum sp.",
+        "sp_us": "Alyssum_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Agabus sp.",
+        "sp_us": "Agabus_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Phagocata velata",
+        "sp_us": "Phagocata_velata",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Belostoma testaceum",
+        "sp_us": "Belostoma_testaceum",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Nuttallia sp.",
+        "sp_us": "Nuttallia_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Aedes nigromaculis",
+        "sp_us": "Aedes_nigromaculis",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Tribolodon sp.",
+        "sp_us": "Tribolodon_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Olpidiopsidales",
+        "sp_us": "Olpidiopsidales",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Balaenopteridae",
+        "sp_us": "Balaenopteridae",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Vicia sativa ssp. nigra",
+        "sp_us": "Vicia_sativa_ssp._nigra",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Allocosa sp.",
+        "sp_us": "Allocosa_sp.",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Ephedrales",
+        "sp_us": "Ephedrales",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Chaenactis fremontii",
+        "sp_us": "Chaenactis_fremontii",
+        "phylo_hit": false,
+        "deb_hit": false
+      },
+      {
+        "latin_name": "Pappea capensis",
+        "sp_us": "Pappea_capensis",
+        "phylo_hit": false,
+        "deb_hit": false
+      }
+    ]
+  },
+  "stepA_coverage": {
+    "E_full_2026-06": {
+      "n_species": 3179,
+      "n_records": 156897,
+      "phylo": {
+        "raw_a": 0.18276187480339728,
+        "recwt_b": 0.5526683110575727,
+        "byK_c": {
+          "k1": 0.18276187480339728,
+          "k1_nsp": 3179,
+          "k5": 0.2326934264107039,
+          "k5_nsp": 1719,
+          "k10": 0.25831202046035806,
+          "k10_nsp": 1173,
+          "k20": 0.31420765027322406,
+          "k20_nsp": 732,
+          "k50": 0.35714285714285715,
+          "k50_nsp": 378
+        }
+      },
+      "deb": {
+        "raw_a": 0.07801195344447939,
+        "recwt_b": 0.503725373971459,
+        "byK_c": {
+          "k1": 0.07801195344447939,
+          "k1_nsp": 3179,
+          "k5": 0.1198371146015125,
+          "k5_nsp": 1719,
+          "k10": 0.13384484228473997,
+          "k10_nsp": 1173,
+          "k20": 0.17486338797814208,
+          "k20_nsp": 732,
+          "k50": 0.21693121693121692,
+          "k50_nsp": 378
+        }
+      },
+      "tax_class": {
+        "raw_a": 0.9880465555206039,
+        "recwt_b": 0.9910960693958457,
+        "byK_c": {
+          "k1": 0.9880465555206039,
+          "k1_nsp": 3179,
+          "k5": 0.9889470622454916,
+          "k5_nsp": 1719,
+          "k10": 0.9889173060528559,
+          "k10_nsp": 1173,
+          "k20": 0.9849726775956285,
+          "k20_nsp": 732,
+          "k50": 0.9814814814814815,
+          "k50_nsp": 378
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 0.9858446052217679,
+        "recwt_b": 0.9916951885631975,
+        "byK_c": {
+          "k1": 0.9858446052217679,
+          "k1_nsp": 3179,
+          "k5": 0.9883653286794648,
+          "k5_nsp": 1719,
+          "k10": 0.9906223358908781,
+          "k10_nsp": 1173,
+          "k20": 0.9890710382513661,
+          "k20_nsp": 732,
+          "k50": 0.9867724867724867,
+          "k50_nsp": 378
+        }
+      },
+      "tax_family": {
+        "raw_a": 0.980182447310475,
+        "recwt_b": 0.988833438497868,
+        "byK_c": {
+          "k1": 0.980182447310475,
+          "k1_nsp": 3179,
+          "k5": 0.9813845258871436,
+          "k5_nsp": 1719,
+          "k10": 0.9812446717817562,
+          "k10_nsp": 1173,
+          "k20": 0.98224043715847,
+          "k20_nsp": 732,
+          "k50": 0.9814814814814815,
+          "k50_nsp": 378
+        }
+      },
+      "tax_genus": {
+        "raw_a": 0.9716892104435357,
+        "recwt_b": 0.9947608940897531,
+        "byK_c": {
+          "k1": 0.9716892104435357,
+          "k1_nsp": 3179,
+          "k5": 0.9813845258871436,
+          "k5_nsp": 1719,
+          "k10": 0.9820971867007673,
+          "k10_nsp": 1173,
+          "k20": 0.9849726775956285,
+          "k20_nsp": 732,
+          "k50": 0.9894179894179894,
+          "k50_nsp": 378
+        }
+      },
+      "genus_only_no_species": {
+        "n": 387,
+        "frac": 0.12173639509279648
+      },
+      "tax_group_species": {
+        "other": 1565,
+        "fish": 618,
+        "crusta": 636,
+        "algae": 360
+      },
+      "n_result_ids": 156897,
+      "n_compounds_cas": 5747
+    },
+    "B1_all": {
+      "n_species": 2729,
+      "n_records": 93721,
+      "phylo": {
+        "raw_a": 0.15646757053865884,
+        "recwt_b": 0.42163442558231345,
+        "byK_c": {
+          "k1": 0.15646757053865884,
+          "k1_nsp": 2729,
+          "k5": 0.20520231213872833,
+          "k5_nsp": 1384,
+          "k10": 0.22246455834242093,
+          "k10_nsp": 917,
+          "k20": 0.26497277676951,
+          "k20_nsp": 551,
+          "k50": 0.29577464788732394,
+          "k50_nsp": 284
+        }
+      },
+      "deb": {
+        "raw_a": 0.07621839501648955,
+        "recwt_b": 0.39174784733410867,
+        "byK_c": {
+          "k1": 0.07621839501648955,
+          "k1_nsp": 2729,
+          "k5": 0.11488439306358382,
+          "k5_nsp": 1384,
+          "k10": 0.12649945474372956,
+          "k10_nsp": 917,
+          "k20": 0.16152450090744103,
+          "k20_nsp": 551,
+          "k50": 0.19718309859154928,
+          "k50_nsp": 284
+        }
+      },
+      "tax_class": {
+        "raw_a": 0.9860754855258337,
+        "recwt_b": 0.9850940557612489,
+        "byK_c": {
+          "k1": 0.9860754855258337,
+          "k1_nsp": 2729,
+          "k5": 0.986271676300578,
+          "k5_nsp": 1384,
+          "k10": 0.9858233369683751,
+          "k10_nsp": 917,
+          "k20": 0.9800362976406534,
+          "k20_nsp": 551,
+          "k50": 0.9753521126760564,
+          "k50_nsp": 284
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 0.9835104433858556,
+        "recwt_b": 0.9860970326821097,
+        "byK_c": {
+          "k1": 0.9835104433858556,
+          "k1_nsp": 2729,
+          "k5": 0.9855491329479769,
+          "k5_nsp": 1384,
+          "k10": 0.9880043620501636,
+          "k10_nsp": 917,
+          "k20": 0.985480943738657,
+          "k20_nsp": 551,
+          "k50": 0.9823943661971831,
+          "k50_nsp": 284
+        }
+      },
+      "tax_family": {
+        "raw_a": 0.9769146207401979,
+        "recwt_b": 0.9813062173899126,
+        "byK_c": {
+          "k1": 0.9769146207401979,
+          "k1_nsp": 2729,
+          "k5": 0.976878612716763,
+          "k5_nsp": 1384,
+          "k10": 0.9760087241003271,
+          "k10_nsp": 917,
+          "k20": 0.9764065335753176,
+          "k20_nsp": 551,
+          "k50": 0.9753521126760564,
+          "k50_nsp": 284
+        }
+      },
+      "tax_genus": {
+        "raw_a": 0.9670208867717113,
+        "recwt_b": 0.9912292869260891,
+        "byK_c": {
+          "k1": 0.9670208867717113,
+          "k1_nsp": 2729,
+          "k5": 0.976878612716763,
+          "k5_nsp": 1384,
+          "k10": 0.9770992366412213,
+          "k10_nsp": 917,
+          "k20": 0.9800362976406534,
+          "k20_nsp": 551,
+          "k50": 0.9859154929577465,
+          "k50_nsp": 284
+        }
+      },
+      "genus_only_no_species": {
+        "n": 351,
+        "frac": 0.12861854159032612
+      },
+      "tax_group_species": {
+        "other": 1558,
+        "fish": 429,
+        "crusta": 436,
+        "algae": 306
+      },
+      "n_result_ids": 93721,
+      "n_compounds_cas": 4595
+    },
+    "B1_old(<=2022-09)": {
+      "n_species": 2594,
+      "n_records": 83580,
+      "phylo": {
+        "raw_a": 0.1576715497301465,
+        "recwt_b": 0.4122995932041158,
+        "byK_c": {
+          "k1": 0.1576715497301465,
+          "k1_nsp": 2594,
+          "k5": 0.2063125481139338,
+          "k5_nsp": 1299,
+          "k10": 0.2240566037735849,
+          "k10_nsp": 848,
+          "k20": 0.26120857699805067,
+          "k20_nsp": 513,
+          "k50": 0.2976190476190476,
+          "k50_nsp": 252
+        }
+      },
+      "deb": {
+        "raw_a": 0.07825751734772551,
+        "recwt_b": 0.3798875329026083,
+        "byK_c": {
+          "k1": 0.07825751734772551,
+          "k1_nsp": 2594,
+          "k5": 0.1147036181678214,
+          "k5_nsp": 1299,
+          "k10": 0.12735849056603774,
+          "k10_nsp": 848,
+          "k20": 0.1617933723196881,
+          "k20_nsp": 513,
+          "k50": 0.1984126984126984,
+          "k50_nsp": 252
+        }
+      },
+      "tax_class": {
+        "raw_a": 0.9857363145720894,
+        "recwt_b": 0.9846255084948552,
+        "byK_c": {
+          "k1": 0.9857363145720894,
+          "k1_nsp": 2594,
+          "k5": 0.9869130100076983,
+          "k5_nsp": 1299,
+          "k10": 0.9870283018867925,
+          "k10_nsp": 848,
+          "k20": 0.9824561403508771,
+          "k20_nsp": 513,
+          "k50": 0.9761904761904762,
+          "k50_nsp": 252
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 0.9834232845026986,
+        "recwt_b": 0.9854510648480498,
+        "byK_c": {
+          "k1": 0.9834232845026986,
+          "k1_nsp": 2594,
+          "k5": 0.9861431870669746,
+          "k5_nsp": 1299,
+          "k10": 0.9882075471698113,
+          "k10_nsp": 848,
+          "k20": 0.98635477582846,
+          "k20_nsp": 513,
+          "k50": 0.9841269841269841,
+          "k50_nsp": 252
+        }
+      },
+      "tax_family": {
+        "raw_a": 0.9757131842713955,
+        "recwt_b": 0.9798755683177793,
+        "byK_c": {
+          "k1": 0.9757131842713955,
+          "k1_nsp": 2594,
+          "k5": 0.9753656658968437,
+          "k5_nsp": 1299,
+          "k10": 0.9740566037735849,
+          "k10_nsp": 848,
+          "k20": 0.9746588693957114,
+          "k20_nsp": 513,
+          "k50": 0.9722222222222222,
+          "k50_nsp": 252
+        }
+      },
+      "tax_genus": {
+        "raw_a": 0.9664610639938319,
+        "recwt_b": 0.9902967217037569,
+        "byK_c": {
+          "k1": 0.9664610639938319,
+          "k1_nsp": 2594,
+          "k5": 0.9761354888375674,
+          "k5_nsp": 1299,
+          "k10": 0.9752358490566038,
+          "k10_nsp": 848,
+          "k20": 0.9785575048732943,
+          "k20_nsp": 513,
+          "k50": 0.9841269841269841,
+          "k50_nsp": 252
+        }
+      },
+      "genus_only_no_species": {
+        "n": 339,
+        "frac": 0.13068619892058597
+      },
+      "tax_group_species": {
+        "other": 1493,
+        "fish": 408,
+        "crusta": 406,
+        "algae": 287
+      },
+      "n_result_ids": 83580,
+      "n_compounds_cas": 4373
+    },
+    "B1_new(>2022-09)": {
+      "n_species": 493,
+      "n_records": 10141,
+      "phylo": {
+        "raw_a": 0.25963488843813387,
+        "recwt_b": 0.49857016073365545,
+        "byK_c": {
+          "k1": 0.25963488843813387,
+          "k1_nsp": 493,
+          "k5": 0.3224489795918367,
+          "k5_nsp": 245,
+          "k10": 0.34838709677419355,
+          "k10_nsp": 155,
+          "k20": 0.40816326530612246,
+          "k20_nsp": 98,
+          "k50": 0.4222222222222222,
+          "k50_nsp": 45
+        }
+      },
+      "deb": {
+        "raw_a": 0.1663286004056795,
+        "recwt_b": 0.48949807711271076,
+        "byK_c": {
+          "k1": 0.1663286004056795,
+          "k1_nsp": 493,
+          "k5": 0.23265306122448978,
+          "k5_nsp": 245,
+          "k10": 0.2645161290322581,
+          "k10_nsp": 155,
+          "k20": 0.3469387755102041,
+          "k20_nsp": 98,
+          "k50": 0.4,
+          "k50_nsp": 45
+        }
+      },
+      "tax_class": {
+        "raw_a": 0.9939148073022313,
+        "recwt_b": 0.9889557242875456,
+        "byK_c": {
+          "k1": 0.9939148073022313,
+          "k1_nsp": 493,
+          "k5": 0.9877551020408163,
+          "k5_nsp": 245,
+          "k10": 0.9806451612903225,
+          "k10_nsp": 155,
+          "k20": 0.9693877551020408,
+          "k20_nsp": 98,
+          "k50": 0.9777777777777777,
+          "k50_nsp": 45
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 0.9918864097363083,
+        "recwt_b": 0.9914209644019327,
+        "byK_c": {
+          "k1": 0.9918864097363083,
+          "k1_nsp": 493,
+          "k5": 0.9877551020408163,
+          "k5_nsp": 245,
+          "k10": 0.9870967741935484,
+          "k10_nsp": 155,
+          "k20": 0.9795918367346939,
+          "k20_nsp": 98,
+          "k50": 0.9777777777777777,
+          "k50_nsp": 45
+        }
+      },
+      "tax_family": {
+        "raw_a": 0.9939148073022313,
+        "recwt_b": 0.993097327679716,
+        "byK_c": {
+          "k1": 0.9939148073022313,
+          "k1_nsp": 493,
+          "k5": 0.9918367346938776,
+          "k5_nsp": 245,
+          "k10": 0.9870967741935484,
+          "k10_nsp": 155,
+          "k20": 0.9795918367346939,
+          "k20_nsp": 98,
+          "k50": 1.0,
+          "k50_nsp": 45
+        }
+      },
+      "tax_genus": {
+        "raw_a": 0.9918864097363083,
+        "recwt_b": 0.9989152943496696,
+        "byK_c": {
+          "k1": 0.9918864097363083,
+          "k1_nsp": 493,
+          "k5": 0.9959183673469387,
+          "k5_nsp": 245,
+          "k10": 1.0,
+          "k10_nsp": 155,
+          "k20": 1.0,
+          "k20_nsp": 98,
+          "k50": 1.0,
+          "k50_nsp": 45
+        }
+      },
+      "genus_only_no_species": {
+        "n": 36,
+        "frac": 0.07302231237322515
+      },
+      "tax_group_species": {
+        "crusta": 104,
+        "algae": 62,
+        "fish": 108,
+        "other": 219
+      },
+      "n_result_ids": 10141,
+      "n_compounds_cas": 802
+    },
+    "P_2022-09(1267)": {
+      "n_species": 1267,
+      "n_records": 70670,
+      "phylo": {
+        "raw_a": 0.4159431728492502,
+        "recwt_b": 0.7532050374982312,
+        "byK_c": {
+          "k1": 0.4159431728492502,
+          "k1_nsp": 1267,
+          "k5": 0.456973293768546,
+          "k5_nsp": 674,
+          "k10": 0.49166666666666664,
+          "k10_nsp": 480,
+          "k20": 0.5562913907284768,
+          "k20_nsp": 302,
+          "k50": 0.6341463414634146,
+          "k50_nsp": 164
+        }
+      },
+      "deb": {
+        "raw_a": 0.1878453038674033,
+        "recwt_b": 0.683345125229942,
+        "byK_c": {
+          "k1": 0.1878453038674033,
+          "k1_nsp": 1267,
+          "k5": 0.2403560830860534,
+          "k5_nsp": 674,
+          "k10": 0.26458333333333334,
+          "k10_nsp": 480,
+          "k20": 0.33112582781456956,
+          "k20_nsp": 302,
+          "k50": 0.4329268292682927,
+          "k50_nsp": 164
+        }
+      },
+      "tax_class": {
+        "raw_a": 0.9952644041041832,
+        "recwt_b": 0.9974954011603226,
+        "byK_c": {
+          "k1": 0.9952644041041832,
+          "k1_nsp": 1267,
+          "k5": 0.9940652818991098,
+          "k5_nsp": 674,
+          "k10": 0.99375,
+          "k10_nsp": 480,
+          "k20": 0.9900662251655629,
+          "k20_nsp": 302,
+          "k50": 0.9878048780487805,
+          "k50_nsp": 164
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 0.9952644041041832,
+        "recwt_b": 0.9974954011603226,
+        "byK_c": {
+          "k1": 0.9952644041041832,
+          "k1_nsp": 1267,
+          "k5": 0.9940652818991098,
+          "k5_nsp": 674,
+          "k10": 0.99375,
+          "k10_nsp": 480,
+          "k20": 0.9900662251655629,
+          "k20_nsp": 302,
+          "k50": 0.9878048780487805,
+          "k50_nsp": 164
+        }
+      },
+      "tax_family": {
+        "raw_a": 0.9952644041041832,
+        "recwt_b": 0.9974954011603226,
+        "byK_c": {
+          "k1": 0.9952644041041832,
+          "k1_nsp": 1267,
+          "k5": 0.9940652818991098,
+          "k5_nsp": 674,
+          "k10": 0.99375,
+          "k10_nsp": 480,
+          "k20": 0.9900662251655629,
+          "k20_nsp": 302,
+          "k50": 0.9878048780487805,
+          "k50_nsp": 164
+        }
+      },
+      "tax_genus": {
+        "raw_a": 0.9952644041041832,
+        "recwt_b": 0.9974954011603226,
+        "byK_c": {
+          "k1": 0.9952644041041832,
+          "k1_nsp": 1267,
+          "k5": 0.9940652818991098,
+          "k5_nsp": 674,
+          "k10": 0.99375,
+          "k10_nsp": 480,
+          "k20": 0.9900662251655629,
+          "k20_nsp": 302,
+          "k50": 0.9878048780487805,
+          "k50_nsp": 164
+        }
+      },
+      "genus_only_no_species": {
+        "n": 109,
+        "frac": 0.08602999210734018
+      },
+      "tax_group_species": {
+        "fish": 520,
+        "crusta": 503,
+        "algae": 201,
+        "other": 43
+      },
+      "n_result_ids": 70670,
+      "n_compounds_cas": null
+    },
+    "A203_2022-09": {
+      "n_species": 203,
+      "n_records": 33448,
+      "phylo": {
+        "raw_a": 1.0,
+        "recwt_b": 1.0,
+        "byK_c": {
+          "k1": 1.0,
+          "k1_nsp": 203,
+          "k5": 1.0,
+          "k5_nsp": 130,
+          "k10": 1.0,
+          "k10_nsp": 105,
+          "k20": 1.0,
+          "k20_nsp": 76,
+          "k50": 1.0,
+          "k50_nsp": 60
+        }
+      },
+      "deb": {
+        "raw_a": 0.7733990147783252,
+        "recwt_b": 0.9789524037311648,
+        "byK_c": {
+          "k1": 0.7733990147783252,
+          "k1_nsp": 203,
+          "k5": 0.8153846153846154,
+          "k5_nsp": 130,
+          "k10": 0.8476190476190476,
+          "k10_nsp": 105,
+          "k20": 0.9210526315789473,
+          "k20_nsp": 76,
+          "k50": 0.95,
+          "k50_nsp": 60
+        }
+      },
+      "tax_class": {
+        "raw_a": 1.0,
+        "recwt_b": 1.0,
+        "byK_c": {
+          "k1": 1.0,
+          "k1_nsp": 203,
+          "k5": 1.0,
+          "k5_nsp": 130,
+          "k10": 1.0,
+          "k10_nsp": 105,
+          "k20": 1.0,
+          "k20_nsp": 76,
+          "k50": 1.0,
+          "k50_nsp": 60
+        }
+      },
+      "tax_tax_order": {
+        "raw_a": 1.0,
+        "recwt_b": 1.0,
+        "byK_c": {
+          "k1": 1.0,
+          "k1_nsp": 203,
+          "k5": 1.0,
+          "k5_nsp": 130,
+          "k10": 1.0,
+          "k10_nsp": 105,
+          "k20": 1.0,
+          "k20_nsp": 76,
+          "k50": 1.0,
+          "k50_nsp": 60
+        }
+      },
+      "tax_family": {
+        "raw_a": 1.0,
+        "recwt_b": 1.0,
+        "byK_c": {
+          "k1": 1.0,
+          "k1_nsp": 203,
+          "k5": 1.0,
+          "k5_nsp": 130,
+          "k10": 1.0,
+          "k10_nsp": 105,
+          "k20": 1.0,
+          "k20_nsp": 76,
+          "k50": 1.0,
+          "k50_nsp": 60
+        }
+      },
+      "tax_genus": {
+        "raw_a": 1.0,
+        "recwt_b": 1.0,
+        "byK_c": {
+          "k1": 1.0,
+          "k1_nsp": 203,
+          "k5": 1.0,
+          "k5_nsp": 130,
+          "k10": 1.0,
+          "k10_nsp": 105,
+          "k20": 1.0,
+          "k20_nsp": 76,
+          "k50": 1.0,
+          "k50_nsp": 60
+        }
+      },
+      "genus_only_no_species": {
+        "n": 2,
+        "frac": 0.009852216748768473
+      },
+      "tax_group_species": {
+        "fish": 140,
+        "algae": 42,
+        "crusta": 17,
+        "other": 4
+      },
+      "n_result_ids": 33448,
+      "n_compounds_cas": null
+    }
+  },
+  "stepB": {
+    "funnel_assumptions": "stage2 duration->hours (h/d/mi/wk/mo) & <=96h (ADORE). stage3 conc unit in mass (mg/L,ug/L,ng/L,ppm,ppb,g/L,ug/ml..) or molar (uM,mM,nM,M..)->mg/L via chem_mw. stage4 CAS->our SMILES non-null. stage5 species has ECOTOX taxonomy name. stage6 D16 lower detection mass>=0.1 ng/L (1e-7 mg/L) proxy (full D16 path3/solubility not applied). Cumulative per result_id.",
+    "funnel": {
+      "all": {
+        "0_B1_raw": 93721,
+        "1_endpoint_LC50EC50": 93721,
+        "2_exposure(dur<=96h)": 72242,
+        "3_units_convertible": 60705,
+        "4_SMILES_resolved": 46751,
+        "5_species_mapped": 46751,
+        "6_D16_massfloor": 46733,
+        "final_recoverable_N": 46733
+      },
+      "old(<=2022-09)": {
+        "0_B1_raw": 83580,
+        "1_endpoint_LC50EC50": 83580,
+        "2_exposure(dur<=96h)": 63740,
+        "3_units_convertible": 53391,
+        "4_SMILES_resolved": 40378,
+        "5_species_mapped": 40378,
+        "6_D16_massfloor": 40360,
+        "final_recoverable_N": 40360
+      },
+      "new(>2022-09)": {
+        "0_B1_raw": 10141,
+        "1_endpoint_LC50EC50": 10141,
+        "2_exposure(dur<=96h)": 8502,
+        "3_units_convertible": 7314,
+        "4_SMILES_resolved": 6373,
+        "5_species_mapped": 6373,
+        "6_D16_massfloor": 6373,
+        "final_recoverable_N": 6373
+      }
+    },
+    "novelty": {
+      "B1_species": 2729,
+      "species_not_in_P": 1950,
+      "species_in_P": 779,
+      "B1_compounds_cas": 4595,
+      "compounds_not_in_P": 2517,
+      "compounds_in_P": 2078
+    },
+    "overlap": {
+      "B1_test_ids": 80729,
+      "share_test_id_with_P": 721,
+      "share_test_id_frac": 0.008931115212624956,
+      "B1_references": 7145,
+      "share_reference_with_P": 2322,
+      "share_reference_frac": 0.3249825052484255,
+      "result_id_intersect_P(sanity=0)": 0
+    },
+    "cost": {
+      "confirmation_run_scope": "t0/t2/t3b/t4 x {D-MPNN,GraphConv} x 5 seed x 1 split = 40 GNN runs",
+      "recoverable_N": {
+        "all": 46733,
+        "old": 40360,
+        "new": 6373
+      },
+      "cost_all": {
+        "gnn_runs": 40,
+        "est_min_per_run@N": 115.2,
+        "est_total_hours": 76.8,
+        "assumption": "~5.0 min/run at 2029 rows, linear scaling; strata-aggregated N approximated by recovered result_ids"
+      },
+      "cost_new_only": {
+        "gnn_runs": 40,
+        "est_min_per_run@N": 15.7,
+        "est_total_hours": 10.5,
+        "assumption": "~5.0 min/run at 2029 rows, linear scaling; strata-aggregated N approximated by recovered result_ids"
+      },
+      "smiles_curation_scale": {
+        "rows_lost_at_SMILES_stage_all": 13954,
+        "note": "manual SMILES recovery scale = rows dropped at stage4 (CAS with no curated SMILES)"
+      }
+    }
+  },
+  "discrepancies_vs_prior_docs": {
+    "P_species": "recomputed 1267 (HANDOFF §C: 1267) — match",
+    "P_result_ids": 70670,
+    "P_rids_not_recovered_in_Efull_2026": 7494,
+    "note": "7k+ P result_ids absent from E-full(2026) = removed from ECOTOX by 2026 OR outside E-full filter (endpoint/habitat)."
+  }
+}

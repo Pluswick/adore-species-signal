@@ -1,0 +1,12 @@
+ADORE Q2 — Species-signal saturation across a representation tier ladder
+
+Copyright 2026 Kim Seonghan, Sangmyung University CCLABS (Creative Contents Labs)
+
+This product is licensed under the Apache License, Version 2.0 (see the LICENSE file).
+
+DATA NOTICE
+-----------
+This repository does NOT distribute ECOTOX data. Model inputs are derived from the
+U.S. EPA ECOTOX Knowledgebase (https://cfpub.epa.gov/ecotox/). The ECOTOX data and any
+processed export are subject to their own terms and are NOT covered by the Apache License
+granted here. Obtain ECOTOX separately (see README.md, "Data availability").

@@ -1,0 +1,665 @@
+{
+  "note": "ECOTOX expansion VERIFY (no training; recompute). E-full=endpoint{LC50,EC50}&habitat=Water@2026-06. P=2022-09. density_ratio def (GAP_LOG:99)=mean records/covered-species ÷ mean records/uncovered-species.",
+  "c1_missing_cause": {
+    "missing_total": 7494,
+    "a_in_raw": 4953,
+    "b_not_in_raw": 2541,
+    "a_reason_endpoint_not_LC50EC50": 4953,
+    "a_reason_habitat_not_Water": 0,
+    "a_reason_species_join_fail": 0,
+    "a_reason_other": 0,
+    "a_top10_endpoint_of_dropped": {
+      "LC50*": 2518,
+      "LC50/": 1874,
+      "EC50*": 294,
+      "EC50/": 139,
+      "LD50/": 52,
+      "LC50*/": 38,
+      "EC50*/": 33,
+      "IC50": 4,
+      "EC0": 1
+    },
+    "a_habitat_distribution": {},
+    "a_effect_of_endpoint_dropped_top10": {
+      "MOR": 4452,
+      "ITX": 412,
+      "~MOR": 29,
+      "GRO": 28,
+      "POP": 25,
+      "PHY": 5,
+      "MOR/": 2
+    },
+    "b_partition": {
+      "discovery(LC50&96)": 1085,
+      "replication(rest)": 1456
+    },
+    "b_test_id_still_in_tests_txt": 10,
+    "b_sample20": [
+      {
+        "result_id": "95464",
+        "test_id": "1140355",
+        "species": "Cyprinus_carpio",
+        "cas": "7758-98-7",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "6.89223031286444e-07"
+      },
+      {
+        "result_id": "95465",
+        "test_id": "1140356",
+        "species": "Cyprinus_carpio",
+        "cas": "7758-98-7",
+        "endpoint": "LC50",
+        "dur": "48.0",
+        "conc_mol": "5.952380724746562e-07"
+      },
+      {
+        "result_id": "95466",
+        "test_id": "1140357",
+        "species": "Cyprinus_carpio",
+        "cas": "7758-98-7",
+        "endpoint": "LC50",
+        "dur": "72.0",
+        "conc_mol": "5.263157693460119e-07"
+      },
+      {
+        "result_id": "95467",
+        "test_id": "1140358",
+        "species": "Cyprinus_carpio",
+        "cas": "7758-98-7",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "3.947368270095088e-07"
+      },
+      {
+        "result_id": "95469",
+        "test_id": "1140360",
+        "species": "Cyprinus_carpio",
+        "cas": "7733-02-0",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "5.5996034832079594e-05"
+      },
+      {
+        "result_id": "95470",
+        "test_id": "1140361",
+        "species": "Cyprinus_carpio",
+        "cas": "7733-02-0",
+        "endpoint": "LC50",
+        "dur": "48.0",
+        "conc_mol": "4.5094151944418086e-05"
+      },
+      {
+        "result_id": "95471",
+        "test_id": "1140362",
+        "species": "Cyprinus_carpio",
+        "cas": "7733-02-0",
+        "endpoint": "LC50",
+        "dur": "72.0",
+        "conc_mol": "3.444003912238524e-05"
+      },
+      {
+        "result_id": "95472",
+        "test_id": "1140363",
+        "species": "Cyprinus_carpio",
+        "cas": "7733-02-0",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "1.9326065119036324e-05"
+      },
+      {
+        "result_id": "148153",
+        "test_id": "1188720",
+        "species": "Cyprinus_carpio",
+        "cas": "107-13-1",
+        "endpoint": "LC50",
+        "dur": "48.0",
+        "conc_mol": "0.0007977159780132992"
+      },
+      {
+        "result_id": "148154",
+        "test_id": "1188721",
+        "species": "Cyprinus_carpio",
+        "cas": "107-13-1",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "0.0003405321928348764"
+      },
+      {
+        "result_id": "148155",
+        "test_id": "1188722",
+        "species": "Cyprinus_carpio",
+        "cas": "107-13-1",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "0.0004025327968429972"
+      },
+      {
+        "result_id": "719162",
+        "test_id": "1267865",
+        "species": "Cyprinus_carpio",
+        "cas": "7646-85-7",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "5.5e-05"
+      },
+      {
+        "result_id": "719164",
+        "test_id": "1267867",
+        "species": "Cyprinus_carpio",
+        "cas": "7646-85-7",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "0.000149"
+      },
+      {
+        "result_id": "112760",
+        "test_id": "1002365",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "10099-74-8",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "9.243697140341838e-05"
+      },
+      {
+        "result_id": "112761",
+        "test_id": "1002366",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "10099-74-8",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "9.003601110722568e-05"
+      },
+      {
+        "result_id": "113577",
+        "test_id": "1002392",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7778-43-0",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "0.0007584519024547195"
+      },
+      {
+        "result_id": "113578",
+        "test_id": "1002393",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7778-43-0",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "0.00036308867670704654"
+      },
+      {
+        "result_id": "113602",
+        "test_id": "1002417",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7646-85-7",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "2.2894041883965576e-05"
+      },
+      {
+        "result_id": "113603",
+        "test_id": "1002418",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7646-85-7",
+        "endpoint": "LC50",
+        "dur": "96.0",
+        "conc_mol": "1.5923099643655543e-05"
+      },
+      {
+        "result_id": "113604",
+        "test_id": "1002419",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7646-85-7",
+        "endpoint": "LC50",
+        "dur": "24.0",
+        "conc_mol": "1.5776342964912173e-06"
+      }
+    ]
+  },
+  "c2_overlap": {
+    "denominator_rows": 46733,
+    "test_id_row": {
+      "num": 861,
+      "den": 46733,
+      "pct": 0.01842381186741703
+    },
+    "test_id_unique": {
+      "num": 447,
+      "den": 41136,
+      "pct": 0.01086639439906651
+    },
+    "reference_row": {
+      "num": 19474,
+      "den": 46733,
+      "pct": 0.4167076797980014
+    },
+    "reference_unique": {
+      "num": 1492,
+      "den": 4175,
+      "pct": 0.35736526946107783
+    },
+    "precise_dup_ref_sp_cas": {
+      "rows": 7959,
+      "pct_of_recovered": 0.17030791945734278
+    },
+    "precise_dup_ref_sp_cas_dur": {
+      "rows": 4169,
+      "pct_of_recovered": 0.08920891019194145
+    },
+    "precise_dup_samples_k3": [
+      {
+        "B1_result_id": "37604",
+        "ref": "685",
+        "species": "Lepomis_macrochirus",
+        "cas": "19902-04-6",
+        "B1_conc_mg_L": 1.5,
+        "B1_dur_h": 6,
+        "P_result_id": "37551",
+        "P_conc_mol": "2.1585322139041073e-06",
+        "P_dur": "24.0"
+      },
+      {
+        "B1_result_id": "2177199",
+        "ref": "12447",
+        "species": "Pimephales_promelas",
+        "cas": "22726-00-7",
+        "B1_conc_mg_L": 79.8,
+        "B1_dur_h": 96,
+        "P_result_id": "2177185",
+        "P_conc_mol": "0.0004634188932082353",
+        "P_dur": "96.0"
+      },
+      {
+        "B1_result_id": "134392",
+        "ref": "2468",
+        "species": "Morone_saxatilis",
+        "cas": "127-65-1",
+        "B1_conc_mg_L": 80.0,
+        "B1_dur_h": 6,
+        "P_result_id": "134365",
+        "P_conc_mol": "2.921279220624703e-05",
+        "P_dur": "96.0"
+      },
+      {
+        "B1_result_id": "124893",
+        "ref": "10366",
+        "species": "Cyprinodon_variegatus",
+        "cas": "108-90-7",
+        "B1_conc_mg_L": 20.0,
+        "B1_dur_h": 24,
+        "P_result_id": "124894",
+        "P_conc_mol": "7.906894272423072e-05",
+        "P_dur": "48.0"
+      },
+      {
+        "B1_result_id": "797220",
+        "ref": "118450",
+        "species": "Neocaridina_denticulata",
+        "cas": "3825-26-1",
+        "B1_conc_mg_L": 1000.0,
+        "B1_dur_h": 24,
+        "P_result_id": "797223",
+        "P_conc_mol": "0.001053117450704423",
+        "P_dur": "96.0"
+      },
+      {
+        "B1_result_id": "37528",
+        "ref": "685",
+        "species": "Salvelinus_namaycush",
+        "cas": "19902-04-6",
+        "B1_conc_mg_L": 0.109,
+        "B1_dur_h": 3,
+        "P_result_id": "37530",
+        "P_conc_mol": "1.4090418618540703e-07",
+        "P_dur": "24.0"
+      },
+      {
+        "B1_result_id": "2732435",
+        "ref": "334",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "10099-74-8",
+        "B1_conc_mg_L": 1.7,
+        "B1_dur_h": 96,
+        "P_result_id": "112760",
+        "P_conc_mol": "9.243697140341838e-05",
+        "P_dur": "24.0"
+      },
+      {
+        "B1_result_id": "75588",
+        "ref": "9128",
+        "species": "Ameiurus_melas",
+        "cas": "17109-36-3",
+        "B1_conc_mg_L": 0.047,
+        "B1_dur_h": 3,
+        "P_result_id": "75590",
+        "P_conc_mol": "1.3593455003146636e-08",
+        "P_dur": "24.0"
+      },
+      {
+        "B1_result_id": "2793765",
+        "ref": "3731",
+        "species": "Fundulus_heteroclitus",
+        "cas": "7789-00-6",
+        "B1_conc_mg_L": 315.0,
+        "B1_dur_h": 24,
+        "P_result_id": "125100",
+        "P_conc_mol": "0.001416146159509743",
+        "P_dur": "24.0"
+      },
+      {
+        "B1_result_id": "243338",
+        "ref": "73668",
+        "species": "Oncorhynchus_mykiss",
+        "cas": "7758-98-7",
+        "B1_conc_mg_L": 1.0,
+        "B1_dur_h": 3,
+        "P_result_id": "243343",
+        "P_conc_mol": "1.1904761449493123e-06",
+        "P_dur": "24.0"
+      }
+    ]
+  },
+  "c3_new_species": {
+    "n_new_species": 1950,
+    "new_1950_coverage": {
+      "n_species": 1950,
+      "n_records": 43188,
+      "phylo": {
+        "raw_a": 0.03230769230769231,
+        "recwt_b": 0.01884782810039826,
+        "k1": 0.03230769230769231,
+        "k1_nsp": 1950,
+        "k5": 0.03638368246968027,
+        "k5_nsp": 907,
+        "k10": 0.02120141342756184,
+        "k10_nsp": 566,
+        "k20": 0.022222222222222223,
+        "k20_nsp": 315,
+        "k50": 0.031446540880503145,
+        "k50_nsp": 159
+      },
+      "deb": {
+        "raw_a": 0.0056410256410256415,
+        "recwt_b": 0.0014355839585069928,
+        "k1": 0.0056410256410256415,
+        "k1_nsp": 1950,
+        "k5": 0.008820286659316428,
+        "k5_nsp": 907,
+        "k10": 0.0,
+        "k10_nsp": 566,
+        "k20": 0.0,
+        "k20_nsp": 315,
+        "k50": 0.0,
+        "k50_nsp": 159
+      },
+      "tax_class": {
+        "raw_a": 0.9805128205128205,
+        "recwt_b": 0.9676530517736408,
+        "k1": 0.9805128205128205,
+        "k1_nsp": 1950,
+        "k5": 0.9790518191841234,
+        "k5_nsp": 907,
+        "k10": 0.9770318021201413,
+        "k10_nsp": 566,
+        "k20": 0.9650793650793651,
+        "k20_nsp": 315,
+        "k50": 0.9559748427672956,
+        "k50_nsp": 159
+      },
+      "tax_order": {
+        "raw_a": 0.9769230769230769,
+        "recwt_b": 0.9698295822913773,
+        "k1": 0.9769230769230769,
+        "k1_nsp": 1950,
+        "k5": 0.9779492833517089,
+        "k5_nsp": 907,
+        "k10": 0.980565371024735,
+        "k10_nsp": 566,
+        "k20": 0.9746031746031746,
+        "k20_nsp": 315,
+        "k50": 0.9685534591194969,
+        "k50_nsp": 159
+      },
+      "tax_family": {
+        "raw_a": 0.9676923076923077,
+        "recwt_b": 0.9594331758821895,
+        "k1": 0.9676923076923077,
+        "k1_nsp": 1950,
+        "k5": 0.9647188533627343,
+        "k5_nsp": 907,
+        "k10": 0.9611307420494699,
+        "k10_nsp": 566,
+        "k20": 0.9587301587301588,
+        "k20_nsp": 315,
+        "k50": 0.9559748427672956,
+        "k50_nsp": 159
+      },
+      "tax_genus": {
+        "raw_a": 0.9538461538461539,
+        "recwt_b": 0.9809669352597944,
+        "k1": 0.9538461538461539,
+        "k1_nsp": 1950,
+        "k5": 0.9647188533627343,
+        "k5_nsp": 907,
+        "k10": 0.9628975265017667,
+        "k10_nsp": 566,
+        "k20": 0.9650793650793651,
+        "k20_nsp": 315,
+        "k50": 0.9748427672955975,
+        "k50_nsp": 159
+      },
+      "density_phylo": {
+        "covered_mean_recs": 12.920634920634921,
+        "uncovered_mean_recs": 22.455749867514573,
+        "density_ratio": 0.5753820289620545,
+        "n_covered": 63,
+        "n_uncovered": 1887
+      },
+      "density_deb": {
+        "covered_mean_recs": 5.636363636363637,
+        "uncovered_mean_recs": 22.241361526560084,
+        "density_ratio": 0.25341810255783265,
+        "n_covered": 11,
+        "n_uncovered": 1939
+      },
+      "records_per_species": {
+        "P25": 2.0,
+        "P50": 4.0,
+        "P75": 12.0,
+        "n_singletons": 396
+      },
+      "genus_only": 280,
+      "tax_group": {
+        "other": 1530,
+        "crusta": 146,
+        "fish": 111,
+        "algae": 163
+      }
+    },
+    "ref_779_discovery_coverage": {
+      "n_species": 779,
+      "n_records": 10149,
+      "phylo": {
+        "raw_a": 0.5224646983311938,
+        "recwt_b": 0.7695339442309587,
+        "k1": 0.5224646983311938,
+        "k1_nsp": 779,
+        "k5": 0.6136363636363636,
+        "k5_nsp": 264,
+        "k10": 0.7482517482517482,
+        "k10_nsp": 143,
+        "k20": 0.7692307692307693,
+        "k20_nsp": 78,
+        "k50": 0.8285714285714286,
+        "k50_nsp": 35
+      },
+      "deb": {
+        "raw_a": 0.26957637997432604,
+        "recwt_b": 0.689230466055769,
+        "k1": 0.26957637997432604,
+        "k1_nsp": 779,
+        "k5": 0.38636363636363635,
+        "k5_nsp": 264,
+        "k10": 0.5034965034965035,
+        "k10_nsp": 143,
+        "k20": 0.6153846153846154,
+        "k20_nsp": 78,
+        "k50": 0.8,
+        "k50_nsp": 35
+      },
+      "tax_class": {
+        "raw_a": 0.9922978177150192,
+        "recwt_b": 0.9985220218740762,
+        "k1": 0.9922978177150192,
+        "k1_nsp": 779,
+        "k5": 0.9962121212121212,
+        "k5_nsp": 264,
+        "k10": 1.0,
+        "k10_nsp": 143,
+        "k20": 1.0,
+        "k20_nsp": 78,
+        "k50": 1.0,
+        "k50_nsp": 35
+      },
+      "tax_order": {
+        "raw_a": 0.9922978177150192,
+        "recwt_b": 0.9985220218740762,
+        "k1": 0.9922978177150192,
+        "k1_nsp": 779,
+        "k5": 0.9962121212121212,
+        "k5_nsp": 264,
+        "k10": 1.0,
+        "k10_nsp": 143,
+        "k20": 1.0,
+        "k20_nsp": 78,
+        "k50": 1.0,
+        "k50_nsp": 35
+      },
+      "tax_family": {
+        "raw_a": 0.9922978177150192,
+        "recwt_b": 0.9985220218740762,
+        "k1": 0.9922978177150192,
+        "k1_nsp": 779,
+        "k5": 0.9962121212121212,
+        "k5_nsp": 264,
+        "k10": 1.0,
+        "k10_nsp": 143,
+        "k20": 1.0,
+        "k20_nsp": 78,
+        "k50": 1.0,
+        "k50_nsp": 35
+      },
+      "tax_genus": {
+        "raw_a": 0.9922978177150192,
+        "recwt_b": 0.9985220218740762,
+        "k1": 0.9922978177150192,
+        "k1_nsp": 779,
+        "k5": 0.9962121212121212,
+        "k5_nsp": 264,
+        "k10": 1.0,
+        "k10_nsp": 143,
+        "k20": 1.0,
+        "k20_nsp": 78,
+        "k50": 1.0,
+        "k50_nsp": 35
+      },
+      "density_phylo": {
+        "covered_mean_recs": 19.18918918918919,
+        "uncovered_mean_recs": 6.287634408602151,
+        "density_ratio": 3.0518932784858395,
+        "n_covered": 407,
+        "n_uncovered": 372
+      },
+      "density_deb": {
+        "covered_mean_recs": 33.30952380952381,
+        "uncovered_mean_recs": 5.543057996485062,
+        "density_ratio": 6.009232418395386,
+        "n_covered": 210,
+        "n_uncovered": 569
+      },
+      "records_per_species": {
+        "P25": 1.0,
+        "P50": 3.0,
+        "P75": 6.0,
+        "n_singletons": 243
+      },
+      "genus_only": 44,
+      "tax_group": {
+        "fish": 444,
+        "crusta": 317,
+        "algae": 9,
+        "other": 9
+      }
+    }
+  },
+  "c4_density_ratio": {
+    "definition": "GAP_LOG:99 = mean(records per covered species) / mean(records per uncovered species). NOT occupancy b/a.",
+    "prior_recorded": "ADORE processed: phylo 4.3x, DEB-any 9.33x (GAP_LOG:99). def matched.",
+    "E_full": {
+      "phylo": {
+        "covered_mean_recs": 149.2461273666093,
+        "uncovered_mean_recs": 27.015011547344113,
+        "density_ratio": 5.524562782623794,
+        "n_covered": 581,
+        "n_uncovered": 2598
+      },
+      "deb": {
+        "covered_mean_recs": 318.68145161290323,
+        "uncovered_mean_recs": 26.565677243261685,
+        "density_ratio": 11.995984468784282,
+        "n_covered": 248,
+        "n_uncovered": 2931
+      }
+    },
+    "B1_old": {
+      "phylo": {
+        "covered_mean_recs": 84.25427872860635,
+        "uncovered_mean_recs": 22.480549199084667,
+        "density_ratio": 3.747874572923552,
+        "n_covered": 409,
+        "n_uncovered": 2185
+      },
+      "deb": {
+        "covered_mean_recs": 156.40886699507388,
+        "uncovered_mean_recs": 21.676704307820994,
+        "density_ratio": 7.215528005271598,
+        "n_covered": 203,
+        "n_uncovered": 2391
+      }
+    },
+    "B1_new": {
+      "phylo": {
+        "covered_mean_recs": 39.5,
+        "uncovered_mean_recs": 13.931506849315069,
+        "density_ratio": 2.835299901671583,
+        "n_covered": 128,
+        "n_uncovered": 365
+      },
+      "deb": {
+        "covered_mean_recs": 60.53658536585366,
+        "uncovered_mean_recs": 12.59610705596107,
+        "density_ratio": 4.805975774650542,
+        "n_covered": 82,
+        "n_uncovered": 411
+      }
+    },
+    "new_1950": {
+      "phylo": {
+        "covered_mean_recs": 12.920634920634921,
+        "uncovered_mean_recs": 22.455749867514573,
+        "density_ratio": 0.5753820289620545,
+        "n_covered": 63,
+        "n_uncovered": 1887
+      },
+      "deb": {
+        "covered_mean_recs": 5.636363636363637,
+        "uncovered_mean_recs": 22.241361526560084,
+        "density_ratio": 0.25341810255783265,
+        "n_covered": 11,
+        "n_uncovered": 1939
+      }
+    },
+    "occupancy_ratio_note": "record-occupancy ratio b/a (e.g. E-full phylo .553/.183=3.0) is a DIFFERENT quantity."
+  }
+}

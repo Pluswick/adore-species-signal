@@ -1,0 +1,342 @@
+{
+  "note": "B1 standalone density check. B1_final = recovered corrected-B1 minus (ref,species,CAS,duration)=P matches. level: raw records (result_id). No training.",
+  "recovered_rows": 45596,
+  "removed_precise4": 4069,
+  "B1_final_rows": 41527,
+  "B1_final": {
+    "n_rows": 41527,
+    "n_species": 1975,
+    "n_compounds": 1993,
+    "n_species_compound_pairs": 14629,
+    "grid_fill_rate": 0.003716552236625658,
+    "recs_per_species": {
+      "P50": 4.0,
+      "Q1": 2.0,
+      "Q3": 12.0,
+      "mean": 21.02632911392405,
+      "max": 1773
+    },
+    "species_ge": {
+      ">=1": {
+        "n": 1975,
+        "frac": 1.0
+      },
+      ">=5": {
+        "n": 924,
+        "frac": 0.46784810126582277
+      },
+      ">=10": {
+        "n": 580,
+        "frac": 0.2936708860759494
+      },
+      ">=20": {
+        "n": 339,
+        "frac": 0.17164556962025315
+      },
+      ">=50": {
+        "n": 146,
+        "frac": 0.0739240506329114
+      }
+    },
+    "recs_per_compound": {
+      "P50": 4.0,
+      "Q1": 2.0,
+      "Q3": 11.0,
+      "mean": 20.83642749623683,
+      "max": 2131
+    }
+  },
+  "P": {
+    "n_rows": 70670,
+    "n_species": 1267,
+    "n_compounds": 3295,
+    "n_species_compound_pairs": 18966,
+    "grid_fill_rate": 0.004543010205364853,
+    "recs_per_species": {
+      "P50": 6.0,
+      "Q1": 2.0,
+      "Q3": 18.0,
+      "mean": 55.77742699289661,
+      "max": 7260
+    },
+    "species_ge": {
+      ">=1": {
+        "n": 1267,
+        "frac": 1.0
+      },
+      ">=5": {
+        "n": 674,
+        "frac": 0.531965272296764
+      },
+      ">=10": {
+        "n": 480,
+        "frac": 0.3788476716653512
+      },
+      ">=20": {
+        "n": 302,
+        "frac": 0.23835832675611682
+      },
+      ">=50": {
+        "n": 164,
+        "frac": 0.12943962115232832
+      }
+    },
+    "recs_per_compound": {
+      "P50": 4.0,
+      "Q1": 1.0,
+      "Q3": 10.0,
+      "mean": 21.447647951441578,
+      "max": 2651
+    }
+  },
+  "P_discovery": {
+    "n_rows": 10149,
+    "n_species": 779,
+    "n_compounds": 2081,
+    "n_species_compound_pairs": 10149,
+    "grid_fill_rate": 0.00626056767661938,
+    "recs_per_species": {
+      "P50": 3.0,
+      "Q1": 1.0,
+      "Q3": 6.0,
+      "mean": 13.02824133504493,
+      "max": 1034
+    },
+    "species_ge": {
+      ">=1": {
+        "n": 779,
+        "frac": 1.0
+      },
+      ">=5": {
+        "n": 264,
+        "frac": 0.33889602053915274
+      },
+      ">=10": {
+        "n": 143,
+        "frac": 0.18356867779204109
+      },
+      ">=20": {
+        "n": 78,
+        "frac": 0.10012836970474968
+      },
+      ">=50": {
+        "n": 35,
+        "frac": 0.044929396662387676
+      }
+    },
+    "recs_per_compound": {
+      "P50": 2.0,
+      "Q1": 1.0,
+      "Q3": 4.0,
+      "mean": 4.8769822200864965,
+      "max": 219
+    }
+  },
+  "B1_final_new_species": {
+    "n_rows": 26150,
+    "n_species": 1458,
+    "n_compounds": 1458,
+    "n_species_compound_pairs": 8912,
+    "grid_fill_rate": 0.004192375070798076,
+    "recs_per_species": {
+      "P50": 4.0,
+      "Q1": 2.0,
+      "Q3": 11.0,
+      "mean": 17.935528120713307,
+      "max": 976
+    },
+    "species_ge": {
+      ">=1": {
+        "n": 1458,
+        "frac": 1.0
+      },
+      ">=5": {
+        "n": 668,
+        "frac": 0.45816186556927296
+      },
+      ">=10": {
+        "n": 407,
+        "frac": 0.27914951989026066
+      },
+      ">=20": {
+        "n": 237,
+        "frac": 0.16255144032921812
+      },
+      ">=50": {
+        "n": 94,
+        "frac": 0.0644718792866941
+      }
+    },
+    "recs_per_compound": {
+      "P50": 3.0,
+      "Q1": 1.0,
+      "Q3": 9.0,
+      "mean": 17.935528120713307,
+      "max": 1380
+    }
+  },
+  "B1_final_existing_species": {
+    "n_rows": 15377,
+    "n_species": 517,
+    "n_compounds": 1439,
+    "n_species_compound_pairs": 5717,
+    "grid_fill_rate": 0.0076845219453117964,
+    "recs_per_species": {
+      "P50": 4.0,
+      "Q1": 2.0,
+      "Q3": 14.0,
+      "mean": 29.74274661508704,
+      "max": 1773
+    },
+    "species_ge": {
+      ">=1": {
+        "n": 517,
+        "frac": 1.0
+      },
+      ">=5": {
+        "n": 256,
+        "frac": 0.4951644100580271
+      },
+      ">=10": {
+        "n": 173,
+        "frac": 0.3346228239845261
+      },
+      ">=20": {
+        "n": 102,
+        "frac": 0.19729206963249515
+      },
+      ">=50": {
+        "n": 52,
+        "frac": 0.10058027079303675
+      }
+    },
+    "recs_per_compound": {
+      "P50": 3.0,
+      "Q1": 1.0,
+      "Q3": 8.0,
+      "mean": 10.68589298123697,
+      "max": 751
+    }
+  },
+  "c3_cas_split_sim": {
+    "per_seed": [
+      {
+        "seed": 11,
+        "train_rows": 34698,
+        "test_rows": 6829,
+        "train_species": 1822,
+        "test_species": 833,
+        "train_compounds": 1594,
+        "test_compounds": 399,
+        "test_OOV_species": 153,
+        "test_OOV_species_frac": 0.1836734693877551,
+        "test_rows_species_in_train_frac": 0.9562161370625275,
+        "test_rows_covered_by_train_ge10sp_frac": 0.84712256552936
+      },
+      {
+        "seed": 22,
+        "train_rows": 33005,
+        "test_rows": 8522,
+        "train_species": 1760,
+        "test_species": 924,
+        "train_compounds": 1594,
+        "test_compounds": 399,
+        "test_OOV_species": 215,
+        "test_OOV_species_frac": 0.2326839826839827,
+        "test_rows_species_in_train_frac": 0.9341703825393101,
+        "test_rows_covered_by_train_ge10sp_frac": 0.7898380661816475
+      },
+      {
+        "seed": 33,
+        "train_rows": 32037,
+        "test_rows": 9490,
+        "train_species": 1787,
+        "test_species": 1043,
+        "train_compounds": 1594,
+        "test_compounds": 399,
+        "test_OOV_species": 188,
+        "test_OOV_species_frac": 0.18024928092042186,
+        "test_rows_species_in_train_frac": 0.9461538461538461,
+        "test_rows_covered_by_train_ge10sp_frac": 0.8034773445732349
+      }
+    ],
+    "variation": {
+      "test_OOV_species_frac": {
+        "mean": 0.19886891099738654,
+        "min": 0.18024928092042186,
+        "max": 0.2326839826839827
+      },
+      "test_rows_species_in_train_frac": {
+        "mean": 0.9455134552518946,
+        "min": 0.9341703825393101,
+        "max": 0.9562161370625275
+      },
+      "test_rows_covered_by_train_ge10sp_frac": {
+        "mean": 0.8134793254280809,
+        "min": 0.7898380661816475,
+        "max": 0.84712256552936
+      }
+    }
+  },
+  "c4_tier_availability": {
+    "taxonomy_from_ecotox_species_txt": {
+      "class": 0.9848101265822785,
+      "tax_order": 0.9807594936708861,
+      "family": 0.9731645569620253,
+      "genus": 0.9625316455696202
+    },
+    "native_taxonomy_constructible": "YES - species.txt provides class/tax_order/family/genus per species_number (t3a/t3b constructible from ECOTOX ranks).",
+    "note": "phylo/DEB coverage in ecotox_expansion_v2.json (not this experiment's tier)."
+  },
+  "c5_composition": {
+    "endpoint_raw": {
+      "LC50": 27804,
+      "EC50": 8373,
+      "IC50": 1612,
+      "LC50*": 1506,
+      "LC50/": 1451,
+      "EC50/": 332,
+      "EC50*": 317,
+      "EC0": 60,
+      "LC50*/": 49,
+      "EC50*/": 23
+    },
+    "endpoint_base": {
+      "LC50": 30810,
+      "EC50": 9045,
+      "IC50": 1612,
+      "EC0": 60
+    },
+    "effect": {
+      "MOR": 31375,
+      "ITX": 3782,
+      "POP": 3721,
+      "PHY": 1488,
+      "GRO": 521,
+      "~MOR": 440,
+      "~ITX": 107,
+      "MOR/": 45
+    },
+    "duration_h": {
+      "96": 11049,
+      "24": 10504,
+      "48": 8840,
+      "72": 2725,
+      "6": 1319,
+      "3": 1304,
+      "1": 1004,
+      "12": 831,
+      "2": 713,
+      "0": 442
+    },
+    "single_endpoint_LC50base_subset": {
+      "rows": 30810,
+      "species": 1624,
+      "compounds": 1597
+    },
+    "single_endpoint_LC50_96h_subset": {
+      "rows": 8722,
+      "species": 931
+    }
+  }
+}

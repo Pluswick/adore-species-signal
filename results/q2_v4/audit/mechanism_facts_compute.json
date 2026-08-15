@@ -1,0 +1,768 @@
+{
+  "note": "Mechanism fact-finding (descriptive; NOT a decision input). pLC50=-log10(mol/L).",
+  "part3_absolute_rmse": {
+    "discovery_group": [
+      {
+        "backbone": "dmpnn",
+        "tier": "t0",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.19830241695036,
+        "per_seed_rmse_sd": 0.018900678662408233,
+        "ensemble_rmse": 1.18001234452353
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t1",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1298698640499185,
+        "per_seed_rmse_sd": 0.0210192984315978,
+        "ensemble_rmse": 1.1102514231028717
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t1p",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.146308249340515,
+        "per_seed_rmse_sd": 0.01905187428251041,
+        "ensemble_rmse": 1.1263742679141155
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t2",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1221608127582712,
+        "per_seed_rmse_sd": 0.017770358189619605,
+        "ensemble_rmse": 1.0933344453358602
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t3a",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1046440911175472,
+        "per_seed_rmse_sd": 0.024605874424143137,
+        "ensemble_rmse": 1.0694920843567792
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t3b",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1055322331506485,
+        "per_seed_rmse_sd": 0.013061327140850135,
+        "ensemble_rmse": 1.0707808986434306
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t4",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1336830256463035,
+        "per_seed_rmse_sd": 0.021491996710792265,
+        "ensemble_rmse": 1.0866732544910316
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t0",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1913200641592387,
+        "per_seed_rmse_sd": 0.02434341373085204,
+        "ensemble_rmse": 1.1667402202084387
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t1",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1416864138442135,
+        "per_seed_rmse_sd": 0.015998752903720475,
+        "ensemble_rmse": 1.1203002268020374
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t1p",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1396366083094893,
+        "per_seed_rmse_sd": 0.025549393604668458,
+        "ensemble_rmse": 1.1133272306914
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t2",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.123930313149082,
+        "per_seed_rmse_sd": 0.01599852617862637,
+        "ensemble_rmse": 1.0929495898649462
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t3a",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.0907681291166331,
+        "per_seed_rmse_sd": 0.018328783230207216,
+        "ensemble_rmse": 1.0506938184555301
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t3b",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.081362208214652,
+        "per_seed_rmse_sd": 0.012463223823294761,
+        "ensemble_rmse": 1.0435508896274297
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t4",
+        "n_seeds": 10,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.1088346538963247,
+        "per_seed_rmse_sd": 0.022610874145817805,
+        "ensemble_rmse": 1.0606515223321389
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t0",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.3490092309797652,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.3490092309797652
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t1p",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.2876324250726043,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2876324250726043
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t2",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.2868311692322285,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2868311692322285
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t3a",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.2602500120865112,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2602500120865112
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t3b",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.2650651633454801,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2650651633454801
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t4",
+        "n_seeds": 1,
+        "n_rows": 2029,
+        "per_seed_rmse_mean": 1.3230742538059808,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.3230742538059808
+      }
+    ],
+    "replication_group": [
+      {
+        "backbone": "dmpnn",
+        "tier": "t0",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.3501413078838747,
+        "per_seed_rmse_sd": 0.04075815743508889,
+        "ensemble_rmse": 1.3312675272023646
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t1",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2858600795805593,
+        "per_seed_rmse_sd": 0.03305797274717047,
+        "ensemble_rmse": 1.2662109446443541
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t1p",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.3260594919177855,
+        "per_seed_rmse_sd": 0.04145147998650523,
+        "ensemble_rmse": 1.3065507986044662
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t2",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.1993197834627434,
+        "per_seed_rmse_sd": 0.02473422272065305,
+        "ensemble_rmse": 1.1662629535117224
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t3a",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.1926159249582962,
+        "per_seed_rmse_sd": 0.025106350212471543,
+        "ensemble_rmse": 1.152941491404732
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t3b",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.1887736026534348,
+        "per_seed_rmse_sd": 0.035427102819071764,
+        "ensemble_rmse": 1.1458753683793519
+      },
+      {
+        "backbone": "dmpnn",
+        "tier": "t4",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2086505368366072,
+        "per_seed_rmse_sd": 0.01691354121476606,
+        "ensemble_rmse": 1.153120334035556
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t0",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.3812421142867102,
+        "per_seed_rmse_sd": 0.03433288677549086,
+        "ensemble_rmse": 1.35812261812051
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t1",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.3268226343665295,
+        "per_seed_rmse_sd": 0.02027134875254444,
+        "ensemble_rmse": 1.3039813262067625
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t1p",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.3631278378517566,
+        "per_seed_rmse_sd": 0.03841298369844968,
+        "ensemble_rmse": 1.3388476531516642
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t2",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2472759602413832,
+        "per_seed_rmse_sd": 0.020448836467198993,
+        "ensemble_rmse": 1.2092537126216343
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t3a",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.207756987944991,
+        "per_seed_rmse_sd": 0.030183912165073257,
+        "ensemble_rmse": 1.1598589358934797
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t3b",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.194662313625863,
+        "per_seed_rmse_sd": 0.025943559110480855,
+        "ensemble_rmse": 1.1451155749684785
+      },
+      {
+        "backbone": "graphconv",
+        "tier": "t4",
+        "n_seeds": 10,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2214156344718807,
+        "per_seed_rmse_sd": 0.011319310308076706,
+        "ensemble_rmse": 1.1580239326910093
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t0",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.259521838584932,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.259521838584932
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t1p",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2396732954349947,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2396732954349947
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t2",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.2116512652836164,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.2116512652836164
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t3a",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.1917042304053929,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.1917042304053929
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t3b",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.1854142903179066,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.1854142903179066
+      },
+      {
+        "backbone": "lightgbm",
+        "tier": "t4",
+        "n_seeds": 1,
+        "n_rows": 4351,
+        "per_seed_rmse_mean": 1.28666996669287,
+        "per_seed_rmse_sd": 0.0,
+        "ensemble_rmse": 1.28666996669287
+      }
+    ]
+  },
+  "part4_taxonomy_resolution": {
+    "discovery": {
+      "n_species": 779,
+      "n_tax_class": 14,
+      "n_tax_order": 51,
+      "n_tax_family": 182,
+      "n_tax_genus": 424,
+      "genus_over_species": 0.5442875481386393,
+      "species_with_unique_genus_frac": 0.36970474967907574
+    },
+    "replication": {
+      "n_species": 1006,
+      "n_tax_class": 28,
+      "n_tax_order": 91,
+      "n_tax_family": 252,
+      "n_tax_genus": 530,
+      "genus_over_species": 0.5268389662027833,
+      "species_with_unique_genus_frac": 0.3558648111332008
+    }
+  },
+  "part5_sensitivity_rank_stability": {
+    "class_field": "oecd_function_prevalent",
+    "min_compounds_per_class": 5,
+    "min_species_overlap": 10,
+    "classes_used": [
+      "antioxidant",
+      "binder",
+      "biocide",
+      "biocide - preservative",
+      "chelating agent",
+      "colorant",
+      "flame retardant",
+      "fragrance",
+      "pH regulating agent",
+      "preservative",
+      "processing aid not otherwise specified",
+      "solvent",
+      "solvent - surfactant",
+      "surfactant"
+    ],
+    "class_sizes": {
+      "antioxidant": {
+        "n_compounds": 5,
+        "n_species": 5
+      },
+      "binder": {
+        "n_compounds": 6,
+        "n_species": 18
+      },
+      "biocide": {
+        "n_compounds": 246,
+        "n_species": 525
+      },
+      "biocide - preservative": {
+        "n_compounds": 6,
+        "n_species": 5
+      },
+      "chelating agent": {
+        "n_compounds": 10,
+        "n_species": 16
+      },
+      "colorant": {
+        "n_compounds": 14,
+        "n_species": 64
+      },
+      "flame retardant": {
+        "n_compounds": 5,
+        "n_species": 14
+      },
+      "fragrance": {
+        "n_compounds": 53,
+        "n_species": 27
+      },
+      "pH regulating agent": {
+        "n_compounds": 11,
+        "n_species": 11
+      },
+      "preservative": {
+        "n_compounds": 31,
+        "n_species": 30
+      },
+      "processing aid not otherwise specified": {
+        "n_compounds": 6,
+        "n_species": 7
+      },
+      "solvent": {
+        "n_compounds": 47,
+        "n_species": 37
+      },
+      "solvent - surfactant": {
+        "n_compounds": 13,
+        "n_species": 50
+      },
+      "surfactant": {
+        "n_compounds": 10,
+        "n_species": 16
+      }
+    },
+    "n_class_pairs": 28,
+    "spearman_summary": {
+      "median": 0.22455146450454283,
+      "min": -0.30055707333974746,
+      "max": 0.8909090909090909,
+      "P25": 0.06473526473526472,
+      "P75": 0.40840222728767617
+    },
+    "pairs": [
+      {
+        "class_a": "binder",
+        "class_b": "biocide",
+        "n_species_overlap": 18,
+        "spearman": 0.413828689370485,
+        "kendall": 0.2679738562091504
+      },
+      {
+        "class_a": "binder",
+        "class_b": "colorant",
+        "n_species_overlap": 10,
+        "spearman": 0.8909090909090909,
+        "kendall": 0.7777777777777777
+      },
+      {
+        "class_a": "binder",
+        "class_b": "fragrance",
+        "n_species_overlap": 10,
+        "spearman": -0.17575757575757575,
+        "kendall": -0.15555555555555553
+      },
+      {
+        "class_a": "binder",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 10,
+        "spearman": 0.5151515151515151,
+        "kendall": 0.37777777777777777
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "chelating agent",
+        "n_species_overlap": 14,
+        "spearman": -0.30055707333974746,
+        "kendall": -0.19105948330009315
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "colorant",
+        "n_species_overlap": 52,
+        "spearman": 0.3590028173823956,
+        "kendall": 0.22473604826546
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "flame retardant",
+        "n_species_overlap": 11,
+        "spearman": 0.6272727272727273,
+        "kendall": 0.34545454545454546
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "fragrance",
+        "n_species_overlap": 24,
+        "spearman": 0.21739130434782608,
+        "kendall": 0.12318840579710144
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "pH regulating agent",
+        "n_species_overlap": 10,
+        "spearman": 0.04242424242424241,
+        "kendall": -0.022222222222222223
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "preservative",
+        "n_species_overlap": 27,
+        "spearman": 0.14713064713064714,
+        "kendall": 0.11111111111111113
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "solvent",
+        "n_species_overlap": 34,
+        "spearman": 0.16394194041252863,
+        "kendall": 0.09090909090909093
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 42,
+        "spearman": 0.33426522453594715,
+        "kendall": 0.2277745881319435
+      },
+      {
+        "class_a": "biocide",
+        "class_b": "surfactant",
+        "n_species_overlap": 14,
+        "spearman": 0.06813186813186813,
+        "kendall": 0.05494505494505495
+      },
+      {
+        "class_a": "chelating agent",
+        "class_b": "solvent",
+        "n_species_overlap": 10,
+        "spearman": 0.23171162466125958,
+        "kendall": 0.20459830184114206
+      },
+      {
+        "class_a": "colorant",
+        "class_b": "fragrance",
+        "n_species_overlap": 13,
+        "spearman": 0.03846153846153846,
+        "kendall": 0.05128205128205127
+      },
+      {
+        "class_a": "colorant",
+        "class_b": "preservative",
+        "n_species_overlap": 13,
+        "spearman": 0.40659340659340654,
+        "kendall": 0.3589743589743589
+      },
+      {
+        "class_a": "colorant",
+        "class_b": "solvent",
+        "n_species_overlap": 15,
+        "spearman": 0.6178571428571428,
+        "kendall": 0.4285714285714286
+      },
+      {
+        "class_a": "colorant",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 18,
+        "spearman": 0.10835913312693499,
+        "kendall": 0.05882352941176472
+      },
+      {
+        "class_a": "fragrance",
+        "class_b": "preservative",
+        "n_species_overlap": 13,
+        "spearman": 0.30769230769230765,
+        "kendall": 0.23076923076923073
+      },
+      {
+        "class_a": "fragrance",
+        "class_b": "solvent",
+        "n_species_overlap": 15,
+        "spearman": -0.017857142857142853,
+        "kendall": -0.009523809523809525
+      },
+      {
+        "class_a": "fragrance",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 17,
+        "spearman": 0.09068627450980393,
+        "kendall": 0.0588235294117647
+      },
+      {
+        "class_a": "fragrance",
+        "class_b": "surfactant",
+        "n_species_overlap": 10,
+        "spearman": 0.19999999999999998,
+        "kendall": 0.19999999999999998
+      },
+      {
+        "class_a": "preservative",
+        "class_b": "solvent",
+        "n_species_overlap": 15,
+        "spearman": 0.3142857142857143,
+        "kendall": 0.23809523809523814
+      },
+      {
+        "class_a": "preservative",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 18,
+        "spearman": 0.4282765737874097,
+        "kendall": 0.35947712418300654
+      },
+      {
+        "class_a": "preservative",
+        "class_b": "surfactant",
+        "n_species_overlap": 10,
+        "spearman": 0.05454545454545454,
+        "kendall": 0.022222222222222223
+      },
+      {
+        "class_a": "solvent",
+        "class_b": "solvent - surfactant",
+        "n_species_overlap": 23,
+        "spearman": 0.6729249011857709,
+        "kendall": 0.4861660079051383
+      },
+      {
+        "class_a": "solvent",
+        "class_b": "surfactant",
+        "n_species_overlap": 12,
+        "spearman": 0.2867132867132868,
+        "kendall": 0.2121212121212121
+      },
+      {
+        "class_a": "solvent - surfactant",
+        "class_b": "surfactant",
+        "n_species_overlap": 13,
+        "spearman": -0.06043956043956044,
+        "kendall": -0.07692307692307691
+      }
+    ]
+  },
+  "part6_two_axis_and_variance": {
+    "discovery": {
+      "species_axis_fix_compound": {
+        "n_units_ge2": 1146,
+        "n_pairs": 157441,
+        "pairwise_absdiff_median_log10": 0.8071245155437374,
+        "pairwise_absdiff_sd_log10": 0.9597086416247478,
+        "pairwise_absdiff_median_fold": 6.413934426229502,
+        "levels_per_unit_dist": {
+          "P25": 2.0,
+          "P50": 4.0,
+          "P75": 7.0,
+          "P90": 15.0
+        },
+        "spearman_nlevels_vs_unit_median_diff": 0.2659349077687588
+      },
+      "chemical_axis_fix_species": {
+        "n_units_ge2": 536,
+        "n_pairs": 1489156,
+        "pairwise_absdiff_median_log10": 1.406299882580191,
+        "pairwise_absdiff_sd_log10": 1.3124125066231533,
+        "pairwise_absdiff_median_fold": 25.48589459313791,
+        "levels_per_unit_dist": {
+          "P25": 3.0,
+          "P50": 4.0,
+          "P75": 11.0,
+          "P90": 30.0
+        },
+        "spearman_nlevels_vs_unit_median_diff": 0.09949807885659291
+      },
+      "variance_components": {
+        "n_cells": 10149,
+        "grid_fill_rate": 0.00626056767661938,
+        "total_ss": 30003.823013399255,
+        "order_compound_then_species": {
+          "smiles_frac": 0.7854342880515357,
+          "species_after_frac": 0.0666857040627529,
+          "residual_frac": 0.14788000788571154
+        },
+        "order_species_then_compound": {
+          "species_frac": 0.23130184249471988,
+          "smiles_after_frac": 0.5486089024098848,
+          "residual_frac": 0.22008925509539548
+        },
+        "method": "sequential Type-I SS on cell-mean grid; order-dependent (unbalanced); fractions of total SS"
+      }
+    },
+    "replication": {
+      "species_axis_fix_compound": {
+        "n_units_ge2": 1518,
+        "n_pairs": 218920,
+        "pairwise_absdiff_median_log10": 0.878046116941162,
+        "pairwise_absdiff_sd_log10": 1.0161850926185838,
+        "pairwise_absdiff_median_fold": 7.551724137931029,
+        "levels_per_unit_dist": {
+          "P25": 2.0,
+          "P50": 4.0,
+          "P75": 7.0,
+          "P90": 16.0
+        },
+        "spearman_nlevels_vs_unit_median_diff": 0.1270887210321904
+      },
+      "chemical_axis_fix_species": {
+        "n_units_ge2": 656,
+        "n_pairs": 2153625,
+        "pairwise_absdiff_median_log10": 1.4779335346320508,
+        "pairwise_absdiff_sd_log10": 1.3815106162929376,
+        "pairwise_absdiff_median_fold": 30.05616281403618,
+        "levels_per_unit_dist": {
+          "P25": 3.0,
+          "P50": 5.0,
+          "P75": 11.25,
+          "P90": 36.0
+        },
+        "spearman_nlevels_vs_unit_median_diff": 0.22387979703301644
+      },
+      "variance_components": {
+        "n_cells": 13487,
+        "grid_fill_rate": 0.00485744950586337,
+        "total_ss": 38810.064175566025,
+        "order_compound_then_species": {
+          "smiles_frac": 0.7233855297803441,
+          "species_after_frac": 0.06469442348787825,
+          "residual_frac": 0.21192004673177778
+        },
+        "order_species_then_compound": {
+          "species_frac": 0.22903998119387328,
+          "smiles_after_frac": 0.4847228130101113,
+          "residual_frac": 0.2862372057960154
+        },
+        "method": "sequential Type-I SS on cell-mean grid; order-dependent (unbalanced); fractions of total SS"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+# Large run outputs (regenerable from run scripts) — NOT committed
+results/q2_v4/runs/**/predictions/
+results/q2_v4/runs/**/runs/
+results/q2_v4/runs_b1/**/predictions/
+results/q2_v4/runs_b1/**/runs/
+results/q2_v4/runs*/**/oof_cache/
+results/q2_v4/runs*/_seqlogs/
+# Raw / aggregated datasets (licensing + size) — obtain ECOTOX separately
+results/q2_v4/data/
+results/q2_v4/data_b1/
+**/taxdump.tar.gz
+**/_ext/
+# python / env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

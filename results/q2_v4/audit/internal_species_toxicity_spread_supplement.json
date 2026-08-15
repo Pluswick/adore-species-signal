@@ -1,0 +1,616 @@
+{
+  "note": "SUPPLEMENT (descriptive; NOT a decision input). (1) species-count dependence of cross-species pLC50 spread; (2) widest-spread compound anatomy. pLC50=-log10(mol/L); fold=10^(pLC50 range). Per-compound = mean pLC50 per (smiles,species), pooled over strata.",
+  "part1_species_count_dependence": {
+    "discovery": {
+      "n_compounds_total": 2081,
+      "n_compounds_ge2species": 1146,
+      "species_count_distribution": {
+        "P10": 1.0,
+        "P25": 1.0,
+        "P50": 2.0,
+        "P75": 4.0,
+        "P90": 10.0,
+        "mean": 4.8769822200864965,
+        "min": 1.0,
+        "max": 219.0
+      },
+      "by_species_count_bin": {
+        "2": {
+          "n_compounds": 324,
+          "range_log10": {
+            "P25": 0.12436702635232522,
+            "P50": 0.32358734292220315,
+            "P75": 0.6219536228717182
+          },
+          "range_fold": {
+            "P25": 1.3315792727688418,
+            "P50": 2.1066255293531553,
+            "P75": 4.187488456782195
+          },
+          "sd_log10_median": 0.22881080448642663,
+          "iqr_log10_median": 0.16179367146110102
+        },
+        "3-5": {
+          "n_compounds": 436,
+          "range_log10": {
+            "P25": 0.43917916052096573,
+            "P50": 0.8670097080019961,
+            "P75": 1.4502209979081748
+          },
+          "range_fold": {
+            "P25": 2.7490279821752206,
+            "P50": 7.362235544845247,
+            "P75": 28.19817476856326
+          },
+          "sd_log10_median": 0.4010056216027923,
+          "iqr_log10_median": 0.35229082599831507
+        },
+        "6-10": {
+          "n_compounds": 195,
+          "range_log10": {
+            "P25": 0.8782637197698178,
+            "P50": 1.4887031272694777,
+            "P75": 2.2137812376393082
+          },
+          "range_fold": {
+            "P25": 7.555508870070064,
+            "P50": 30.81081081081082,
+            "P75": 163.5992233549391
+          },
+          "sd_log10_median": 0.5315729651998002,
+          "iqr_log10_median": 0.46168866073539583
+        },
+        "11-20": {
+          "n_compounds": 114,
+          "range_log10": {
+            "P25": 1.5823447062894256,
+            "P50": 2.139726186623025,
+            "P75": 3.6245871974696877
+          },
+          "range_fold": {
+            "P25": 38.22475462935013,
+            "P50": 137.9514236160136,
+            "P75": 4212.958658757428
+          },
+          "sd_log10_median": 0.5934356478264207,
+          "iqr_log10_median": 0.6188091154117139
+        },
+        "21+": {
+          "n_compounds": 77,
+          "range_log10": {
+            "P25": 2.700449714394065,
+            "P50": 4.163165502090677,
+            "P75": 5.407402136369771
+          },
+          "range_fold": {
+            "P25": 501.70648464163645,
+            "P50": 14560.138364779876,
+            "P75": 255506.6079294897
+          },
+          "sd_log10_median": 0.8909789605053073,
+          "iqr_log10_median": 0.9380273454386998
+        }
+      },
+      "median_range_by_bin": [
+        [
+          "2",
+          0.32358734292220315
+        ],
+        [
+          "3-5",
+          0.8670097080019961
+        ],
+        [
+          "6-10",
+          1.4887031272694777
+        ],
+        [
+          "11-20",
+          2.139726186623025
+        ],
+        [
+          "21+",
+          4.163165502090677
+        ]
+      ],
+      "monotone_increasing": true,
+      "spearman_vs_n_species": {
+        "range": 0.6919752857593188,
+        "sd": 0.45624577630155455,
+        "iqr": 0.5383891626201646
+      },
+      "summary_distributions_over_compounds": {
+        "range_log10": {
+          "P10": 0.1542841456039259,
+          "P25": 0.39178878757561375,
+          "P50": 0.917664960733229,
+          "P75": 1.8554722029248873,
+          "P90": 3.3994135302981836,
+          "mean": 1.3874885070675393,
+          "min": 0.0,
+          "max": 8.515270974279375
+        },
+        "sd_log10": {
+          "P10": 0.09440808466796802,
+          "P25": 0.20495005108410708,
+          "P50": 0.4218025312780317,
+          "P75": 0.7197545704969114,
+          "P90": 1.132362629347555,
+          "mean": 0.5348142798545366,
+          "min": 0.0,
+          "max": 4.029288594229293
+        },
+        "iqr_log10": {
+          "P10": 0.0706163107293023,
+          "P25": 0.16914297180796156,
+          "P50": 0.3653104056536318,
+          "P75": 0.6913238700860627,
+          "P90": 1.2388101407408127,
+          "mean": 0.5303560725337882,
+          "min": 0.0,
+          "max": 4.589847724843457
+        }
+      }
+    },
+    "replication": {
+      "n_compounds_total": 2760,
+      "n_compounds_ge2species": 1518,
+      "species_count_distribution": {
+        "P10": 1.0,
+        "P25": 1.0,
+        "P50": 2.0,
+        "P75": 4.0,
+        "P90": 10.0,
+        "mean": 4.886594202898551,
+        "min": 1.0,
+        "max": 254.0
+      },
+      "by_species_count_bin": {
+        "2": {
+          "n_compounds": 474,
+          "range_log10": {
+            "P25": 0.22317882115042367,
+            "P50": 0.5062905202072896,
+            "P75": 1.099852623567916
+          },
+          "range_fold": {
+            "P25": 1.6717788290774687,
+            "P50": 3.208414867897604,
+            "P75": 12.584982719933413
+          },
+          "sd_log10_median": 0.3580014600890392,
+          "iqr_log10_median": 0.25314526010364524
+        },
+        "3-5": {
+          "n_compounds": 544,
+          "range_log10": {
+            "P25": 0.6101614734932119,
+            "P50": 1.1231026139115179,
+            "P75": 1.8654823536190186
+          },
+          "range_fold": {
+            "P25": 4.075317725840419,
+            "P50": 13.277081279142335,
+            "P75": 73.36389043812376
+          },
+          "sd_log10_median": 0.5331477820026697,
+          "iqr_log10_median": 0.49738013365098954
+        },
+        "6-10": {
+          "n_compounds": 229,
+          "range_log10": {
+            "P25": 1.1580255076567236,
+            "P50": 1.8629613118106305,
+            "P75": 2.755192928574848
+          },
+          "range_fold": {
+            "P25": 14.388830864859768,
+            "P50": 72.93925309962864,
+            "P75": 569.1056910568966
+          },
+          "sd_log10_median": 0.6595242425471667,
+          "iqr_log10_median": 0.6435923178793925
+        },
+        "11-20": {
+          "n_compounds": 161,
+          "range_log10": {
+            "P25": 1.7238885677184888,
+            "P50": 2.5722790323396962,
+            "P75": 3.5791694233468467
+          },
+          "range_fold": {
+            "P25": 52.952755905511815,
+            "P50": 373.4900464747823,
+            "P75": 3794.629890441895
+          },
+          "sd_log10_median": 0.7184226928372153,
+          "iqr_log10_median": 0.795502503956631
+        },
+        "21+": {
+          "n_compounds": 110,
+          "range_log10": {
+            "P25": 3.4144065604829645,
+            "P50": 4.575298926453698,
+            "P75": 5.487143058900795
+          },
+          "range_fold": {
+            "P25": 2596.6090145357766,
+            "P50": 37609.61835745372,
+            "P75": 307003.31070013647
+          },
+          "sd_log10_median": 1.0874690332814934,
+          "iqr_log10_median": 1.2199237329746957
+        }
+      },
+      "median_range_by_bin": [
+        [
+          "2",
+          0.5062905202072896
+        ],
+        [
+          "3-5",
+          1.1231026139115179
+        ],
+        [
+          "6-10",
+          1.8629613118106305
+        ],
+        [
+          "11-20",
+          2.5722790323396962
+        ],
+        [
+          "21+",
+          4.575298926453698
+        ]
+      ],
+      "monotone_increasing": true,
+      "spearman_vs_n_species": {
+        "range": 0.6435731508011292,
+        "sd": 0.34436620993262357,
+        "iqr": 0.46802044684311495
+      },
+      "summary_distributions_over_compounds": {
+        "range_log10": {
+          "P10": 0.22184874961635614,
+          "P25": 0.5467098686126628,
+          "P50": 1.2453106605948294,
+          "P75": 2.374838583939707,
+          "P90": 3.777213737136403,
+          "mean": 1.6898591403762335,
+          "min": 0.0,
+          "max": 9.043968736710552
+        },
+        "sd_log10": {
+          "P10": 0.1412469698171692,
+          "P25": 0.2937451197332687,
+          "P50": 0.5695472675472779,
+          "P75": 0.9575415746575187,
+          "P90": 1.3731247777367408,
+          "mean": 0.6841755198552353,
+          "min": 0.0,
+          "max": 3.6137181611783222
+        },
+        "iqr_log10": {
+          "P10": 0.10415348014826184,
+          "P25": 0.2436508572233862,
+          "P50": 0.5089850509687226,
+          "P75": 0.891937044479263,
+          "P90": 1.4418819673118388,
+          "mean": 0.6601502602072387,
+          "min": 0.0,
+          "max": 4.806149983273949
+        }
+      }
+    }
+  },
+  "part2_top10_widest_discovery": [
+    {
+      "smiles": "CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1",
+      "cas_first": "52315-07-8",
+      "cas_list": "52315-07-8",
+      "n_cas_merged": 1,
+      "compound_name": "52315-07-8\nCypermethrin",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 8.5153,
+      "spread_fold": 327544999.99999446,
+      "n_species": 51,
+      "most_sensitive": {
+        "species": "palaemonetes_argentinus",
+        "pLC50": 11.3184,
+        "conc_mol_L": 4.8042278612667775e-12,
+        "tax_group": "crusta",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "channa_striata",
+        "pLC50": 2.8031,
+        "conc_mol_L": 0.0015736008148186,
+        "tax_group": "fish",
+        "n_source_rows": 1
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)",
+        "single-source-row extreme (resistant n_src=1)"
+      ]
+    },
+    {
+      "smiles": "COP(N)(=O)SC",
+      "cas_first": "10265-92-6",
+      "cas_list": "10265-92-6",
+      "n_cas_merged": 1,
+      "compound_name": "10265-92-6\nMethamidophos",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 7.2865,
+      "spread_fold": 19341463.41463329,
+      "n_species": 11,
+      "most_sensitive": {
+        "species": "macrobrachium_rosenbergii",
+        "pLC50": 10.3607,
+        "conc_mol_L": 4.3579933480673503e-11,
+        "tax_group": "crusta",
+        "n_source_rows": 4
+      },
+      "most_resistant": {
+        "species": "hypophthalmichthys_molitrix",
+        "pLC50": 3.0742,
+        "conc_mol_L": 0.0008428996890285,
+        "tax_group": "fish",
+        "n_source_rows": 2
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": []
+    },
+    {
+      "smiles": "CC1(C)C(C=C(Br)Br)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1",
+      "cas_first": "52918-63-5",
+      "cas_list": "52918-63-5",
+      "n_cas_merged": 1,
+      "compound_name": "52918-63-5\nDeltamethrin",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 7.1111,
+      "spread_fold": 12915232.472323157,
+      "n_species": 43,
+      "most_sensitive": {
+        "species": "palaemonetes_pugio",
+        "pLC50": 10.9695,
+        "conc_mol_L": 1.0728297106723874e-11,
+        "tax_group": "crusta",
+        "n_source_rows": 2
+      },
+      "most_resistant": {
+        "species": "rhodeus_sericeus",
+        "pLC50": 3.8584,
+        "conc_mol_L": 0.0001385584511654,
+        "tax_group": "fish",
+        "n_source_rows": 2
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": true,
+      "anomaly_flags": []
+    },
+    {
+      "smiles": "CC1(C)C(C=C(Cl)C(F)(F)F)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1",
+      "cas_first": "91465-08-6",
+      "cas_list": "91465-08-6",
+      "n_cas_merged": 1,
+      "compound_name": "91465-08-6\nlambda-Cyhalothrin",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 7.005,
+      "spread_fold": 10116624.372740002,
+      "n_species": 22,
+      "most_sensitive": {
+        "species": "gammarus_pseudolimnaeus",
+        "pLC50": 11.3742,
+        "conc_mol_L": 4.225112017069311e-12,
+        "tax_group": "crusta",
+        "n_source_rows": 3
+      },
+      "most_resistant": {
+        "species": "clarias_batrachus",
+        "pLC50": 4.3691,
+        "conc_mol_L": 4.274387120944001e-05,
+        "tax_group": "fish",
+        "n_source_rows": 3
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": []
+    },
+    {
+      "smiles": "COP(=O)(OC)C(O)C(Cl)(Cl)Cl",
+      "cas_first": "52-68-6",
+      "cas_list": "52-68-6",
+      "n_cas_merged": 1,
+      "compound_name": "52-68-6\nTrichlorfon",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 6.9618,
+      "spread_fold": 9157999.9999988,
+      "n_species": 38,
+      "most_sensitive": {
+        "species": "daphnia_carinata",
+        "pLC50": 10.4107,
+        "conc_mol_L": 3.884551250636301e-11,
+        "tax_group": "crusta",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "pimephales_promelas",
+        "pLC50": 3.4489,
+        "conc_mol_L": 0.0003557472035332,
+        "tax_group": "fish",
+        "n_source_rows": 5
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)"
+      ]
+    },
+    {
+      "smiles": "[Cl-].[Cl-].[Cu+2]",
+      "cas_first": "7447-39-4",
+      "cas_list": "7447-39-4",
+      "n_cas_merged": 1,
+      "compound_name": "7447-39-4\nCopper(II) chloride",
+      "oecd_function_prevalent": NaN,
+      "funcuse_prevalent": NaN,
+      "spread_log10": 6.9274,
+      "spread_fold": 8459999.999999844,
+      "n_species": 65,
+      "most_sensitive": {
+        "species": "esomus_danricus",
+        "pLC50": 10.1286,
+        "conc_mol_L": 7.43770935439262e-11,
+        "tax_group": "fish",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "notemigonus_crysoleucas",
+        "pLC50": 3.2012,
+        "conc_mol_L": 0.0006292302113816,
+        "tax_group": "fish",
+        "n_source_rows": 1
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)",
+        "single-source-row extreme (resistant n_src=1)"
+      ]
+    },
+    {
+      "smiles": "Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1",
+      "cas_first": "50-29-3",
+      "cas_list": "50-29-3",
+      "n_cas_merged": 1,
+      "compound_name": "50-29-3\np,p'-DDT",
+      "oecd_function_prevalent": "biocide",
+      "funcuse_prevalent": "insecticide",
+      "spread_log10": 6.8424,
+      "spread_fold": 6956765.957446758,
+      "n_species": 92,
+      "most_sensitive": {
+        "species": "corophium_insidiosum",
+        "pLC50": 9.1785,
+        "conc_mol_L": 6.629428817329381e-10,
+        "tax_group": "crusta",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "leucaspius_delineatus",
+        "pLC50": 2.3361,
+        "conc_mol_L": 0.0046119384713713,
+        "tax_group": "fish",
+        "n_source_rows": 4
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)"
+      ]
+    },
+    {
+      "smiles": "[Ni]",
+      "cas_first": "7440-02-0",
+      "cas_list": "7440-02-0",
+      "n_cas_merged": 1,
+      "compound_name": "7440-02-0\nNickel",
+      "oecd_function_prevalent": "colorant",
+      "funcuse_prevalent": "nickel",
+      "spread_log10": 6.7298,
+      "spread_fold": 5368421.052631497,
+      "n_species": 19,
+      "most_sensitive": {
+        "species": "heteropneustes_fossilis",
+        "pLC50": 9.0919,
+        "conc_mol_L": 8.092902935976786e-10,
+        "tax_group": "fish",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "mystus_vittatus",
+        "pLC50": 2.362,
+        "conc_mol_L": 0.0043446110498401,
+        "tax_group": "fish",
+        "n_source_rows": 1
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)",
+        "single-source-row extreme (resistant n_src=1)"
+      ]
+    },
+    {
+      "smiles": "[Cl-].[Cl-].[Hg+2]",
+      "cas_first": "7487-94-7",
+      "cas_list": "7487-94-7",
+      "n_cas_merged": 1,
+      "compound_name": "7487-94-7\nMercuric chloride",
+      "oecd_function_prevalent": NaN,
+      "funcuse_prevalent": NaN,
+      "spread_log10": 6.6832,
+      "spread_fold": 4821412.803532013,
+      "n_species": 95,
+      "most_sensitive": {
+        "species": "penaeus_chinensis",
+        "pLC50": 11.2548,
+        "conc_mol_L": 5.561899349204109e-12,
+        "tax_group": "crusta",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "poecilia_reticulata",
+        "pLC50": 4.5716,
+        "conc_mol_L": 2.681621273420903e-05,
+        "tax_group": "fish",
+        "n_source_rows": 3
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)"
+      ]
+    },
+    {
+      "smiles": "CC(C)C(C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1)c1ccc(Cl)cc1",
+      "cas_first": "51630-58-1",
+      "cas_list": "51630-58-1",
+      "n_cas_merged": 1,
+      "compound_name": "51630-58-1\nFenvalerate",
+      "oecd_function_prevalent": NaN,
+      "funcuse_prevalent": NaN,
+      "spread_log10": 6.5756,
+      "spread_fold": 3763366.249999031,
+      "n_species": 49,
+      "most_sensitive": {
+        "species": "daphnia_pulex",
+        "pLC50": 10.3221,
+        "conc_mol_L": 4.762925347235471e-11,
+        "tax_group": "crusta",
+        "n_source_rows": 1
+      },
+      "most_resistant": {
+        "species": "channa_punctata",
+        "pLC50": 3.7465,
+        "conc_mol_L": 0.0001792463250305,
+        "tax_group": "fish",
+        "n_source_rows": 6
+      },
+      "d16_cas_in_excluded_audit_trail": false,
+      "d16_cas_in_prereg_excluded_rows": false,
+      "anomaly_flags": [
+        "single-source-row extreme (sensitive n_src=1)"
+      ]
+    }
+  ]
+}

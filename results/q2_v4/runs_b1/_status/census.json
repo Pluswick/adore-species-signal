@@ -1,0 +1,10 @@
+{
+  "total": 3794,
+  "blocks": {
+    "gnn_warm":      {"expected": 1920, "desc": "GNN warm 24var x 2bb x 10seed x 4split"},
+    "species_cold":  {"expected": 500,  "desc": "species-cold OOV"},
+    "rank":          {"expected": 40,   "desc": "rank-truncation taxonomy"},
+    "deterministic": {"expected": 74,   "desc": "lgbm 38 + naive 32 + svd 4"},
+    "dprime":        {"expected": 1260, "desc": "delta' ensemble sensitivity"}
+  }
+}

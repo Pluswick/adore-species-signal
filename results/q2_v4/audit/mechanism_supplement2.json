@@ -1,0 +1,613 @@
+{
+  "note": "POST-HOC attenuation control (A) + ADORE-stage verification (B). Descriptive; not a decision input. Existing outputs untouched.",
+  "A_attenuation_control": {
+    "params": {
+      "n_reps": 50,
+      "min_compounds_per_class": 5,
+      "min_species_overlap": 10,
+      "split_unit": "(compound x species) cells within a class",
+      "class_field": "oecd_function_prevalent",
+      "correction_formula": "rho_cross / sqrt(rel_a * rel_b); rel=within-class split-half Spearman (also Spearman-Brown full variant)",
+      "assumptions": "classical attenuation model (additive independent error); applied to Spearman ranks (approximation); split-half rel is HALF-data reliability -> Spearman-Brown gives full-data reliability; corrected values may exceed 1 (reported as-is)"
+    },
+    "per_class_splithalf": {
+      "antioxidant": {
+        "n_success_reps": 0,
+        "n_cells": 7,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "binder": {
+        "n_success_reps": 0,
+        "n_cells": 28,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "biocide": {
+        "n_success_reps": 50,
+        "n_cells": 3238,
+        "splithalf_spearman_mean": 0.4184925534122658,
+        "splithalf_spearman_sd": 0.04240092963346289,
+        "splithalf_kendall_mean": 0.29501851081051716,
+        "spearman_brown_full_reliability": 0.5900525207630563
+      },
+      "biocide - preservative": {
+        "n_success_reps": 0,
+        "n_cells": 14,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "chelating agent": {
+        "n_success_reps": 0,
+        "n_cells": 28,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "colorant": {
+        "n_success_reps": 50,
+        "n_cells": 110,
+        "splithalf_spearman_mean": 0.4843085640235163,
+        "splithalf_spearman_sd": 0.15505217646711547,
+        "splithalf_kendall_mean": 0.3659799301999918,
+        "spearman_brown_full_reliability": 0.6525712722571656
+      },
+      "flame retardant": {
+        "n_success_reps": 0,
+        "n_cells": 20,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "fragrance": {
+        "n_success_reps": 32,
+        "n_cells": 118,
+        "splithalf_spearman_mean": 0.4272872960372961,
+        "splithalf_spearman_sd": 0.19916951525905047,
+        "splithalf_kendall_mean": 0.3330176767676768,
+        "spearman_brown_full_reliability": 0.5987404178872909
+      },
+      "pH regulating agent": {
+        "n_success_reps": 0,
+        "n_cells": 28,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "preservative": {
+        "n_success_reps": 40,
+        "n_cells": 111,
+        "splithalf_spearman_mean": 0.05012154512154512,
+        "splithalf_spearman_sd": 0.20280386136961517,
+        "splithalf_kendall_mean": 0.03053391053391053,
+        "spearman_brown_full_reliability": 0.09545855973413793
+      },
+      "processing aid not otherwise specified": {
+        "n_success_reps": 0,
+        "n_cells": 12,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      },
+      "solvent": {
+        "n_success_reps": 50,
+        "n_cells": 154,
+        "splithalf_spearman_mean": 0.6031551389786683,
+        "splithalf_spearman_sd": 0.13862567062038184,
+        "splithalf_kendall_mean": 0.4516159289626781,
+        "spearman_brown_full_reliability": 0.7524601011015366
+      },
+      "solvent - surfactant": {
+        "n_success_reps": 50,
+        "n_cells": 103,
+        "splithalf_spearman_mean": 0.5204049263430067,
+        "splithalf_spearman_sd": 0.10026926031228596,
+        "splithalf_kendall_mean": 0.3769063918537603,
+        "spearman_brown_full_reliability": 0.6845609578426243
+      },
+      "surfactant": {
+        "n_success_reps": 0,
+        "n_cells": 35,
+        "splithalf_spearman_mean": null,
+        "splithalf_spearman_sd": null,
+        "splithalf_kendall_mean": null,
+        "spearman_brown_full_reliability": null
+      }
+    },
+    "splithalf_summary_over_classes": {
+      "median": 0.4557979300304062,
+      "P25": 0.4206912390685234,
+      "P75": 0.5113808357631341,
+      "min": 0.05012154512154512,
+      "max": 0.6031551389786683
+    },
+    "cross_class_summary": {
+      "median": 0.22455146450454283,
+      "P25": 0.06473526473526472,
+      "P75": 0.40840222728767617,
+      "min": -0.30055707333974746,
+      "max": 0.8909090909090909
+    },
+    "pairs": [
+      {
+        "a": "binder",
+        "b": "biocide",
+        "n_overlap": 18,
+        "rho_cross": 0.413828689370485,
+        "rel_a_splithalf": null,
+        "rel_b_splithalf": 0.4184925534122658,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "binder",
+        "b": "colorant",
+        "n_overlap": 10,
+        "rho_cross": 0.8909090909090909,
+        "rel_a_splithalf": null,
+        "rel_b_splithalf": 0.4843085640235163,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "binder",
+        "b": "fragrance",
+        "n_overlap": 10,
+        "rho_cross": -0.17575757575757575,
+        "rel_a_splithalf": null,
+        "rel_b_splithalf": 0.4272872960372961,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "binder",
+        "b": "solvent - surfactant",
+        "n_overlap": 10,
+        "rho_cross": 0.5151515151515151,
+        "rel_a_splithalf": null,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "biocide",
+        "b": "chelating agent",
+        "n_overlap": 14,
+        "rho_cross": -0.30055707333974746,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "biocide",
+        "b": "colorant",
+        "n_overlap": 52,
+        "rho_cross": 0.3590028173823956,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": 0.4843085640235163,
+        "corrected_by_splithalf": 0.7974306334671989,
+        "corrected_by_spearmanBrown": 0.578546867169842
+      },
+      {
+        "a": "biocide",
+        "b": "flame retardant",
+        "n_overlap": 11,
+        "rho_cross": 0.6272727272727273,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "biocide",
+        "b": "fragrance",
+        "n_overlap": 24,
+        "rho_cross": 0.21739130434782608,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": 0.4272872960372961,
+        "corrected_by_splithalf": 0.5140889991838954,
+        "corrected_by_spearmanBrown": 0.36574428207179066
+      },
+      {
+        "a": "biocide",
+        "b": "pH regulating agent",
+        "n_overlap": 10,
+        "rho_cross": 0.04242424242424241,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "biocide",
+        "b": "preservative",
+        "n_overlap": 27,
+        "rho_cross": 0.14713064713064714,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": 0.05012154512154512,
+        "corrected_by_splithalf": 1.015890858790758,
+        "corrected_by_spearmanBrown": 0.6199410169354016
+      },
+      {
+        "a": "biocide",
+        "b": "solvent",
+        "n_overlap": 34,
+        "rho_cross": 0.16394194041252863,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": 0.6031551389786683,
+        "corrected_by_splithalf": 0.3263109799909582,
+        "corrected_by_spearmanBrown": 0.24603845871380967
+      },
+      {
+        "a": "biocide",
+        "b": "solvent - surfactant",
+        "n_overlap": 42,
+        "rho_cross": 0.33426522453594715,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": 0.7162697828100114,
+        "corrected_by_spearmanBrown": 0.5259443554519612
+      },
+      {
+        "a": "biocide",
+        "b": "surfactant",
+        "n_overlap": 14,
+        "rho_cross": 0.06813186813186813,
+        "rel_a_splithalf": 0.4184925534122658,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "chelating agent",
+        "b": "solvent",
+        "n_overlap": 10,
+        "rho_cross": 0.23171162466125958,
+        "rel_a_splithalf": null,
+        "rel_b_splithalf": 0.6031551389786683,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "colorant",
+        "b": "fragrance",
+        "n_overlap": 13,
+        "rho_cross": 0.03846153846153846,
+        "rel_a_splithalf": 0.4843085640235163,
+        "rel_b_splithalf": 0.4272872960372961,
+        "corrected_by_splithalf": 0.08454843775084572,
+        "corrected_by_spearmanBrown": 0.06153091712894768
+      },
+      {
+        "a": "colorant",
+        "b": "preservative",
+        "n_overlap": 13,
+        "rho_cross": 0.40659340659340654,
+        "rel_a_splithalf": 0.4843085640235163,
+        "rel_b_splithalf": 0.05012154512154512,
+        "corrected_by_splithalf": 2.609678646568366,
+        "corrected_by_spearmanBrown": 1.629066891703663
+      },
+      {
+        "a": "colorant",
+        "b": "solvent",
+        "n_overlap": 15,
+        "rho_cross": 0.6178571428571428,
+        "rel_a_splithalf": 0.4843085640235163,
+        "rel_b_splithalf": 0.6031551389786683,
+        "corrected_by_splithalf": 1.1431743757966524,
+        "corrected_by_spearmanBrown": 0.8817233822135816
+      },
+      {
+        "a": "colorant",
+        "b": "solvent - surfactant",
+        "n_overlap": 18,
+        "rho_cross": 0.10835913312693499,
+        "rel_a_splithalf": 0.4843085640235163,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": 0.21584090242238546,
+        "corrected_by_spearmanBrown": 0.16212331789102108
+      },
+      {
+        "a": "fragrance",
+        "b": "preservative",
+        "n_overlap": 13,
+        "rho_cross": 0.30769230769230765,
+        "rel_a_splithalf": 0.4272872960372961,
+        "rel_b_splithalf": 0.05012154512154512,
+        "corrected_by_splithalf": 2.1025407574928137,
+        "corrected_by_spearmanBrown": 1.2870336806888076
+      },
+      {
+        "a": "fragrance",
+        "b": "solvent",
+        "n_overlap": 15,
+        "rho_cross": -0.017857142857142853,
+        "rel_a_splithalf": 0.4272872960372961,
+        "rel_b_splithalf": 0.6031551389786683,
+        "corrected_by_splithalf": -0.035175272164484385,
+        "corrected_by_spearmanBrown": -0.026604245491139114
+      },
+      {
+        "a": "fragrance",
+        "b": "solvent - surfactant",
+        "n_overlap": 17,
+        "rho_cross": 0.09068627450980393,
+        "rel_a_splithalf": 0.4272872960372961,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": 0.19231398675146222,
+        "corrected_by_spearmanBrown": 0.14164987955995062
+      },
+      {
+        "a": "fragrance",
+        "b": "surfactant",
+        "n_overlap": 10,
+        "rho_cross": 0.19999999999999998,
+        "rel_a_splithalf": 0.4272872960372961,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "preservative",
+        "b": "solvent",
+        "n_overlap": 15,
+        "rho_cross": 0.3142857142857143,
+        "rel_a_splithalf": 0.05012154512154512,
+        "rel_b_splithalf": 0.6031551389786683,
+        "corrected_by_splithalf": 1.8075815474523218,
+        "corrected_by_spearmanBrown": 1.172669051894055
+      },
+      {
+        "a": "preservative",
+        "b": "solvent - surfactant",
+        "n_overlap": 18,
+        "rho_cross": 0.4282765737874097,
+        "rel_a_splithalf": 0.05012154512154512,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": 2.6518038374273933,
+        "corrected_by_spearmanBrown": 1.6753703205723567
+      },
+      {
+        "a": "preservative",
+        "b": "surfactant",
+        "n_overlap": 10,
+        "rho_cross": 0.05454545454545454,
+        "rel_a_splithalf": 0.05012154512154512,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "solvent",
+        "b": "solvent - surfactant",
+        "n_overlap": 23,
+        "rho_cross": 0.6729249011857709,
+        "rel_a_splithalf": 0.6031551389786683,
+        "rel_b_splithalf": 0.5204049263430067,
+        "corrected_by_splithalf": 1.201106130523333,
+        "corrected_by_spearmanBrown": 0.9376025887846456
+      },
+      {
+        "a": "solvent",
+        "b": "surfactant",
+        "n_overlap": 12,
+        "rho_cross": 0.2867132867132868,
+        "rel_a_splithalf": 0.6031551389786683,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      },
+      {
+        "a": "solvent - surfactant",
+        "b": "surfactant",
+        "n_overlap": 13,
+        "rho_cross": -0.06043956043956044,
+        "rel_a_splithalf": 0.5204049263430067,
+        "rel_b_splithalf": null,
+        "corrected_by_splithalf": null,
+        "corrected_by_spearmanBrown": null
+      }
+    ]
+  },
+  "B2_coverage_bias": {
+    "processed_all_1267": {
+      "n_species": 1267,
+      "phylo_covered_species": 526,
+      "phylo_frac": 0.4151539068666141,
+      "deb_covered_species": 238,
+      "deb_frac": 0.1878453038674033,
+      "records_per_species": {
+        "P25": 2.0,
+        "P50": 6.0,
+        "P75": 18.0,
+        "mean": 55.77742699289661,
+        "max": 7260
+      },
+      "tax_group_species": {
+        "fish": 520,
+        "crusta": 508,
+        "algae": 239
+      }
+    },
+    "our_discovery": {
+      "n_species": 779,
+      "phylo_covered_species": 408,
+      "phylo_frac": 0.5237483953786907,
+      "deb_covered_species": 210,
+      "deb_frac": 0.26957637997432604,
+      "records_per_species": {
+        "P25": 3.0,
+        "P50": 9.0,
+        "P75": 28.0,
+        "mean": 83.97689345314505,
+        "max": 7260
+      },
+      "tax_group_species": {
+        "fish": 446,
+        "crusta": 321,
+        "algae": 12
+      }
+    },
+    "our_replication": {
+      "n_species": 1006,
+      "phylo_covered_species": 407,
+      "phylo_frac": 0.40457256461232605,
+      "deb_covered_species": 190,
+      "deb_frac": 0.18886679920477137,
+      "records_per_species": {
+        "P25": 3.0,
+        "P50": 8.0,
+        "P75": 24.0,
+        "mean": 69.14910536779324,
+        "max": 7260
+      },
+      "tax_group_species": {
+        "crusta": 408,
+        "fish": 361,
+        "algae": 237
+      }
+    },
+    "adore_final_203": {
+      "n_species": 203,
+      "phylo_covered_species": 203,
+      "phylo_frac": 1.0,
+      "deb_covered_species": 157,
+      "deb_frac": 0.7733990147783252,
+      "records_per_species": {
+        "P25": 4.0,
+        "P50": 14.0,
+        "P75": 96.5,
+        "mean": 221.4975369458128,
+        "max": 7260
+      },
+      "tax_group_species": {
+        "fish": 140,
+        "algae": 46,
+        "crusta": 17
+      }
+    },
+    "our_discovery_split_by_final": {
+      "in203": {
+        "n_species": 147,
+        "phylo_covered_species": 147,
+        "phylo_frac": 1.0,
+        "deb_covered_species": 146,
+        "deb_frac": 0.9931972789115646,
+        "records_per_species": {
+          "P25": 7.5,
+          "P50": 28.0,
+          "P75": 160.0,
+          "mean": 299.7959183673469,
+          "max": 7260
+        },
+        "tax_group_species": {
+          "fish": 132,
+          "crusta": 14,
+          "algae": 1
+        }
+      },
+      "not_in203": {
+        "n_species": 632,
+        "phylo_covered_species": 261,
+        "phylo_frac": 0.4129746835443038,
+        "deb_covered_species": 64,
+        "deb_frac": 0.10126582278481013,
+        "records_per_species": {
+          "P25": 3.0,
+          "P50": 7.0,
+          "P75": 22.0,
+          "mean": 33.778481012658226,
+          "max": 1793
+        },
+        "tax_group_species": {
+          "fish": 314,
+          "crusta": 307,
+          "algae": 11
+        }
+      }
+    },
+    "our_replication_split_by_final": {
+      "in203": {
+        "n_species": 184,
+        "phylo_covered_species": 184,
+        "phylo_frac": 1.0,
+        "deb_covered_species": 138,
+        "deb_frac": 0.75,
+        "records_per_species": {
+          "P25": 6.0,
+          "P50": 17.0,
+          "P75": 112.5,
+          "mean": 243.7663043478261,
+          "max": 7260
+        },
+        "tax_group_species": {
+          "fish": 122,
+          "algae": 46,
+          "crusta": 16
+        }
+      },
+      "not_in203": {
+        "n_species": 822,
+        "phylo_covered_species": 223,
+        "phylo_frac": 0.2712895377128954,
+        "deb_covered_species": 52,
+        "deb_frac": 0.06326034063260341,
+        "records_per_species": {
+          "P25": 2.0,
+          "P50": 7.0,
+          "P75": 20.0,
+          "mean": 30.062043795620436,
+          "max": 1793
+        },
+        "tax_group_species": {
+          "crusta": 392,
+          "fish": 239,
+          "algae": 191
+        }
+      }
+    },
+    "species_dropped_processed_minus_final": {
+      "n_species": 1064,
+      "phylo_covered_species": 323,
+      "phylo_frac": 0.30357142857142855,
+      "deb_covered_species": 81,
+      "deb_frac": 0.07612781954887218,
+      "records_per_species": {
+        "P25": 2.0,
+        "P50": 4.0,
+        "P75": 15.0,
+        "mean": 24.159774436090224,
+        "max": 1793
+      },
+      "tax_group_species": {
+        "crusta": 491,
+        "fish": 380,
+        "algae": 193
+      }
+    }
+  },
+  "B4_adore_qc_on_our_data": {
+    "qc_rule": "ADORE extreme-value QC: EC50/LC50 >= 1e5 mg/L or <= 1e-5 mg/L (paper). mass_mg_L = conc_mol*MW*1000; MW from chem_mw.",
+    "our_kept_rows_total_with_MW": 31908,
+    "our_kept_rows_missing_MW": 0,
+    "our_kept_flagged_high(>=1e5)": 5,
+    "our_kept_flagged_low(<=1e-5)": 39,
+    "our_kept_flagged_total": 44,
+    "d16_excluded_rows_total_with_MW": 36,
+    "d16_excluded_flagged_high": 4,
+    "d16_excluded_flagged_low": 16,
+    "note": "our_kept_flagged = rows WE keep that ADORE's extreme-QC would drop; D16 rows already removed from our kept set (overlap shown separately)."
+  }
+}

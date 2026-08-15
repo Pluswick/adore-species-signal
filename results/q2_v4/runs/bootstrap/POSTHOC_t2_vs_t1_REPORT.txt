@@ -1,0 +1,20 @@
+### POST-HOC (⚠ 언블라인딩 이후 지정 — 사후 분석; director 2026-08-05). 사전등록 판정과 동일지위 아님.
+δ(read)=0.019776562  FDR=BH within these 4 only (NOT mixed with prereg families)
+cand=t2(one-hot)  ref=t1(additive_bias)  within-backbone  base=own t0  (4항 DD, 공유 t0 → 직접차 축약)
+
+-- 4건: backbone · data · dd · 90% CI · 판정 · p · q · n · blk · str · 4th --
+dmpnn     discovery   dd=-0.007709 CI=[-0.036353,+0.022448] cat=indeterminate p=0.7000 q=0.7000 n=2029 blk=439 str=1 4th=0
+graphconv discovery   dd=-0.017756 CI=[-0.050488,+0.017427] cat=indeterminate p=0.4040 q=0.5387 n=2029 blk=439 str=1 4th=0
+dmpnn     replication dd=-0.086540 CI=[-0.120134,-0.049394] cat=significant   p=0.0020 q=0.0080 n=4351 blk=643 str=7 4th=0
+graphconv replication dd=-0.079547 CI=[-0.136525,-0.020279] cat=significant   p=0.0210 q=0.0420 n=4351 blk=643 str=7 4th=0
+
+-- 유도값 대조 (유도 dd(t2>t0)−dd(t1>t0) vs 직접 t2-vs-t1 DD) --
+backbone/data                   유도          직접           차이  n(sup=direct) 일치
+dmpnn/discovery          -0.007709   -0.007709    +0.00e+00           2029 일치
+    (sup dd t2>t0=-0.076142, t1>t0=-0.068433)
+graphconv/discovery      -0.017756   -0.017756    +3.47e-18           2029 일치
+    (sup dd t2>t0=-0.067390, t1>t0=-0.049634)
+dmpnn/replication        -0.086540   -0.086540    +1.39e-17           4351 일치
+    (sup dd t2>t0=-0.150822, t1>t0=-0.064281)
+graphconv/replication    -0.079547   -0.079547    +1.39e-17           4351 일치
+    (sup dd t2>t0=-0.133966, t1>t0=-0.054419)

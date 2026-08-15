@@ -1,0 +1,128 @@
+{
+  "note": "INTERNAL descriptive reference scale (director §2). Same-compound cross-species pLC50 spread = max-min of pLC50 across species. NOT a tier comparison; used in NO decision. pLC50 = -log10(mol/L); fold = 10^(pLC50 range) = LC50 concentration ratio across species. Source = dataset SSOT raw target_log10 (pre-residualization). >=2 species required.",
+  "filter": "compounds/cells with >=2 distinct species tested",
+  "discovery": {
+    "partition_rows": 10149,
+    "distinct_smiles": 2081,
+    "distinct_species": 779,
+    "strata_endpoint_duration": {
+      "LC50@96": 10149
+    },
+    "A_per_compound": {
+      "unit": "per compound, species pooled across all its strata (discovery=single stratum so clean; replication=CONFLATES endpoint/duration with species)",
+      "n_compounds_ge2species": 1146,
+      "n_species_involved": 777,
+      "log10": {
+        "P10": 0.1542841456039259,
+        "P25": 0.39178878757561375,
+        "P50": 0.917664960733229,
+        "P75": 1.8554722029248873,
+        "P90": 3.3994135302981836,
+        "mean": 1.3874885070675393,
+        "min": 0.0,
+        "max": 8.515270974279375
+      },
+      "fold": {
+        "P10": 1.4265406302678814,
+        "P25": 2.4648403086175517,
+        "P50": 8.27303688723208,
+        "P75": 71.69224873943288,
+        "P90": 2508.4966784034123,
+        "mean": 24.405544816837946,
+        "min": 1.0,
+        "max": 327544999.99999446
+      }
+    },
+    "B_per_compound_x_condition": {
+      "unit": "per (compound, endpoint, duration) cell; isolates species contrast (condition fixed)",
+      "n_cells_ge2species": 1146,
+      "n_compounds_involved": 1146,
+      "n_species_involved": 777,
+      "log10": {
+        "P10": 0.1542841456039259,
+        "P25": 0.39178878757561375,
+        "P50": 0.917664960733229,
+        "P75": 1.8554722029248873,
+        "P90": 3.3994135302981836,
+        "mean": 1.3874885070675393,
+        "min": 0.0,
+        "max": 8.515270974279375
+      },
+      "fold": {
+        "P10": 1.4265406302678814,
+        "P25": 2.4648403086175517,
+        "P50": 8.27303688723208,
+        "P75": 71.69224873943288,
+        "P90": 2508.4966784034123,
+        "mean": 24.405544816837946,
+        "min": 1.0,
+        "max": 327544999.99999446
+      }
+    }
+  },
+  "replication": {
+    "partition_rows": 21759,
+    "distinct_smiles": 2760,
+    "distinct_species": 1006,
+    "strata_endpoint_duration": {
+      "EC50@24": 1438,
+      "EC50@48": 2630,
+      "EC50@72": 915,
+      "EC50@96": 1868,
+      "LC50@24": 6141,
+      "LC50@48": 6614,
+      "LC50@72": 2153
+    },
+    "A_per_compound": {
+      "unit": "per compound, species pooled across all its strata (discovery=single stratum so clean; replication=CONFLATES endpoint/duration with species)",
+      "n_compounds_ge2species": 1518,
+      "n_species_involved": 1003,
+      "log10": {
+        "P10": 0.22184874961635614,
+        "P25": 0.5467098686126628,
+        "P50": 1.2453106605948294,
+        "P75": 2.374838583939707,
+        "P90": 3.777213737136403,
+        "mean": 1.6898591403762335,
+        "min": 0.0,
+        "max": 9.043968736710552
+      },
+      "fold": {
+        "P10": 1.6666666666666659,
+        "P25": 3.5213554751718346,
+        "P50": 17.59181546053188,
+        "P75": 237.0492490975559,
+        "P90": 5987.061745789613,
+        "mean": 48.961998964311704,
+        "min": 1.0,
+        "max": 1106544124.9999573
+      }
+    },
+    "B_per_compound_x_condition": {
+      "unit": "per (compound, endpoint, duration) cell; isolates species contrast (condition fixed)",
+      "n_cells_ge2species": 2982,
+      "n_compounds_involved": 1230,
+      "n_species_involved": 1000,
+      "log10": {
+        "P10": 0.15031645577937894,
+        "P25": 0.4293808383864217,
+        "P50": 1.0109037559799776,
+        "P75": 1.975119882235412,
+        "P90": 3.3395263974159928,
+        "mean": 1.4447002291369102,
+        "min": 0.0,
+        "max": 9.106945505325125
+      },
+      "fold": {
+        "P10": 1.4135671883018242,
+        "P25": 2.6877002913368986,
+        "P50": 10.25424656664605,
+        "P75": 94.43215099225074,
+        "P90": 2185.3771478583267,
+        "mean": 27.8419871784656,
+        "min": 1.0,
+        "max": 1279220779.220766
+      }
+    }
+  }
+}

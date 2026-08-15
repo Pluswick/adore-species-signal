@@ -1,0 +1,66 @@
+{
+  "definition": "capture_rate(tier,bb) = (RMSE_t0^2 - RMSE_tier^2) / (species-axis pairwise SD)^2",
+  "inputs": {
+    "RMSE": "per-seed mean, group split, warm, main condition (Phase1 discovery_group / B1 b1_group; PART3 table = expansion_results.json s4_4)",
+    "species_axis_SD": {
+      "phase1_discovery": 0.96,
+      "b1": 1.0792
+    },
+    "species_axis_SD_source": "pairwise |Δ target_log10| SD over 'fix compound (smiles), vary species (per-(smiles,species) mean)'; Phase1 from PART6 (mechanism_facts_compute.txt), B1 computed here (same method, validated on discovery)"
+  },
+  "caveat": "ROUGH calculation ('거친 계산'). Denominator (species-axis pairwise SD)^2 includes measurement/replicate noise, so capture_rate is NOT bounded above by 1.",
+  "method_validation_discovery": {
+    "recomputed_SD": 0.9597,
+    "n_units": 1146,
+    "n_pairs": 157441,
+    "matches_PART6_0.960/1146/157441": true
+  },
+  "capture_rate": {
+    "phase1": {
+      "dmpnn": {
+        "t0": 0.0,
+        "t1": 0.1728,
+        "t1p": 0.1323,
+        "t2": 0.1916,
+        "t3a": 0.2341,
+        "t3b": 0.232,
+        "t4": 0.1635
+      },
+      "graphconv": {
+        "t0": 0.0,
+        "t1": 0.1256,
+        "t1p": 0.1308,
+        "t2": 0.1693,
+        "t3a": 0.2489,
+        "t3b": 0.271,
+        "t4": 0.2059
+      }
+    },
+    "b1": {
+      "dmpnn": {
+        "t0": 0.0,
+        "t1": 0.2161,
+        "t1p": 0.265,
+        "t2": 0.3594,
+        "t3a": 0.377,
+        "t3b": 0.3553,
+        "t4": 0.3601
+      },
+      "graphconv": {
+        "t0": 0.0,
+        "t1": 0.2954,
+        "t1p": 0.2597,
+        "t2": 0.4708,
+        "t3a": 0.4504,
+        "t3b": 0.3974,
+        "t4": 0.3705
+      }
+    }
+  },
+  "director_hand_values_check": {
+    "t2_dmpnn (~19%)": 0.1916,
+    "t2_graphconv (~17%)": 0.1693,
+    "t3b_dmpnn (~23%)": 0.232,
+    "t3b_graphconv (~27%)": 0.271
+  }
+}
