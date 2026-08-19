@@ -1,4 +1,4 @@
-"""B1 dataset build (independent replication corpus).
+"""B1 dataset build (ECOTOX-external second dataset).
 
 ⚠ RECONSTRUCTED, not the original. The working build_b1.py was developed in a temporary
 directory that was later cleared. This is a faithful re-implementation of the DOCUMENTED recipe
@@ -26,7 +26,7 @@ Self-validation at the end asserts the split-count table matches data_b1/data_pr
 Env: jcim_v3 (conda run). No training.
 """
 from __future__ import annotations
-import sys
+import sys, os
 from pathlib import Path
 import numpy as np, pandas as pd
 
@@ -46,8 +46,9 @@ MEDIA_P = {"FW", "SW", "FW/", "SW/", "CUL/"}  # documented top set; = P's observ
 MAX_DURATION_H = 96.0
 
 # ---- author-specific inputs (see header) ----
-RAW_ECOTOX = Path(r"<DATA_ROOT>\ecotox_ascii_06_11_2026")   # 2026 ECOTOX ASCII pull
-CHEM = Path(r"<DATA_ROOT>\adore_dataset\chemicals\ecotox_properties_with-oecd-function.csv")
+_DR = os.environ.get("ADORE_DATA_ROOT", r"<DATA_ROOT>")            # set ADORE_DATA_ROOT to your local data dir
+RAW_ECOTOX = Path(_DR) / "ecotox_ascii_06_11_2026"                 # 2026 ECOTOX ASCII pull (holds ecotox_processed.csv from build_ecotox_processed.py)
+CHEM = Path(_DR) / "adore_dataset" / "chemicals" / "ecotox_properties_with-oecd-function.csv"
 NCBI_B1 = OUT / "ncbi_taxonomy_by_species_b1.csv"           # produced by ncbi_resolve.py
 
 
@@ -104,6 +105,7 @@ def main():
     kept, _excl = apply_d16(m)
     print(f"B1 corrected E-full (post P-subtraction, conc>0): {len(m)}  D16-kept: {len(kept)}", flush=True)
 
+    kept = kept.assign(smiles=kept["smiles"].astype(str))   # raw-ASCII path: coerce (some rows lack a chem SMILES)
     pool = aggregate(valid_smiles(kept))
     sidx = {sp: i for i, sp in enumerate(sorted(pool["species"].unique()))}  # global species_idx
     pool["species_idx"] = pool["species"].map(sidx).astype("Int64")
