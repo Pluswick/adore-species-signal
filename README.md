@@ -1,4 +1,4 @@
-# ADORE Q2 — species representation in aquatic toxicity prediction
+# Comparison for species representation in aquatic toxicity prediction
 
 Code, pre-registration, and audit artifacts for the paper
 *"Data availability, not predictive performance, constrains the choice of species representation
