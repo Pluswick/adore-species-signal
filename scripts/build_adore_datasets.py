@@ -22,7 +22,12 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 
 RDLogger.DisableLog("rdApp.*")
 
-ADORE = Path(r"<ECOTOX_DATA_DIR>")
+# Root of the ADORE benchmark distribution (CC-BY 4.0), containing processed/ and
+# chemicals/. Supply it via the ADORE_ROOT environment variable.
+import os
+ADORE = Path(os.environ.get("ADORE_ROOT", ""))
+if not ADORE.name:
+    raise SystemExit("Set ADORE_ROOT to the root of the ADORE benchmark distribution.")
 MORT = ADORE / "processed" / "ecotox_mortality_processed.csv"
 CHEM = ADORE / "chemicals" / "ecotox_properties_with-oecd-function.csv"
 OUT = Path(r".\results\q2_v4\data")

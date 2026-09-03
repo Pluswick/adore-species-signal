@@ -5,7 +5,7 @@ results/q2_v4/runs_b1/**/predictions/
 results/q2_v4/runs_b1/**/runs/
 results/q2_v4/runs*/**/oof_cache/
 results/q2_v4/runs*/_seqlogs/
-# Raw / aggregated datasets (licensing + size) — obtain ECOTOX separately
+# Raw / aggregated datasets — obtain ADORE and ECOTOX separately (see README, "Data")
 results/q2_v4/data/
 results/q2_v4/data_b1/
 **/taxdump.tar.gz
@@ -15,3 +15,5 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+.venv/
+env/

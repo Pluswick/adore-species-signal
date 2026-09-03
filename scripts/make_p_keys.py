@@ -14,19 +14,33 @@ The key transforms are byte-identical to build_b1.subtract_P / load_corrected_ef
     duration = str(pd.to_numeric(result_obs_duration_mean))    # e.g. "48.0"
     ref      = str(reference_number)
 
-AUTHOR-SPECIFIC INPUT (not redistributable; see repo README):
-    ADORE_PROCESSED = the ADORE `processed/ecotox_mortality_processed.csv` (ECOTOX 2022-09).
+INPUT (not redistributed here; see repo README, "Data"):
+    ADORE_PROCESSED = the ADORE `processed/ecotox_mortality_processed.csv` (ECOTOX 2022-09),
+    distributed with the ADORE benchmark under CC-BY 4.0. Supply it via the ADORE_PROCESSED
+    environment variable or as the first command-line argument.
 
 The keys are the P side only; build_b1.py's self-validation (split counts vs the committed
 data_provenance_ledger.csv) is the end-to-end check that P and the 2026 E-full align.
 Env: jcim_v3 (conda run). No training.
 """
 from __future__ import annotations
+import sys
 from pathlib import Path
 import pandas as pd
 
-# ---- author-specific input (edit to your local ADORE dataset) ----
-ADORE_PROCESSED = Path(r"C:\Users\tjdgk\Desktop\My\Data\adore_dataset\processed\ecotox_mortality_processed.csv")
+# ---- input: the ADORE intermediate processed mortality table (CC-BY 4.0) ----
+# Set ADORE_PROCESSED to its path, or pass it as the first command-line argument.
+import os
+ADORE_PROCESSED = Path(
+    sys.argv[1] if len(sys.argv) > 1
+    else os.environ.get("ADORE_PROCESSED", "")
+)
+if not ADORE_PROCESSED.name:
+    raise SystemExit(
+        "Set the ADORE_PROCESSED environment variable to "
+        "<ADORE>/processed/ecotox_mortality_processed.csv, "
+        "or pass the path as the first argument."
+    )
 
 OUT = (Path(__file__).resolve().parent.parent / "results" / "q2_v4" / "data_b1" / "_ext")
 OUT.mkdir(parents=True, exist_ok=True)

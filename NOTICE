@@ -1,4 +1,5 @@
-ADORE Q2 — Species-signal saturation across a representation tier ladder
+Species representation in multi-species aquatic toxicity prediction
+Analysis pipeline, pre-registration, and audit artefacts
 
 Copyright 2026 Kim Seonghan, Sangmyung University CCLABS (Creative Contents Labs)
 
@@ -7,6 +8,12 @@ This product is licensed under the Apache License, Version 2.0 (see the LICENSE 
 DATA NOTICE
 -----------
 This repository does NOT distribute ECOTOX data. Model inputs are derived from the
-U.S. EPA ECOTOX Knowledgebase (https://cfpub.epa.gov/ecotox/). The ECOTOX data and any
-processed export are subject to their own terms and are NOT covered by the Apache License
-granted here. Obtain ECOTOX separately (see README.md, "Data availability").
+U.S. EPA ECOTOX Knowledgebase (https://cfpub.epa.gov/ecotox/) and from the ADORE
+benchmark, which is distributed under CC-BY 4.0. ECOTOX data and any processed export
+are subject to their own terms and are NOT covered by the Apache License granted here.
+Obtain them separately (see README.md, "Data").
+
+The aggregated ECOTOX-external table analysed in the paper is deposited separately under
+CC0 1.0; see README.md, "Data". That waiver applies to the compilation and derived
+structure only. The underlying records originate from the U.S. EPA ECOTOX Knowledgebase,
+a work of the United States Government.

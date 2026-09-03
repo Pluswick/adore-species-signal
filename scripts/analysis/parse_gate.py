@@ -81,5 +81,7 @@ for exp,res in [("Phase1",P1),("B1",B1)]:
     for l,q,c in sorted(qs,key=lambda x:x[1]): print(f"    {l:<22} q={q:.4f} {c}")
 
 out={"s4_1_note":"printed above; stored structured below","s4_2_effect_sizes":s4_2}
-Path(r"C:\Users\user\AppData\Local\Temp\claude\C--Users-user-Desktop-CCLABS-adore-experiment\181c7c0f-1c41-4d9f-8397-50bb4d49e202\scratchpad\s4_parsed.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
-print("\n[written scratch s4_parsed.json]")
+OUT_PATH = Path(__file__).resolve().parents[2] / "results" / "q2_v4" / "audit" / "s4_parsed.json"
+OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+OUT_PATH.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"\n[written {OUT_PATH}]")

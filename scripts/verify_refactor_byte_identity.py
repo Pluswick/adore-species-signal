@@ -15,7 +15,8 @@ from jcim_v3.runner import V3RunConfig, run_v3_smoke
 
 DATA = r".\results\q2_v4\data"
 REAL = Path(r".\results\q2_v4\runs\gnn\predictions")
-SCRATCH = Path(r"<USER_HOME>\AppData\Local\Temp\claude\C--Users-user-Desktop-CCLABS-adore-experiment\f0f045e8-dc07-47ab-8ac4-da1b09a54762\scratchpad\refactor_verify")
+import os, tempfile
+SCRATCH = Path(os.environ.get("SCRATCH_DIR", Path(tempfile.gettempdir()) / "refactor_verify"))
 SPLIT, SEED = "discovery_group", 7          # seed 7 originally ran on the 4090 (job C)
 VARIANTS = ["true_species_taxonomy_original", "true_species_taxonomy_ncbi",
             "shuffled_species_taxonomy_original"]   # t3a, t3b, control (same dispatch path)

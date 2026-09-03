@@ -1,0 +1,22 @@
+# conda env create -f environment.yml
+#
+# Recorded from the environment in which the reported runs were executed.
+# PyTorch was installed with CUDA 13.0; adjust the CUDA build to the local driver
+# if necessary. The RDKit version is load-bearing: both scaffold splits are
+# computed by RDKit, so a different version can change the train/test partitions.
+
+name: jcim_v3
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit=2026.3.3
+  - lightgbm=4.6.0
+  - numpy=2.4.6
+  - pandas=3.0.3
+  - scikit-learn
+  - matplotlib
+  - pytest=9.1.1
+  - pip
+  - pip:
+      - torch==2.12.1+cu130

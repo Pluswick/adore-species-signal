@@ -48,7 +48,7 @@ _INJECTION_SUFFIXES = {
     # GAP item 6 — GNN "Tier 2" analogs at the readout:
     "categorical": "categorical",   # raw species one-hot concat (dim n_species); capacity NOT matched
     "fixed_proj": "fixed_proj",     # frozen random emb_dim projection; readout capacity matched to Tier 4
-    # GAP item 7 (GNN taxonomy, GraphConv only — D-MPNN blocked by read-only ccmpnn):
+    # GAP item 7 — GNN taxonomy on both backbones (per-rank embeddings summed):
     "taxonomy_original": "taxonomy_original",
     "taxonomy_ncbi": "taxonomy_ncbi",
     # rank-truncation study (native ranks, tier-3a lineage): genus-only and genus+family.
@@ -460,7 +460,7 @@ def build_v3_model(
             species_emb_dim=species_emb_dim,
         )
         if spec.injection in TAXONOMY_INJECTIONS:
-            # adore_t3a/t3b on D-MPNN: learned per-rank embedding context (frozen 아님),
+            # adore_t3a/t3b on D-MPNN: learned (not frozen) per-rank embedding context,
             # mirroring GraphConv taxonomy via the public ccmpnn ContextBase seam.
             if tax_codes is None or tax_cards is None:
                 raise ValueError(f"{spec.injection} requires tax_codes and tax_cards")
