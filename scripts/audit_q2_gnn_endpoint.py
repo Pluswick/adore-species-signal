@@ -7,7 +7,7 @@ Three independent probes:
   (c) per-species gain (T4-T0) vs that species' EC50 fraction -- the same diagnostic that
       exposed the Tier 1' offset confound (corr was -0.251 there).
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -19,8 +19,8 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.stratum import fit_stratum_effect  # noqa: E402
-from jcim_v3.prediction_io import load_prediction_csv  # noqa: E402  (pred CSV = keys/pred/true only)
+from src.stratum import fit_stratum_effect  # noqa: E402
+from src.prediction_io import load_prediction_csv  # noqa: E402  (pred CSV = keys/pred/true only)
 
 PRED = Path(r".\results\q2_v4\runs\gnn\predictions")
 DATA = Path(r".\results\q2_v4\data")

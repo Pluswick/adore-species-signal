@@ -4,7 +4,7 @@ Every q2 script resolves paths through here so a new dataset is a one-file swap:
 copy configs/q2_dataset_toxlearn.json, point vendor_raw + filters at the new source,
 and set Q2_DATASET_CONFIG (env var) or pass --config. No hardcoded paths in scripts.
 
-    from jcim_v3.q2config import load_q2_config
+    from src.q2config import load_q2_config
     C = load_q2_config()          # env Q2_DATASET_CONFIG or the toxlearn default
     C.data_dir / "replication_group_train.csv"
 """

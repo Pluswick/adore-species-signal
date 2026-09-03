@@ -4,7 +4,7 @@
 (C=14 warm main conditions, discovery×group). Single-arm quantity (each condition's own RMSEs) — NOT
 a tier comparison, so computing/freezing it is the gate-OPENER prerequisite, not a gated comparison.
 Reads predictions via the SSOT whitelist loader (pred/true only). First run freezes; later runs verify
-the frozen value is unchanged (§4δ '동결 후 불변 검증'). Env: conda run -n jcim_v3.
+the frozen value is unchanged (§4δ '동결 후 불변 검증'). Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json
@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
+from src.prediction_io import load_prediction_csv
 
 PRED = Path(r".\results\q2_v4\runs\gnn\predictions")
 FROZEN = Path(r".\results\q2_v4\audit\delta_primary_frozen.json")

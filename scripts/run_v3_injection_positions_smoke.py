@@ -13,8 +13,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.models import model_spec_from_variant
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.models import model_spec_from_variant
+from src.runner import V3RunConfig, run_v3_smoke
 
 
 REQUIRED_PREDICTION_COLUMNS = [

@@ -10,7 +10,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "configs" / "v3_full_experiment.json"
-DEFAULT_OUT = ROOT / "results" / "jcim_v3" / "full_run_plan"
+DEFAULT_OUT = ROOT / "results" / "src" / "full_run_plan"
 
 
 def _load_config(path: Path) -> dict:
@@ -31,9 +31,9 @@ def _dedupe(items: list[str]) -> list[str]:
 
 def _smoke_runtime_reference() -> dict:
     roots = [
-        ROOT / "results" / "jcim_v3" / "smoke" / "jcim_v3_env" / "controls" / "control_smoke_summary.csv",
-        ROOT / "results" / "jcim_v3" / "smoke" / "jcim_v3_env" / "injection_positions" / "injection_smoke_summary.csv",
-        ROOT / "results" / "jcim_v3" / "smoke" / "jcim_v3_env" / "embedding_smoke" / "embedding_smoke_summary.csv",
+        ROOT / "results" / "src" / "smoke" / "src_env" / "controls" / "control_smoke_summary.csv",
+        ROOT / "results" / "src" / "smoke" / "src_env" / "injection_positions" / "injection_smoke_summary.csv",
+        ROOT / "results" / "src" / "smoke" / "src_env" / "embedding_smoke" / "embedding_smoke_summary.csv",
     ]
     seconds = []
     for path in roots:
@@ -64,7 +64,7 @@ def _estimate_storage(prediction_files: int, embedding_files: int, metadata_file
 
 def _write_markdown(path: Path, payload: dict) -> None:
     lines = [
-        "# JCIM v3 Full Run Estimate",
+        "# Full Run Estimate",
         "",
         f"- Config: `{payload['config_path']}`",
         f"- Generated at UTC: `{payload['generated_at_utc']}`",

@@ -3,14 +3,14 @@
 Upper (immediate-stop) = tier-0 (no_species) cells only; Lower (leak-suspicion, report-not-stop) = ALL tiers.
 Partition-specific: discovery upper 1.7195 / lower 0.8598 ; replication upper 1.7094 / lower 0.8547.
 Single-arm check (each cell's own RMSE) — NO tier comparison. RMSE from prediction CSVs via SSOT loader
-(pred/true only). Reports triggers + near-lower cells + eval scope. Env: conda run -n jcim_v3.
+(pred/true only). Reports triggers + near-lower cells + eval scope. Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, glob
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv, PredictionColumnViolation
+from src.prediction_io import load_prediction_csv, PredictionColumnViolation
 
 ROOT = Path(r".\results\q2_v4\runs")
 DIRS = [ROOT / "gnn" / "predictions", ROOT / "gnn_dprime" / "predictions",

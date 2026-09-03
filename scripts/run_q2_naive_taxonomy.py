@@ -4,7 +4,7 @@ Runs run_naive_taxonomy_baselines over splits x seeds. Resumable (skips a (split
 """
 import sys, argparse, os
 sys.path.insert(0, r".")
-from jcim_v3.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_taxonomy_baselines
+from src.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_taxonomy_baselines
 
 DATA = r".\results\q2_v4\data"
 OUT = r".\results\q2_v4\runs\replication"

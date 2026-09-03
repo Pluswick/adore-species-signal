@@ -23,7 +23,7 @@ TO VERIFY before running in your environment (author-specific, not recoverable f
                   of the Phase-1 training corpus P, used for the disjointness subtraction.
 Self-validation at the end asserts the split-count table matches data_b1/data_provenance_ledger.csv.
 
-Env: jcim_v3 (conda run). No training.
+Env: src (conda run). No training.
 """
 from __future__ import annotations
 import sys, os

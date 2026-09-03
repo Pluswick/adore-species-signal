@@ -8,7 +8,7 @@ Matched budget = discovery full config (v3_compound_random_core_full.json):
 GNN_STRATUM_EXPOSURE stays False (ccmpnn mol_feat axis is unusable for our fusions).
 Resumable: a run whose runs/<id>.json already exists is skipped.
 
-Env: run via `conda run -n jcim_v3`.
+Env: run via `conda run -n src`.
 """
 from __future__ import annotations
 
@@ -20,8 +20,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
-from jcim_v3.tier_input_guard import assert_tier_input, TierInputDegenerate
+from src.runner import V3RunConfig, run_v3_smoke
+from src.tier_input_guard import assert_tier_input, TierInputDegenerate
 
 DATA = r".\results\q2_v4\data"
 OUT = r".\results\q2_v4\runs\gnn"

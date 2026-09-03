@@ -5,7 +5,7 @@ tier1prime OOF; only data path (data_b1), out_root (runs_b1/gnn_dprime), split (
 
 GPU assignment by seed (balanced 50/50 for B1's ~equal GPUs; Phase 1's 7:3 card rule assumed a
 slower 5060Ti — for B1 the sequencer passes explicit balanced --seeds per card). δ′ = within-condition
-seed SD includes cross-GPU variance, same character as Phase 1. Resumable. Env: conda run -n jcim_v3.
+seed SD includes cross-GPU variance, same character as Phase 1. Resumable. Env: conda run -n src.
 """
 from __future__ import annotations
 import argparse, sys, time, json
@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.runner import V3RunConfig, run_v3_smoke
 
 ROOT = Path(r".\results\q2_v4")
 DATA = str(ROOT / "data_b1")

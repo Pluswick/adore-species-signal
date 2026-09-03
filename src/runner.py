@@ -11,14 +11,14 @@ import pandas as pd
 import torch
 from torch import nn
 
-from jcim_v3.models import build_v3_model, count_trainable_params, model_spec_from_variant
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT, add_ccmpnn_to_path
-from jcim_v3.species_controls import apply_species_control
-from jcim_v3.dataset import GraphDataset, StandardScaler, iterate_batches
-from jcim_v3.stratum import fit_stratum_effect
-from jcim_v3.stratum import remove as stratum_remove
-from jcim_v3.stratum import restore as stratum_restore
-from jcim_v3.featurizer import ATOM_FDIM, bemis_murcko_scaffold
+from src.models import build_v3_model, count_trainable_params, model_spec_from_variant
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT, add_ccmpnn_to_path
+from src.species_controls import apply_species_control
+from src.dataset import GraphDataset, StandardScaler, iterate_batches
+from src.stratum import fit_stratum_effect
+from src.stratum import remove as stratum_remove
+from src.stratum import restore as stratum_restore
+from src.featurizer import ATOM_FDIM, bemis_murcko_scaffold
 
 add_ccmpnn_to_path()
 
@@ -489,9 +489,9 @@ def run_v3_smoke(cfg: V3RunConfig) -> dict:
     # RAW data (true species->taxonomy), same ranks/source as the LightGBM taxonomy tier. The model
     # indexes it by (possibly control-permuted) species_idx, so the shuffled control auto-applies.
     tax_codes = tax_cards = None
-    from jcim_v3.models import TAXONOMY_INJECTIONS
+    from src.models import TAXONOMY_INJECTIONS
     if spec.injection in TAXONOMY_INJECTIONS:
-        from jcim_v3.rdkit_lgbm import TAX_RANKS
+        from src.rdkit_lgbm import TAX_RANKS
         ranks = TAX_RANKS[spec.injection]
         sp = full.drop_duplicates("species_idx").set_index("species_idx")
         tax_codes = np.zeros((n_species, len(ranks)), dtype=np.int64)

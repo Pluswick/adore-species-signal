@@ -4,7 +4,7 @@ import json, glob, sys
 import numpy as np, pandas as pd
 from pathlib import Path
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
+from src.prediction_io import load_prediction_csv
 R=Path(r".\results\q2_v4")
 KEY=["smiles","species","endpoint","duration"]
 

@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
 
 
 REQUIRED_PREDICTION_COLUMNS = [
@@ -40,10 +40,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", default=str(CC_MPNN_DATA))
     parser.add_argument("--results-root", default=str(RESULTS_ROOT))
-    parser.add_argument("--smoke-root", default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env"))
+    parser.add_argument("--smoke-root", default=str(RESULTS_ROOT / "smoke" / "src_env"))
     parser.add_argument(
         "--out",
-        default=str(RESULTS_ROOT / "data_audit" / "jcim_v3_revalidation_summary.json"),
+        default=str(RESULTS_ROOT / "data_audit" / "src_revalidation_summary.json"),
     )
     args = parser.parse_args()
 

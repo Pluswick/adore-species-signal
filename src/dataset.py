@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import torch
 
-from jcim_v3.featurizer import ATOM_FDIM, BOND_FDIM, mol_to_molgraph, smiles_to_mol
-from jcim_v3.paths import add_ccmpnn_to_path
+from src.featurizer import ATOM_FDIM, BOND_FDIM, mol_to_molgraph, smiles_to_mol
+from src.paths import add_ccmpnn_to_path
 
 add_ccmpnn_to_path()
 

@@ -10,9 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FULL_CONFIG = ROOT / "configs" / "v3_full_experiment.json"
-DEFAULT_PILOT_ROOT = ROOT / "results" / "jcim_v3" / "full_pilot_scaffold_seed0"
-DEFAULT_FULL_ROOT = ROOT / "results" / "jcim_v3" / "full"
-DEFAULT_PLAN_DIR = ROOT / "results" / "jcim_v3" / "full_run_plan"
+DEFAULT_PILOT_ROOT = ROOT / "results" / "src" / "full_pilot_scaffold_seed0"
+DEFAULT_FULL_ROOT = ROOT / "results" / "src" / "full"
+DEFAULT_PLAN_DIR = ROOT / "results" / "src" / "full_run_plan"
 
 
 def _read_json(path: Path) -> dict:
@@ -147,7 +147,7 @@ def _write_markdown(path: Path, payload: dict) -> None:
                 "## Execute Command",
                 "",
                 "```powershell",
-                "conda activate jcim_v3",
+                "conda activate src",
                 "python scripts\\register_v3_pilot_as_full.py --execute",
                 "```",
                 "",

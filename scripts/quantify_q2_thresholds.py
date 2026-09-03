@@ -9,7 +9,7 @@ Thresholds reported: >=1, >=2, >=3, >=6, >=10, >=50.
   - 3 = lowest bin where dd is negative in 4/4 (sign-based lower bound)
   - 6 = lowest bin where the bootstrap CI excludes 0 in 4/4 (CI-based lower bound)
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 

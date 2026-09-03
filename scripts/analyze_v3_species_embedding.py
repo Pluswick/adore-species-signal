@@ -14,7 +14,7 @@ os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
 os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
 os.environ.setdefault(
     "MPLCONFIGDIR",
-    str(Path(__file__).resolve().parents[1] / "results" / "jcim_v3" / ".matplotlib_cache"),
+    str(Path(__file__).resolve().parents[1] / "results" / "src" / ".matplotlib_cache"),
 )
 
 import matplotlib
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from jcim_v3.paths import RESULTS_ROOT
+from src.paths import RESULTS_ROOT
 
 
 def _load_config(path: str | None) -> dict:
@@ -351,7 +351,7 @@ def main() -> None:
     parser.add_argument("--config", default="configs/v3_embedding_smoke.json")
     parser.add_argument(
         "--out-root",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "embedding_smoke"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "embedding_smoke"),
     )
     args = parser.parse_args()
     config = _load_config(args.config)

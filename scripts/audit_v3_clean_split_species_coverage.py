@@ -9,7 +9,7 @@ import pandas as pd
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--split-dir", default="results/jcim_v3/clean_splits")
+    parser.add_argument("--split-dir", default="results/src/clean_splits")
     parser.add_argument("--split-name", default="compound_random")
     args = parser.parse_args()
 

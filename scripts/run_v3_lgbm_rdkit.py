@@ -10,7 +10,7 @@ from pathlib import Path
 os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
+from src.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
 
 
 BASELINES = [

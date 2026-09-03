@@ -5,15 +5,15 @@ import sys
 from pathlib import Path
 
 
-JCIM_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 # The `ccmpnn` package is bundled at the repository root. It supplies the molecular
 # graph representation, the directed message-passing backbone, and the evaluation
 # metrics. A sibling checkout is accepted as a fallback for development installs.
-CC_MPNN_ROOT = JCIM_ROOT if (JCIM_ROOT / "ccmpnn").is_dir() else JCIM_ROOT.parent / "CC-MPNN"
+CC_MPNN_ROOT = REPO_ROOT if (REPO_ROOT / "ccmpnn").is_dir() else REPO_ROOT.parent / "CC-MPNN"
 CC_MPNN_DATA = CC_MPNN_ROOT / "data"
 
-RESULTS_ROOT = JCIM_ROOT / "results" / "q2_v4"
+RESULTS_ROOT = REPO_ROOT / "results" / "q2_v4"
 
 # Optional external corpus; unused by the reported runs. Set TOX_LEARN_ROOT if needed.
 RAW_TOX_LEARN = Path(os.environ.get("TOX_LEARN_ROOT", "")) if os.environ.get("TOX_LEARN_ROOT") else None

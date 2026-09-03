@@ -11,7 +11,7 @@ from pandas.errors import EmptyDataError
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ROOT = ROOT / "results" / "jcim_v3" / "full_like_mini"
+DEFAULT_ROOT = ROOT / "results" / "src" / "full_like_mini"
 REQUIRED_PREDICTION_COLUMNS = [
     "smiles",
     "compound_key",
@@ -95,7 +95,7 @@ def _warning_summary(path: Path) -> dict:
 
 def _write_md(path: Path, summary: dict) -> None:
     lines = [
-        "# JCIM v3 Full-Like Mini Summary",
+        "# Full-Like Mini Summary",
         "",
         f"- Generated at UTC: `{summary['generated_at_utc']}`",
         f"- Output root: `{summary['output_root']}`",

@@ -1,10 +1,10 @@
 """Synthetic-data unit tests for the gatekeeping/TOST decision logic (§3-2, director).
-NO real data, NO Δ on real predictions — pure logic verification. Env: conda run -n jcim_v3."""
+NO real data, NO Δ on real predictions — pure logic verification. Env: conda run -n src."""
 from __future__ import annotations
 import sys
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.gatekeeping import (decide, is_fourth_cell, paired_dd_bootstrap, ensemble_dd_bootstrap,
+from src.gatekeeping import (decide, is_fourth_cell, paired_dd_bootstrap, ensemble_dd_bootstrap,
                                  bh_fdr, stage2_reached)
 
 D = 0.02          # synthetic δ

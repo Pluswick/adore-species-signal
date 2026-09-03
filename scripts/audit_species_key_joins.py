@@ -7,7 +7,7 @@ import sys, json
 from pathlib import Path
 import numpy as np, pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.rdkit_lgbm import TAX_RANKS
+from src.rdkit_lgbm import TAX_RANKS
 
 ADORE = Path(r"<ECOTOX_DATA_DIR>")
 MORT = ADORE / "processed" / "ecotox_mortality_processed.csv"

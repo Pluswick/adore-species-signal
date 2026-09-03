@@ -11,7 +11,7 @@ H3 (original prediction): leakage amplifies the additive intercept (Tier1) but n
 interaction (Tier4)  ->  leak_shift(T1) more negative than leak_shift(T4).
 lgbm proxy found the OPPOSITE (intercept unchanged, categorical/interaction eroded).
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 

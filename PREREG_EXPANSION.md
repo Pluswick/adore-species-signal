@@ -109,4 +109,4 @@ Phase 1 `runs/gnn/predictions`(4,880) 실측 분해로 확정: 22 ladder + 2 t1�
 
 **run_id 규약**: GNN `{backbone}_{variant}_{split}_s{seed}_e{epochs}_nfull` (`runner.py:546`); LGBM `{baseline}_{split}_s{seed}`; SVD t4 `LightGBM_RDKit_species_svd_factor_{split}_s{seed}`. b1 split명이라 Phase 1 run_id와 자연 분리.
 
-**실행 구조**: 코어(`jcim_v3/`) 무편집·데이터경로 파라미터화 완비 → B1 드라이버가 동일 코어 함수를 `data_dir=data_b1`·`out_root=runs_b1/…`로 호출 + 각 run 후 원장 append + skip-if-exists. GPU 핀 = `CUDA_DEVICE_ORDER=PCI_BUS_ID` + `CUDA_VISIBLE_DEVICES=1`(4090) + `CUBLAS_WORKSPACE_CONFIG=:4096:8`(Phase 1 결정론 재현).
+**실행 구조**: 코어(`src/`) 무편집·데이터경로 파라미터화 완비 → B1 드라이버가 동일 코어 함수를 `data_dir=data_b1`·`out_root=runs_b1/…`로 호출 + 각 run 후 원장 append + skip-if-exists. GPU 핀 = `CUDA_DEVICE_ORDER=PCI_BUS_ID` + `CUDA_VISIBLE_DEVICES=1`(4090) + `CUBLAS_WORKSPACE_CONFIG=:4096:8`(Phase 1 결정론 재현).

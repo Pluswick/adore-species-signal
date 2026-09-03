@@ -10,7 +10,7 @@ Carries original taxonomy (as-is, no backfill) and joins the self-generated
 ncbi_filled taxonomy by species. Produces Yuan-group, scaffold, and
 designed-leaky splits + a provenance ledger.
 
-Env: jcim_v3 (run via `conda run -n jcim_v3` -- direct invocation crashes in BLAS).
+Env: src (run via `conda run -n src` -- direct invocation crashes in BLAS).
 """
 from __future__ import annotations
 
@@ -244,7 +244,7 @@ def main():
         return "\n".join([head, sep] + body)
 
     lines = ["# Q2 v4 — data_provenance_ledger (STRATA aggregation)", "",
-             "생성: build_q2_datasets.py (env jcim_v3). 집계 단위 = (smiles, species, endpoint, duration).",
+             "생성: build_q2_datasets.py (env src). 집계 단위 = (smiles, species, endpoint, duration).",
              "discovery는 단일 stratum이라 (smiles, species) 집계와 항등. raw 무변경.", "",
              "designed_leaky = (smiles,species) pair 단위 무작위 분할(한 pair의 모든 strata는 같은 쪽).", "",
              "## Split metrics", "", df_to_md(led), "", "## CAS groups dropped by filter", ""]

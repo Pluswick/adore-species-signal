@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from jcim_v3.stats import (
+from src.stats import (
     approximate_sign_p_value,
     improvement_probability,
     metric_value,

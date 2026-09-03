@@ -11,7 +11,7 @@ so no cross-file row matching is needed.
 Efficiency question: if the Tier 4 edge concentrates in warm species and vanishes in
 rare/cold, the embedding advantage is realised only where a species is data-rich.
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
+from src.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
 
 GNN = Path(r".\results\q2_v4\runs\gnn\predictions")
 LGB = Path(r".\results\q2_v4\runs\replication\predictions")

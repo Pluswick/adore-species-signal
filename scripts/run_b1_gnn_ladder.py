@@ -7,7 +7,7 @@ t1' (tier1prime_oof / shuffled_tier1prime_oof) is the other 2 of the 24 warm var
 separately (run_b1_gnn_t1prime.py) because it needs the no_species base CSVs this script writes.
 
 GPU: launch with CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1 (4090) CUBLAS_WORKSPACE_CONFIG=:4096:8.
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import argparse, sys, time, json, traceback
@@ -15,8 +15,8 @@ from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
-from jcim_v3.tier_input_guard import assert_tier_input, TierInputDegenerate
+from src.runner import V3RunConfig, run_v3_smoke
+from src.tier_input_guard import assert_tier_input, TierInputDegenerate
 
 ROOT = Path(r".\results\q2_v4")
 DATA = str(ROOT / "data_b1")

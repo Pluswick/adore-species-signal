@@ -7,7 +7,7 @@ import sys, shutil, hashlib
 from pathlib import Path
 import pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.io_atomic import atomic_write_csv  # in-flight data writes must be atomic (temp+fsync+rename)
+from src.io_atomic import atomic_write_csv  # in-flight data writes must be atomic (temp+fsync+rename)
 
 D = Path(r".\results\q2_v4\data")
 BK = D / "_backup_ncbifix"

@@ -4,7 +4,7 @@ import json, numpy as np
 from pathlib import Path
 import sys
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
+from src.prediction_io import load_prediction_csv
 R=Path(r".\results\q2_v4")
 KEY=["smiles","species","endpoint","duration"]
 GVAR={"t0":"no_species","t1":"species_bias_only","t1p":"tier1prime_oof","t2":"true_species_categorical",

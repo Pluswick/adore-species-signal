@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.runner import V3RunConfig, run_v3_smoke
 
 
 def _load_config(path: Path) -> dict:

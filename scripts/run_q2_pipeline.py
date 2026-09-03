@@ -1,7 +1,7 @@
 """Q2 v4 — single entry point. Runs the whole pipeline for one dataset config.
 
-    conda run -n jcim_v3 python scripts/run_q2_pipeline.py --stage all
-    conda run -n jcim_v3 python scripts/run_q2_pipeline.py --stage lgbm --seeds 0-9
+    conda run -n src python scripts/run_q2_pipeline.py --stage all
+    conda run -n src python scripts/run_q2_pipeline.py --stage lgbm --seeds 0-9
 
 Stages (each resumable / independently runnable):
   build   : build_q2_datasets.py           -> results/<ws>/data/*.csv + ledger

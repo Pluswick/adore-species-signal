@@ -7,7 +7,7 @@ if it does, the factor is peeking at its own rows => LEAK => stop.
 
 Pre-registered criterion (see GAP_EXECUTION_LOG Session 24): per split, PASS iff
 rmse_shuffled >= rmse_nofactor - 0.02 ; LEAK iff rmse_shuffled < rmse_nofactor - 0.02.
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json
@@ -17,12 +17,12 @@ sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 # reuse the EXACT tier4 factor pipeline
 from run_q2_lgbm_tier4 import build_factor, K, DATA
-from jcim_v3.rdkit_lgbm import _features, RDKitLGBMConfig
-from jcim_v3.naive_species_baselines import _train_booster
-from jcim_v3.stratum import fit_stratum_effect
-from jcim_v3.stratum import remove as stratum_remove
-from jcim_v3.stratum import restore as stratum_restore
-from jcim_v3.paths import add_ccmpnn_to_path
+from src.rdkit_lgbm import _features, RDKitLGBMConfig
+from src.naive_species_baselines import _train_booster
+from src.stratum import fit_stratum_effect
+from src.stratum import remove as stratum_remove
+from src.stratum import restore as stratum_restore
+from src.paths import add_ccmpnn_to_path
 add_ccmpnn_to_path()
 from ccmpnn.metrics import perf_metrics  # noqa: E402
 

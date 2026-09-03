@@ -15,7 +15,7 @@ Phase 1 실제 설정을 코드에서 읽어 확장(B1 단독)과 항목별 대�
 | shuffled 통제 | species_idx **행별 permutation**(marginal 보존·쌍 파괴), seed=cfg.seed+101/202/303, `_ensure_not_identity` (`species_controls.py:117-130`, `runner.py:439-459`) | 동일 코드·동일 seed 규칙 | **동일** |
 | endpoint/duration 잔차화 | train 추정 가산 주효과 제거→예측 복원 (`runner.py:466-478,535`); 단일 stratum=항등 | 동일 코드 (B1 혼합→활성, LC50@96h 부분집합→항등) | **동일** |
 | 앙상블 k=10 | canonical seed 0–9 (prereg §4δ′) | 동일 | **동일** |
-| Δ (4-arm DD, per-seed paired) | `jcim_v3/gatekeeping.py` `paired_dd_bootstrap`/`_dd_point` (읽음) | 동일 | **동일** |
+| Δ (4-arm DD, per-seed paired) | `src/gatekeeping.py` `paired_dd_bootstrap`/`_dd_point` (읽음) | 동일 | **동일** |
 | TOST α·CI·판정 | α 0.05단측×2=90% CI, 3범주+4번째칸 (`gatekeeping.py:15-32`) · δ=0.019777 동결 | 동일 (δ 동일 재사용) | **동일** |
 | seed 목록 | `range(10)` (`run_q2_gnn_ladder.py:51`) | 동일 | **동일** |
 | **split 절차** | compound(CAS)-disjoint group · Bemis-Murcko scaffold · generic scaffold (`build_adore_datasets.py`, 고정 seed) | **B1 데이터로 동일 절차·동일 seed로 재생성** | **불가피**(새 데이터) |

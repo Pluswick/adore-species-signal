@@ -8,7 +8,7 @@ This is EXPLORATORY and post-hoc. It is NOT a pre-registered confirmatory test; 
 only supports the confirmatory warm/rare results. Per species, errors are averaged
 over seeds first (to denoise the GNN), then the per-species sign is taken.
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
+from src.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
 
 GNN = Path(r".\results\q2_v4\runs\gnn\predictions")
 LGB = Path(r".\results\q2_v4\runs\replication\predictions")

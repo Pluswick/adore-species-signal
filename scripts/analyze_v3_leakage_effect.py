@@ -383,7 +383,7 @@ def _write_summary_md(path: Path, agg: pd.DataFrame, interaction_summary: pd.Dat
         & interaction_summary["metric"].isin(["rmse", "mae"])
     ].copy()
     lines = [
-        "# JCIM v3 Leakage Effect Subset Analysis",
+        "# Leakage Effect Subset Analysis",
         "",
         "This is a post-hoc analysis over existing full prediction CSVs. It does not retrain models.",
         "",
@@ -413,8 +413,8 @@ def _write_summary_md(path: Path, agg: pd.DataFrame, interaction_summary: pd.Dat
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", default="<USER_HOME>/Desktop/CCLABS/CC-MPNN/data")
-    parser.add_argument("--prediction-dir", default="results/jcim_v3/full/predictions")
-    parser.add_argument("--out-dir", default="results/jcim_v3/full/paper_results/leakage_effect")
+    parser.add_argument("--prediction-dir", default="results/src/full/predictions")
+    parser.add_argument("--out-dir", default="results/src/full/paper_results/leakage_effect")
     parser.add_argument("--n-bootstrap", type=int, default=2000)
     parser.add_argument("--bootstrap-seed", type=int, default=20260713)
     args = parser.parse_args()

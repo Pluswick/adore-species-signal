@@ -55,7 +55,7 @@ def _examples(train: pd.DataFrame, test: pd.DataFrame, split: str, key: str, lim
 
 def _write_markdown(path: Path, summary: pd.DataFrame) -> None:
     lines = [
-        "# JCIM v3 Split Leakage Diagnostics",
+        "# Split Leakage Diagnostics",
         "",
         "This audit checks whether train and test partitions share compound identifiers.",
         "It does not modify raw data or model outputs.",
@@ -79,7 +79,7 @@ def _write_markdown(path: Path, summary: pd.DataFrame) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", default="<USER_HOME>/Desktop/CCLABS/CC-MPNN/data")
-    parser.add_argument("--out-dir", default="results/jcim_v3/data_audit")
+    parser.add_argument("--out-dir", default="results/src/data_audit")
     parser.add_argument("--example-limit", type=int, default=20)
     args = parser.parse_args()
 

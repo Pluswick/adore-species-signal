@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 import pandas as pd
 
-from jcim_v3.stats import approximate_sign_p_value, bh_fdr, metric_value
+from src.stats import approximate_sign_p_value, bh_fdr, metric_value
 
 
 MERGE_KEYS = ["smiles", "species", "compound_key", "scaffold_key", "split", "seed"]
@@ -139,8 +139,8 @@ def _bootstrap(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--prediction-dir", default="results/jcim_v3/compound_random_core_full/predictions")
-    parser.add_argument("--out-dir", default="results/jcim_v3/compound_random_core_full/summary_tables")
+    parser.add_argument("--prediction-dir", default="results/src/compound_random_core_full/predictions")
+    parser.add_argument("--out-dir", default="results/src/compound_random_core_full/summary_tables")
     parser.add_argument("--split", default="compound_random")
     parser.add_argument("--seed", type=int, action="append", dest="seeds")
     parser.add_argument("--n-bootstrap", type=int, default=2000)

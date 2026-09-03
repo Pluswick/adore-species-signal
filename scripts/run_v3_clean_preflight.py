@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUT = ROOT / "results" / "jcim_v3" / "preflight"
+DEFAULT_OUT = ROOT / "results" / "src" / "preflight"
 
 
 def _read_json(path: Path) -> dict:
@@ -90,7 +90,7 @@ def _extract_env_summary(env_payload: dict) -> dict:
 
 def _write_markdown(path: Path, summary: dict) -> None:
     lines = [
-        "# JCIM v3 Clean Preflight Summary",
+        "# Clean Preflight Summary",
         "",
         f"- Generated at UTC: `{summary['generated_at_utc']}`",
         f"- Python executable: `{summary['python_executable']}`",
@@ -142,8 +142,8 @@ def main() -> None:
     started_at = datetime.now(timezone.utc).isoformat()
     steps: list[dict] = []
 
-    env_out = out_dir / "jcim_v3_import_check.json"
-    steps.append(_run_command("01_env_check", ["scripts/check_jcim_v3_env.py", "--out", str(env_out)], out_dir))
+    env_out = out_dir / "src_import_check.json"
+    steps.append(_run_command("01_env_check", ["scripts/check_src_env.py", "--out", str(env_out)], out_dir))
 
     feature_out = out_dir / "feature_cache_validation.json"
     steps.append(_run_command("02_feature_cache_validation", ["scripts/validate_v3_outputs.py", "--out", str(feature_out)], out_dir))
@@ -151,7 +151,7 @@ def main() -> None:
     steps.append(
         _json_file_check(
             "03_control_smoke_validation",
-            ROOT / "results" / "jcim_v3" / "smoke" / "jcim_v3_env" / "controls" / "control_sanity_checks.json",
+            ROOT / "results" / "src" / "smoke" / "src_env" / "controls" / "control_sanity_checks.json",
             "all_checks_passed",
         )
     )
@@ -160,9 +160,9 @@ def main() -> None:
             "04_injection_position_smoke_validation",
             ROOT
             / "results"
-            / "jcim_v3"
+            / "src"
             / "smoke"
-            / "jcim_v3_env"
+            / "src_env"
             / "injection_positions"
             / "injection_sanity_checks.json",
             "all_checks_passed",

@@ -14,8 +14,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
 
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
+from src.runner import V3RunConfig, run_v3_smoke
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,7 +53,7 @@ def _dedupe(items: list[str]) -> list[str]:
 
 
 def _output_root(config: dict) -> Path:
-    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "jcim_v3" / "full")
+    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "src" / "full")
 
 
 def _plan_runs(config: dict) -> list[dict]:

@@ -7,14 +7,14 @@ Take a prediction CSV written BEFORE the Aug-1 NCBI fix (carries NULL ncbi_*) an
       DATASET by species -> correct taxonomy stratum for each species.
   (GUARD)               load_prediction_csv(..., columns=[...,'ncbi_class']) RAISES, so the WRONG
       pattern is now structurally impossible.
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import sys
 from pathlib import Path
 import pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv, PredictionColumnViolation
+from src.prediction_io import load_prediction_csv, PredictionColumnViolation
 
 DATA = Path(r".\results\q2_v4\data")
 PRED = Path(r".\results\q2_v4\runs\gnn\predictions")

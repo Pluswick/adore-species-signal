@@ -9,8 +9,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.bootstrap import PAIR_MERGE_KEYS
-from jcim_v3.paths import RESULTS_ROOT
+from src.bootstrap import PAIR_MERGE_KEYS
+from src.paths import RESULTS_ROOT
 
 
 REQUIRED_PREDICTION_COLUMNS = [
@@ -66,7 +66,7 @@ def main() -> None:
     parser.add_argument(
         "--out",
         default=str(
-            RESULTS_ROOT / "smoke" / "jcim_v3_env" / "stats_smoke" / "stats_sanity_checks.json"
+            RESULTS_ROOT / "smoke" / "src_env" / "stats_smoke" / "stats_sanity_checks.json"
         ),
     )
     args = parser.parse_args()
@@ -75,10 +75,10 @@ def main() -> None:
     prediction_dir = Path(
         config.get(
             "prediction_root",
-            RESULTS_ROOT / "smoke" / "jcim_v3_env" / "injection_positions" / "predictions",
+            RESULTS_ROOT / "smoke" / "src_env" / "injection_positions" / "predictions",
         )
     )
-    out_dir = Path(config.get("output_root", RESULTS_ROOT / "smoke" / "jcim_v3_env" / "stats_smoke"))
+    out_dir = Path(config.get("output_root", RESULTS_ROOT / "smoke" / "src_env" / "stats_smoke"))
     block_key = str(config.get("block_key", "scaffold_key"))
 
     files = {

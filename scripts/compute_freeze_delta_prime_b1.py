@@ -6,7 +6,7 @@ Ensemble j (j=0..9) = seeds [10j..10j+9]; ensemble-RMSE = RMSE of the 10-seed-AV
 from runs/gnn_dprime. C=14 warm main conditions (discovery×group). SSOT loader (pred/true only).
 
 DEFAULT = dry-run (compute + print, NO freeze). Pass --freeze to write the immutable frozen file
-(execution·freeze requires director approval per the Session-26 process note). Env: conda run -n jcim_v3.
+(execution·freeze requires director approval per the Session-26 process note). Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json, argparse
@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
+from src.prediction_io import load_prediction_csv
 
 CANON = Path(r".\results\q2_v4\runs_b1\gnn\predictions")
 DPRIME = Path(r".\results\q2_v4\runs_b1\gnn_dprime\predictions")

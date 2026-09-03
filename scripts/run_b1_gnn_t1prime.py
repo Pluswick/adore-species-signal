@@ -4,7 +4,7 @@ call its run_one. Needs the no_species base CSVs the ladder writes. Counts towar
 variants = 22 ladder + 2 t1'). Ledger + skip (run_one skips if output CSV exists).
 
 Dual-GPU: launch with CUDA_VISIBLE_DEVICES=1 --seeds 0 1 2 3 4  (4090) and =0 --seeds 5 6 7 8 9 (5060Ti).
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import argparse, sys, time, json
@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 import run_q2_gnn_oof_tier1prime as t1p
-from jcim_v3.tier_input_guard import TierInputDegenerate
+from src.tier_input_guard import TierInputDegenerate
 
 ROOT = Path(r".\results\q2_v4")
 t1p.DATA = ROOT / "data_b1"

@@ -5,7 +5,7 @@ B. new-species (cold) view
 C. method freedom: measured lgbm(one-hot) vs GNN(embedding) training cost
 D. failure mode: embedding collapse in cold vs one-hot
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -90,7 +90,7 @@ def main():
     print("\n=== C. measured training cost: one-hot on lgbm vs embedding on GNN ===")
     import sys
     sys.path.insert(0, r".")
-    from jcim_v3.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
+    from src.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
     timings = []
     for baseline in ("LightGBM_RDKit_no_species", "LightGBM_RDKit_species_categorical"):
         t0 = time.time()

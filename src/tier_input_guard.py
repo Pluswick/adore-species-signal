@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from jcim_v3.rdkit_lgbm import TAX_RANKS
+from src.rdkit_lgbm import TAX_RANKS
 
 NONNULL_FLOOR = 0.5        # any representation column below this non-null fraction = degenerate
 OOM = 10.0                 # cardinality off from reference by >= this factor = degenerate

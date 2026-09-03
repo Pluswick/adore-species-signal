@@ -11,8 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 import pandas as pd
 
-from jcim_v3.bootstrap import align_predictions
-from jcim_v3.paths import RESULTS_ROOT
+from src.bootstrap import align_predictions
+from src.paths import RESULTS_ROOT
 
 
 MERGE_KEYS = [
@@ -76,18 +76,18 @@ def main() -> None:
     parser.add_argument("--config", default="configs/v3_embedding_smoke.json")
     parser.add_argument(
         "--prediction-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "embedding_smoke" / "predictions"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "embedding_smoke" / "predictions"),
     )
     parser.add_argument(
         "--reference-prediction-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "injection_positions" / "predictions"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "injection_positions" / "predictions"),
     )
     parser.add_argument(
         "--out",
         default=str(
             RESULTS_ROOT
             / "smoke"
-            / "jcim_v3_env"
+            / "src_env"
             / "embedding_smoke"
             / "scaffold_improvement_summary.csv"
         ),

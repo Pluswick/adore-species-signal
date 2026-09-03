@@ -12,16 +12,16 @@ repository. Exclude: `JMGM_*.docx`, `실험_데이터_결과*.docx`, `HANDOFF.md
 Resulting layout:
 
 ```
-adore-species-signal/
+species-representation-toxicity/
   ccmpnn/          <- copied
   tests/           <- copied
-  jcim_v3/
+  src/
   scripts/
   results/
   docs/
 ```
 
-`jcim_v3/paths.py` already resolves `ccmpnn` at the repository root and falls back to a sibling
+`src/paths.py` already resolves `ccmpnn` at the repository root and falls back to a sibling
 `../CC-MPNN` checkout for development installs. It raises a clear error if neither is present.
 
 ## 2. Add the licence
@@ -35,7 +35,7 @@ can be identified later.
 
 ## 3. Recover the missing status document
 
-`jcim_v3/models.py` refers twice to `results/q2_v4/runs/replication/TASK_D_STATUS.md`, which is
+`src/models.py` refers twice to `results/q2_v4/runs/replication/TASK_D_STATUS.md`, which is
 excluded by `.gitignore`. It documents why `GNN_STRATUM_EXPOSURE` is disabled — a decision that
 supports the paper's claim that the two backbones are configured identically. Either commit it
 (preferably, under `results/q2_v4/audit/`) or remove the references.

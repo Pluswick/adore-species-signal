@@ -8,7 +8,7 @@
 **Injection loci actually experimented** (CC-MPNN study; dataset = **tox-learn**, Yuan et al. bioRxiv 2025.11.24.690199, repo mgtools/tox-learn — CC-MPNN/HANDOFF.md:63; **NOT ADORE**):
 - "계층 1 (fusion locus): GBDT / plain MPNN(맥락 없음) / late-fusion / FiLM / CC-MPNN(결합 조건화)" (CC-MPNN/codex.md:8; also project_decisions.md:174).
 - FiLM = "readout 채널 변조" (project_decisions_v2.md:28); "FiLM (채널 단위 변조) | 조건화 방식 비교 | 필수" (project_decisions.md:157).
-- The current `jcim_v3/models.py` additionally implements `early_injection` and `message_level` loci (lines 181–195), plus `film` (lines 189–195, 231–233).
+- The current `src/models.py` additionally implements `early_injection` and `message_level` loci (lines 181–195), plus `film` (lines 189–195, 231–233).
 
 **Result numbers** (CC-MPNN `data/sweep_summary.csv`, column `A.rmse`, mean±sd over 5 seeds):
 - random split: gbdt 0.8307±0.0033 · late-embed 0.8992±0.0078 · **film-embed 0.9196±0.0112** · none(plain) 0.9283±0.0066.
@@ -19,7 +19,7 @@
 **FiLM "abandonment" reason** — no explicit performance-based abandonment statement found. FiLM was a **mandatory comparison / fusion-locus ablation arm** ("필수", project_decisions.md:157; "**FiLM 행**... 메인표 6행×2split 완성", HANDOFF.md:47), kept in the main table; the **proposed** method was CC-MPNN bond-level conditioning, and "GNN 비교군 4종(없음/late/FiLM/결합조건화)은 같은 D-MPNN 토대·readout·FFN을 공유하고 맥락 합류 위치(fusion locus)만 다른 ablation 변형" (project_decisions.md:162).
 - **ADORE exclusion** (namespace/scope, not performance), verbatim `results/q2_v4/audit/adore_tier_namespace.md:24`: "**film = 구 fusion-locus tier 5 → Phase 1에서 사용 안 함(ADORE t5=phylo는 성능 실험 제외). 학습 variant 목록에서 제외.**"
 
-## PART 2 — current architecture interaction (jcim_v3/models.py)
+## PART 2 — current architecture interaction (src/models.py)
 
 **Where species enters** (ADORE main tiers t2/t3a/t3b/t4 = readout/global concat; t1 = post-readout scalar):
 - GraphConv: t4 late_fusion `H = torch.cat([H, species_emb(species_idx)], dim=1)` (models.py:235); t2 categorical `H = torch.cat([H, one_hot(species_idx)], dim=1)` (:237); t3a/t3b `H = torch.cat([H, tax_vec], dim=1)` (:239). Readout FFN `_build_ffn` (:214, def :83): ffn_layers=2 → `Linear(readout_dim→hidden) → ReLU → Dropout → Linear(hidden→1)` (:86–89).

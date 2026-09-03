@@ -21,7 +21,7 @@ INPUT (not redistributed here; see repo README, "Data"):
 
 The keys are the P side only; build_b1.py's self-validation (split counts vs the committed
 data_provenance_ledger.csv) is the end-to-end check that P and the 2026 E-full align.
-Env: jcim_v3 (conda run). No training.
+Env: src (conda run). No training.
 """
 from __future__ import annotations
 import sys

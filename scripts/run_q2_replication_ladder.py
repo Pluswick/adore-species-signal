@@ -10,7 +10,7 @@ results/q2_v4/data via data_dir override:
 NOT run here (need new code / heavy compute; see configs/q2_replication_ladder.json):
   Tier 1 (gnn bias), Tier 3a/3b (taxonomy features), Tier 4/5 (gnn fusion/film).
 
-Env: jcim_v3.
+Env: src.
 """
 from __future__ import annotations
 
@@ -22,8 +22,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from jcim_v3.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_species_baselines
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
+from src.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_species_baselines
+from src.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
 
 LGBM = ["LightGBM_RDKit_no_species", "LightGBM_RDKit_species_categorical",
         "LightGBM_RDKit_zero_species_categorical", "LightGBM_RDKit_shuffled_species_categorical",

@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
 
 
 def _load_config(path: str | None) -> dict:
@@ -144,7 +144,7 @@ def main() -> None:
     parser.add_argument("--config", default="configs/v3_embedding_smoke.json")
     parser.add_argument(
         "--out-root",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "embedding_smoke"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "embedding_smoke"),
     )
     parser.add_argument("--checks-out")
     parser.add_argument("--warnings-out")

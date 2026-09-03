@@ -50,14 +50,14 @@ Several internal names predate the terminology settled in the paper. The full ma
 | `discovery` | the single-condition partition (LC50, 96 h) |
 | `replication` | the seven-condition partition (LC50/EC50, 24–96 h) |
 | `Phase 1` | the ADORE data and the analyses run on it |
-| `q2`, `v3`, `v4`, `jcim_v3` | internal project and revision labels; no scientific meaning |
+| `q2`, `v3`, `v4`, `src` | internal project and revision labels; no scientific meaning |
 
 ## What's here
 
 - `PREREGISTRATION.md` — the frozen pre-registration. `PREREGISTRATION_draft.md` is the earlier
   draft, retained because it timestamps which family-assignment questions were still open before
   training began; `PREREG_EXPANSION.md` extends the same specification to the ECOTOX-external set.
-- `jcim_v3/` — core compute: dataset assembly, model construction, species controls, bootstrap,
+- `src/` — core compute: dataset assembly, model construction, species controls, bootstrap,
   gatekeeping. Identical across both datasets.
 - `scripts/` — dataset builds, training launchers, margin freezes, gatekeeping, and analysis.
 - `results/q2_v4/audit/` — the frozen margins, the construction record for the ECOTOX-external
@@ -67,7 +67,7 @@ Several internal names predate the terminology settled in the paper. The full ma
 - `docs/FREEZE_HISTORY.md` — the chronology of the margin freeze, including the one correction
   that was made to the freeze-evidence record.
 - `docs/NAMING.md` — internal name to paper terminology mapping.
-- `HANDOFF_ADORE_experiment.md`, `results/q2_v4/audit/GAP_EXECUTION_LOG.md` — the working
+- `HANDOFF_experiment.md`, `results/q2_v4/audit/GAP_EXECUTION_LOG.md` — the working
   execution record, retained for provenance. Written in Korean; not required to use the pipeline.
 
 > **Note on language.** `PREREGISTRATION.md` and several audit documents are written in Korean.
@@ -95,7 +95,7 @@ Run all scripts from the repository root.
 
 `ccmpnn/` supplies the molecular graph representation (`MolGraph`, `assemble_batch`), the
 directed message-passing backbone (`DMPNNModel`, `MPNEncoder`), the late-fusion species context,
-and the evaluation metrics. `jcim_v3` builds both backbones on top of it, so neither network runs
+and the evaluation metrics. `src` builds both backbones on top of it, so neither network runs
 without it.
 
 The package name comes from an earlier, discontinued project of the same author

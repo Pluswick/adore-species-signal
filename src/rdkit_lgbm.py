@@ -11,12 +11,12 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT, add_ccmpnn_to_path
-from jcim_v3.featurizer import bemis_murcko_scaffold
-from jcim_v3.species_controls import apply_species_control
-from jcim_v3.stratum import fit_stratum_effect
-from jcim_v3.stratum import remove as stratum_remove
-from jcim_v3.stratum import restore as stratum_restore
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT, add_ccmpnn_to_path
+from src.featurizer import bemis_murcko_scaffold
+from src.species_controls import apply_species_control
+from src.stratum import fit_stratum_effect
+from src.stratum import remove as stratum_remove
+from src.stratum import restore as stratum_restore
 
 add_ccmpnn_to_path()
 
@@ -135,7 +135,7 @@ def _features(df: pd.DataFrame, include_species: bool, species_repr: str = "spec
         rows.append(cache[smi])
     X = pd.DataFrame(rows, columns=list(DESCRIPTOR_NAMES))
     # SPEC 4-0b(A): endpoint/duration are NOT features. They are controlled uniformly for
-    # every tier and backbone by additive target residualization (jcim_v3.stratum), so no
+    # every tier and backbone by additive target residualization (src.stratum), so no
     # tier can exploit an endpoint x structure interaction that others cannot.
     if include_species:
         if species_repr == "species_idx":
@@ -248,7 +248,7 @@ def run_rdkit_lgbm(cfg: RDKitLGBMConfig) -> dict:
 
     # SPEC 4-0b(A): remove the train-estimated additive endpoint/duration main effect from
     # the FITTING targets only. Test targets stay in original units; predictions are
-    # restored below. Identical operation for every tier/backbone (jcim_v3.stratum).
+    # restored below. Identical operation for every tier/backbone (src.stratum).
     stratum_eff = fit_stratum_effect(tr_full, tr_full["target_log10"].to_numpy(np.float64))
     train_frame = train_frame.copy()
     val_frame = val_frame.copy()

@@ -4,10 +4,10 @@ from __future__ import annotations
 import sys, json, time
 from pathlib import Path
 sys.path.insert(0, r".")
-from jcim_v3.rdkit_lgbm import run_rdkit_lgbm, RDKitLGBMConfig
-from jcim_v3.naive_species_baselines import (run_naive_species_baselines, run_naive_taxonomy_baselines,
+from src.rdkit_lgbm import run_rdkit_lgbm, RDKitLGBMConfig
+from src.naive_species_baselines import (run_naive_species_baselines, run_naive_taxonomy_baselines,
                                              NaiveSpeciesBaselineConfig)
-from jcim_v3.tier_input_guard import assert_tier_input, TierInputDegenerate
+from src.tier_input_guard import assert_tier_input, TierInputDegenerate
 
 def _lgb_variant(base):  # map a LightGBM baseline name to a guard variant (representation input)
     if "taxonomy_ncbi" in base: return "true_species_taxonomy_ncbi"

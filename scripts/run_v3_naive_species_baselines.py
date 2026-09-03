@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from jcim_v3.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_species_baselines
+from src.naive_species_baselines import NaiveSpeciesBaselineConfig, run_naive_species_baselines
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +23,7 @@ def _load_config(path: Path) -> dict:
 
 
 def _output_root(config: dict) -> Path:
-    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "jcim_v3" / "full")
+    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "src" / "full")
 
 
 def _read_csv(path: Path) -> list[dict]:

@@ -10,13 +10,13 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
 
-from jcim_v3.featurizer import bemis_murcko_scaffold
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
-from jcim_v3.rdkit_lgbm import DESCRIPTOR_NAMES, TAX_RANKS, _features
-from jcim_v3.stats import prediction_metrics
-from jcim_v3.stratum import fit_stratum_effect
-from jcim_v3.stratum import remove as stratum_remove
-from jcim_v3.stratum import restore as stratum_restore
+from src.featurizer import bemis_murcko_scaffold
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.rdkit_lgbm import DESCRIPTOR_NAMES, TAX_RANKS, _features
+from src.stats import prediction_metrics
+from src.stratum import fit_stratum_effect
+from src.stratum import remove as stratum_remove
+from src.stratum import restore as stratum_restore
 
 
 NAIVE_BASELINES = (

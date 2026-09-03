@@ -3,7 +3,7 @@
 The gap between the two curves visualises the concentration structure (a few
 data-rich species carry most measurements). Marks the observed lower bound (3).
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 

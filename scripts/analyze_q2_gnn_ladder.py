@@ -9,7 +9,7 @@ Retreat criteria (SPEC-fixed, judged on QUALITY not direction):
   2. H3 inconsistent   : GNN H3 disagrees with the lgbm proxy (needs designed_leaky)
   3. Tier4/5 borderline: Tier4 vs Tier2 too close to fix a saturation point
 
-Env: run via `conda run -n jcim_v3`.
+Env: run via `conda run -n src`.
 """
 from __future__ import annotations
 

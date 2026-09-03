@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FULL_CONFIG = ROOT / "configs" / "v3_full_experiment.json"
 DEFAULT_PILOT_CONFIG = ROOT / "configs" / "v3_full_pilot_scaffold_seed0.json"
-DEFAULT_PILOT_ROOT = ROOT / "results" / "jcim_v3" / "full_pilot_scaffold_seed0"
-DEFAULT_OUT_DIR = ROOT / "results" / "jcim_v3" / "full_run_plan"
+DEFAULT_PILOT_ROOT = ROOT / "results" / "src" / "full_pilot_scaffold_seed0"
+DEFAULT_OUT_DIR = ROOT / "results" / "src" / "full_run_plan"
 
 TRAINING_FIELDS = [
     "official_env",
@@ -37,13 +37,13 @@ TRAINING_FIELDS = [
 
 IMPLEMENTATION_FILES = [
     ROOT / "scripts" / "run_v3_full_experiment.py",
-    ROOT / "jcim_v3" / "runner.py",
-    ROOT / "jcim_v3" / "models.py",
-    ROOT / "jcim_v3" / "dataset.py",
-    ROOT / "jcim_v3" / "featurizer.py",
-    ROOT / "jcim_v3" / "species_controls.py",
-    ROOT / "jcim_v3" / "rdkit_lgbm.py",
-    ROOT / "jcim_v3" / "rdkit_features.py",
+    ROOT / "src" / "runner.py",
+    ROOT / "src" / "models.py",
+    ROOT / "src" / "dataset.py",
+    ROOT / "src" / "featurizer.py",
+    ROOT / "src" / "species_controls.py",
+    ROOT / "src" / "rdkit_lgbm.py",
+    ROOT / "src" / "rdkit_features.py",
 ]
 
 
@@ -98,7 +98,7 @@ def _compare_field(full: dict, pilot: dict, field: str) -> dict:
 
 def _write_markdown(path: Path, payload: dict) -> None:
     lines = [
-        "# JCIM v3 Pilot Reuse Check",
+        "# Pilot Reuse Check",
         "",
         f"- Generated at UTC: `{payload['generated_at_utc']}`",
         f"- Full config: `{payload['full_config']}`",
@@ -173,7 +173,7 @@ def main() -> None:
         "pilot_is_seed0_only": [int(seed) for seed in pilot.get("seeds", [])] == [0],
     }
 
-    feature_dir = ROOT / "results" / "jcim_v3" / "features"
+    feature_dir = ROOT / "results" / "src" / "features"
     feature_paths = {
         "rdkit_descriptor_cache": feature_dir / "rdkit6_by_smiles.csv",
         "scaffold_key_cache": feature_dir / "scaffold_by_smiles.csv",
@@ -215,9 +215,9 @@ def main() -> None:
             "summary": "The same runner and species control implementation files are used for pilot and full. Per-run seed comes from the config seed value.",
             "relevant_files": [
                 "scripts/run_v3_full_experiment.py",
-                "jcim_v3/runner.py",
-                "jcim_v3/species_controls.py",
-                "jcim_v3/rdkit_lgbm.py",
+                "src/runner.py",
+                "src/species_controls.py",
+                "src/rdkit_lgbm.py",
             ],
         },
         "implementation_fingerprints": implementation,

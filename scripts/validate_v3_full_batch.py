@@ -12,7 +12,7 @@ from pandas.errors import EmptyDataError
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ROOT = ROOT / "results" / "jcim_v3" / "full"
+DEFAULT_ROOT = ROOT / "results" / "src" / "full"
 DEFAULT_CONFIG = ROOT / "configs" / "v3_full_experiment.json"
 REQUIRED_PREDICTION_COLUMNS = [
     "smiles",
@@ -123,7 +123,7 @@ def _prediction_has_nan(path: Path) -> bool:
 
 def _write_markdown(path: Path, payload: dict) -> None:
     lines = [
-        f"# JCIM v3 Full Batch Validation: {payload['split']} seed {payload['seed']}",
+        f"# Full Batch Validation: {payload['split']} seed {payload['seed']}",
         "",
         f"- Generated at UTC: `{payload['generated_at_utc']}`",
         f"- Root: `{payload['root']}`",

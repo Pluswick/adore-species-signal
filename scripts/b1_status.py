@@ -10,7 +10,7 @@ Contract (all under results/q2_v4/runs_b1/_status/):
   progress.jsonl : append-only, one JSON per run attempt written by the runner:
                    {"run_id","block","status":"ok"|"fail","error"?,"ts"}
                    Retries allowed: a run_id's LATEST line wins.
-Pure stdlib. Run: conda run -n jcim_v3 python scripts/b1_status.py
+Pure stdlib. Run: conda run -n src python scripts/b1_status.py
 """
 from __future__ import annotations
 import json, os, subprocess

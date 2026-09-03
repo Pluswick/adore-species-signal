@@ -17,7 +17,7 @@ Contrasts:
 All aligned on KEY; block = compound_key. CI = pct(2.5,97.5); two-sided p from the
 bootstrap sign. Global BH-FDR across every 'ok' contrast.
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.prediction_io import load_prediction_csv  # single-source-of-truth: pred CSV = keys/pred/true only
+from src.prediction_io import load_prediction_csv  # single-source-of-truth: pred CSV = keys/pred/true only
 
 GNN = Path(r".\results\q2_v4\runs\gnn\predictions")
 LGB = Path(r".\results\q2_v4\runs\replication\predictions")

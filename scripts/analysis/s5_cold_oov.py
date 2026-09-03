@@ -7,8 +7,8 @@ sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 import run_q2_gatekeeping_b1 as GKB
 import run_q2_gatekeeping as GKP
-from jcim_v3.prediction_io import load_prediction_csv
-from jcim_v3.gatekeeping import paired_dd_bootstrap, decide
+from src.prediction_io import load_prediction_csv
+from src.gatekeeping import paired_dd_bootstrap, decide
 R=Path(r".\results\q2_v4")
 KEY=["smiles","species","endpoint","duration"]
 GVAR=GKB.GVAR; TOST=["t3a","t3b","t4"]

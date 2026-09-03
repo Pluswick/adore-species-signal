@@ -5,13 +5,13 @@ into 9 disjoint ensembles of consecutive 10s (§4δ′ A-5.3). Card rule (A-5.4)
 seeds ending 0-6 -> 5060Ti, 7-9 -> 4090 (matches canonical 7:3); t1' entirely on 4090. Identical
 hyperparameters/packing/determinism as canonical — only the seed number differs (A-5.6). Resumable.
 Canonical seeds 0-9 (runs/gnn) are the immutable representative ensemble and are NEVER run here.
-Env: conda run -n jcim_v3 with CUDA_VISIBLE_DEVICES set per card.
+Env: conda run -n src with CUDA_VISIBLE_DEVICES set per card.
 """
 from __future__ import annotations
 import sys, argparse, time, traceback
 from pathlib import Path
 sys.path.insert(0, r".")
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.runner import V3RunConfig, run_v3_smoke
 
 DATA = r".\results\q2_v4\data"
 OUT = r".\results\q2_v4\runs\gnn_dprime"

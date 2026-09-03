@@ -5,7 +5,7 @@ import sys, json
 from pathlib import Path
 import numpy as np, pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.io_atomic import atomic_write_csv  # atomic replace for shared data CSVs
+from src.io_atomic import atomic_write_csv  # atomic replace for shared data CSVs
 DATA = Path(r".\results\q2_v4\data")
 ADORE = r"<ECOTOX_DATA_DIR>\processed\ecotox_mortality_processed.csv"
 SEED = 42

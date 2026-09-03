@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
 
 
 def _load_config(path: str | None) -> dict:
@@ -63,11 +63,11 @@ def main() -> None:
     parser.add_argument("--data-dir", default=str(CC_MPNN_DATA))
     parser.add_argument(
         "--prediction-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "embedding_smoke" / "predictions"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "embedding_smoke" / "predictions"),
     )
     parser.add_argument(
         "--out",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "embedding_smoke" / "species_summary.csv"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "embedding_smoke" / "species_summary.csv"),
     )
     args = parser.parse_args()
 

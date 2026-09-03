@@ -6,7 +6,7 @@ stratum purge/re-add); the SVD is fit OUT-OF-FOLD so a train row's own label nev
 Methods: OOF-fit low-dim species factor (NOT GNN end-to-end embedding) -> no cross-backbone Tier 4
 comparison. Confound (SVD rank-16 implicit shrinkage vs Tier 1' raw mean) recorded in pre-reg.
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json, time, argparse
@@ -15,12 +15,12 @@ import numpy as np, pandas as pd
 from sklearn.model_selection import KFold
 
 sys.path.insert(0, r".")
-from jcim_v3.rdkit_lgbm import _features, RDKitLGBMConfig
-from jcim_v3.naive_species_baselines import _stratum_key, _train_booster
-from jcim_v3.stratum import fit_stratum_effect
-from jcim_v3.stratum import remove as stratum_remove
-from jcim_v3.stratum import restore as stratum_restore
-from jcim_v3.paths import add_ccmpnn_to_path
+from src.rdkit_lgbm import _features, RDKitLGBMConfig
+from src.naive_species_baselines import _stratum_key, _train_booster
+from src.stratum import fit_stratum_effect
+from src.stratum import remove as stratum_remove
+from src.stratum import restore as stratum_restore
+from src.paths import add_ccmpnn_to_path
 add_ccmpnn_to_path()
 from ccmpnn.metrics import perf_metrics  # noqa: E402
 

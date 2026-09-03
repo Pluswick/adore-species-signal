@@ -5,7 +5,7 @@
 # if necessary. The RDKit version is load-bearing: both scaffold splits are
 # computed by RDKit, so a different version can change the train/test partitions.
 
-name: jcim_v3
+name: src
 channels:
   - conda-forge
 dependencies:

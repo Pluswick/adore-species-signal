@@ -313,8 +313,8 @@ def main() -> None:
         "--consolidated",
         default="<USER_HOME>/Desktop/CCLABS/CC-MPNN/data/lc50_96_consolidated.csv",
     )
-    parser.add_argument("--clean-dir", default="results/jcim_v3/clean_splits")
-    parser.add_argument("--out-dir", default="results/jcim_v3/data_audit")
+    parser.add_argument("--clean-dir", default="results/src/clean_splits")
+    parser.add_argument("--out-dir", default="results/src/data_audit")
     parser.add_argument("--expected-raw-total", type=int, default=50603)
     args = parser.parse_args()
 

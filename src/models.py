@@ -6,7 +6,7 @@ import torch
 import torch.nn.functional as F
 from torch import Tensor, nn
 
-from jcim_v3.paths import add_ccmpnn_to_path
+from src.paths import add_ccmpnn_to_path
 
 add_ccmpnn_to_path()
 
@@ -14,7 +14,7 @@ from ccmpnn import ModelConfig, VariantConfig, build_model  # noqa: E402
 from ccmpnn.context import ContextBase  # noqa: E402
 from ccmpnn.model import DMPNNModel  # noqa: E402
 
-from jcim_v3.featurizer import BOND_FDIM, DESC_FDIM
+from src.featurizer import BOND_FDIM, DESC_FDIM
 
 
 @dataclass(frozen=True)

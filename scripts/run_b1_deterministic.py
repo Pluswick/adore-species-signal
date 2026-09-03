@@ -2,7 +2,7 @@
 SVD Tier4. Byte-identical compute to Phase 1 (run_q2_cpu_tiers_blockA.py + run_q2_lgbm_tier4.py);
 only data path (data_b1), output root (runs_b1), split names (b1_*), + ledger append differ.
 Deterministic -> seed 0. Runs on CPU concurrently with the GPU ladder. Resumable.
-Env: conda run -n jcim_v3.  (no GPU env needed)
+Env: conda run -n src.  (no GPU env needed)
 """
 from __future__ import annotations
 import sys, json, time
@@ -10,10 +10,10 @@ from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
-from jcim_v3.rdkit_lgbm import run_rdkit_lgbm, RDKitLGBMConfig
-from jcim_v3.naive_species_baselines import (run_naive_species_baselines, run_naive_taxonomy_baselines,
+from src.rdkit_lgbm import run_rdkit_lgbm, RDKitLGBMConfig
+from src.naive_species_baselines import (run_naive_species_baselines, run_naive_taxonomy_baselines,
                                              NaiveSpeciesBaselineConfig)
-from jcim_v3.tier_input_guard import assert_tier_input, TierInputDegenerate
+from src.tier_input_guard import assert_tier_input, TierInputDegenerate
 
 ROOT = Path(r".\results\q2_v4")
 DATA = str(ROOT / "data_b1")

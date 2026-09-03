@@ -4,7 +4,7 @@ main + shuffled (tier 1/1' N/A). Each species variant -> 3 oov CSVs (mean/untrai
 no_species -> 1. Ledger per oov-file (block species_cold -> ~500). Skip if all oov files exist.
 
 Dual-GPU: CUDA_VISIBLE_DEVICES=1 --seeds 0 1 2 3 4 (4090) / =0 --seeds 5 6 7 8 9 (5060Ti).
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import argparse, sys, time, json
@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 import run_q2_blockb_oov as bb
-from jcim_v3.tier_input_guard import TierInputDegenerate
+from src.tier_input_guard import TierInputDegenerate
 
 ROOT = Path(r".\results\q2_v4")
 bb.DATA = ROOT / "data_b1"

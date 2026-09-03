@@ -2,7 +2,7 @@
 discovery_group at improve_shuffled=0.0192 (just under tau=0.02). If that were real label leakage
 it would be a STABLE positive across permutation seeds; if noise/support-structure it straddles 0.
 Run the two positive-margin splits across several permutation seeds. Does NOT change the
-pre-registered verdict — pure robustness. Env: conda run -n jcim_v3.
+pre-registered verdict — pure robustness. Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json
@@ -12,7 +12,7 @@ sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 from run_q2_lgbm_tier4 import build_factor, K, DATA
 from verify_tier4_permutation_leak import _final_rmse
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig
+from src.rdkit_lgbm import RDKitLGBMConfig
 
 SPLITS = ["discovery_group", "replication_scaffold_generic"]
 SEEDS = [20260801, 20260802, 20260803, 20260804, 20260805]

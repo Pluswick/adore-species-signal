@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUT = ROOT / "results" / "jcim_v3" / "env_diagnostics"
+DEFAULT_OUT = ROOT / "results" / "src" / "env_diagnostics"
 DEFAULT_ENV_ROOT = Path(r"<USER_HOME>\anaconda3\envs")
 
 TESTS = {

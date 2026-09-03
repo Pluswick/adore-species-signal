@@ -3,7 +3,7 @@
 oov=mean (primary): cold species / OOV rank categories -> mean of TRAIN-split species / categories.
 oov=untrained: current (untrained own row). oov=collapse: species/tax contribution -> 0.
 Training is UNCHANGED (warm/block A untouched; gate "same comparison" preserved).
-Range = {t0, t2, t3a, t3b, t4} (tier 1/1' N/A). Env: conda run -n jcim_v3.
+Range = {t0, t2, t3a, t3b, t4} (tier 1/1' N/A). Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json, time, argparse, copy
@@ -11,11 +11,11 @@ from pathlib import Path
 import numpy as np, pandas as pd, torch
 
 sys.path.insert(0, r".")
-from jcim_v3.runner import (V3RunConfig, _setup_reproducible, _carve_val, _train, _predict,
+from src.runner import (V3RunConfig, _setup_reproducible, _carve_val, _train, _predict,
     _species_lookup, model_spec_from_variant, build_v3_model, GraphDataset, StandardScaler,
     apply_species_control, fit_stratum_effect, stratum_remove, stratum_restore, ATOM_FDIM)
-from jcim_v3.rdkit_lgbm import TAX_RANKS
-from jcim_v3.tier_input_guard import check_blockb_oov_input, TierInputDegenerate
+from src.rdkit_lgbm import TAX_RANKS
+from src.tier_input_guard import check_blockb_oov_input, TierInputDegenerate
 
 DATA = Path(r".\results\q2_v4\data")
 PRED = Path(r".\results\q2_v4\runs\gnn\predictions")

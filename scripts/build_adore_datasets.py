@@ -7,7 +7,7 @@ writes discovery (LC50@96h) / replication (LC50 24/48/72h + EC50) x
 {group(compound-disjoint) / scaffold-murcko / scaffold-generic / designed-leaky}.
 
 target_log10 = -log10(mean conc_mol) = pLC50 (sign verified §0-1).
-Env: jcim_v3 (conda run). No training.
+Env: src (conda run). No training.
 """
 from __future__ import annotations
 import json

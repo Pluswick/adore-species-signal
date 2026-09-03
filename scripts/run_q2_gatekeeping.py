@@ -4,15 +4,15 @@
 --dry-check enumerates the FULL comparison set + verifies frozen files/cells resolve, WITHOUT any Δ.
 
 [C#] = director 16-item checklist. δ/δ′/δ_det READ from frozen files, never recomputed [C14].
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json, argparse, hashlib
 from pathlib import Path
 import numpy as np, pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv                          # [C12] SSOT whitelist loader
-from jcim_v3.gatekeeping import (paired_dd_bootstrap, ensemble_dd_bootstrap, decide,
+from src.prediction_io import load_prediction_csv                          # [C12] SSOT whitelist loader
+from src.gatekeeping import (paired_dd_bootstrap, ensemble_dd_bootstrap, decide,
                                  is_fourth_cell, bh_fdr, stage2_reached)
 
 R = Path(r".\results\q2_v4")
@@ -259,7 +259,7 @@ def run(execute, dry_check):
     for r in results:
         if r.get("test") == "TOST" and r.get("status") == "ok" and r.get("family") in ("primary", "confirmatory"):
             r["reaches_stage2"] = stage2_reached(r["category"])                # [C8]
-    provenance = {"script_sha16": file_sha(__file__), "gatekeeping_module_sha16": file_sha(R.parents[1] / "jcim_v3" / "gatekeeping.py"),
+    provenance = {"script_sha16": file_sha(__file__), "gatekeeping_module_sha16": file_sha(R.parents[1] / "src" / "gatekeeping.py"),
                   "frozen": {k: {"value": deltas[k], "sha16": file_sha(v)} for k, v in FROZEN.items()},
                   "n_comparisons": len(comps), "param_hash": hashlib.sha256(json.dumps(sorted(map(str, prim))).encode()).hexdigest()[:16],
                   "confirmatory_subset_of_primary": bool(conf.issubset(prim))}

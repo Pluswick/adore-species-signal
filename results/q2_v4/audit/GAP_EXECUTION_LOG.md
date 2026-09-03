@@ -9,11 +9,11 @@
 작업: HANDOFF 통독 후 §1–§3 검증만. 로더 구현·데이터 재구축·사다리 학습은 미착수(다음 지시 대기).
 
 ### 1. EXP 환경 자기검증 — PASS
-- `import jcim_v3.runner` OK; `import ccmpnn` OK (`CC-MPNN\ccmpnn\__init__.py` 자동 해결).
-- paths.py: `JCIM_ROOT = EXP` ✓ / `CC_MPNN_ROOT = CCLABS\CC-MPNN` (존재) ✓ / `CC_MPNN_DATA` 존재 ✓ / `RESULTS_ROOT = EXP\results\jcim_v3` ✓.
+- `import src.runner` OK; `import ccmpnn` OK (`CC-MPNN\ccmpnn\__init__.py` 자동 해결).
+- paths.py: `REPO_ROOT = EXP` ✓ / `CC_MPNN_ROOT = CCLABS\CC-MPNN` (존재) ✓ / `CC_MPNN_DATA` 존재 ✓ / `RESULTS_ROOT = EXP\results\src` ✓.
 - run 스크립트 하드코딩 경로 DATA/OUT/PRED 모두 `EXP\results\q2_v4\…` 지시 확인
   (`run_q2_gnn_ladder.py`, `run_q2_gnn_oof_tier1prime.py`, `run_q2_naive_taxonomy.py`, `run_q2_scaffold_taxonomy_lgbm.py`).
-- conda env `jcim_v3` 존재; torch 2.12.1+cu130.
+- conda env `src` 존재; torch 2.12.1+cu130.
 
 ### 2. 멀티 GPU 검증 (§F) — PASS (device 매핑 주의점 발견)
 - `nvidia-smi`: GPU0 = RTX 5060 Ti (16 GB, 디스플레이), GPU1 = RTX 4090 (24 GB, 유휴). **두 장 모두 인식** (과거 세션 1장만 보이던 문제 해소).
@@ -511,7 +511,7 @@ SD·중단규칙·fixed_proj 확정. #1/#2/#3 구현 → 확대 스모크 → �
 
 director 16차: 임계에 파티션 미지정 → 33일 오작동 위험. discovery/replication 기준 분리 필요.
 
-### 파티션별 residualized SD (jcim_v3.stratum로 산출)
+### 파티션별 residualized SD (src.stratum로 산출)
 - **discovery**: LC50@96 단일 stratum → 잔차화=항등 → SD **1.7195**. 상한 1.7195 / 하한 0.8598.
 - **replication**: 7 strata(LC50@24/48/72·EC50@24/48/72/96) → 잔차 SD **1.7094**. 상한 1.7094 / 하한 0.8547.
 - **⚠ 실측 정정**: 잔차화가 replication 분산 **0.5%만 제거**(1.7139→1.7094). 주효과가 compound×species 대비 작아 예상 대폭감소(~1.3) 미발생 → repl SD ≈ disc SD. 그래도 파티션별 residualized SD로 분리 고정(원리 준수). pre-reg §6 파티션별 표.
@@ -622,14 +622,14 @@ ADORE 경로 전 조인의 키 교집합 실측(추정 아님). **NCBI가 유일
 - ⑥ native tax_* nonnull 1.0(내부 groupby-first, 외부조인 아님).
 - 병행 검증: 독립 5-lens 스윕 워크플로(멀티모달)로 완전성 교차확인(누락 조인 탐색 + completeness critic). lens-2가 sp2grp 동일결론 독립 도출.
 
-### 2. tier 입력 비축퇴 가드(상시 규칙) — `jcim_v3/tier_input_guard.py`
+### 2. tier 입력 비축퇴 가드(상시 규칙) — `src/tier_input_guard.py`
 각 (variant, split) tier 시작 시 종표현 입력 축퇴를 단언·로그, 축퇴 시 **그 tier 미착수·즉시 HALT(sys.exit 2)**.
 - 축퇴 기준: 표현 열 non-null < 0.5 / cardinality < 2 / 참조 대비 자릿수(10×) 이탈. 참조 `data/tier_input_reference.json`(split별 n_species·랭크 cardinality).
 - 점검: t2/t4=species_idx cardinality·**0..n 연속성**·참조대조; t3a/t3b=랭크별 non-null·cardinality·참조; t1/t1'=오프셋 종수≥2·**분산≥2**; t0=무점검.
 - **가드 검증(핵심)**: 수정 데이터 = 전 tier clean(오탐 0, cold 포함); **pre-fix 백업 = t3b DEGEN 정확 검출**(ncbi 4랭크 non-null 0.0/card 0), t3a는 clean. → RMSE 우연이 아니라 tier 3b 착수 시점 **구조적** 검출됨을 입증.
 - 배선: `run_q2_gnn_ladder.py`(변형별 1회, HALT), `run_q2_cpu_tiers_blockA.py`(lgbm 변형매핑), `run_q2_gnn_oof_tier1prime.py`(오프셋 축퇴 HALT), `run_q2_blockb_oov.py`(**OOV 매핑 이후** 입력점검: cold종 식별+swap 발화). block A는 이미 수정데이터라 미영향 — 가드는 향후/재개 launch에 상시 활성. 배선 발화 확인(스킵 셀에도 가드 로그 기록).
 
-### 3. 실행 중 데이터 파일 수정 = 원자적 교체 규칙 — `jcim_v3/io_atomic.py`
+### 3. 실행 중 데이터 파일 수정 = 원자적 교체 규칙 — `src/io_atomic.py`
 - **이번 패치 방식 확인**: `patch_ncbi_columns.py`가 `to_csv(f)`로 원본 경로 **제자리 덮어쓰기 = 비원자적**(백업은 했으나 라이브 쓰기 자체는 truncate-then-stream, 동시 읽기가 잘린 파일 노출 가능). FAIL 0이었으나 위험 실재.
 - **규칙 확립**: `atomic_write_csv/bytes/text` = 동일 디렉터리 temp 작성 → fsync → `os.replace`(동일 볼륨 원자적). 부분쓰기 미노출. 라운드트립 검증 OK.
 - **적용**: `patch_ncbi_columns.py`·`build_adore_cold_splits.py`(공유 CSV writer) 리트로핏. 앞으로 실행 중 공유 데이터파일 수정은 원자적 교체 의무.
@@ -647,7 +647,7 @@ ADORE 경로 전 조인의 키 교집합 실측(추정 아님). **NCBI가 유일
   - G5 tier1' 종공간(no_species pred species_idx_original ⊆ data space): **1.0**.
   - G6 live species **100% 밑줄**(gammarus_fasciatus) → build_adore canonical, legacy build_q2(공백-소문자 'Latin name') 비호환.
 - **거버넌스 위험 1건 가드**: `run_q2_pipeline.py:53`이 build 단계에서 폐기된 `build_q2_datasets.py`(다른 종 규약·다른 species_idx 열거) 호출 → q2_v4/data(ADORE 소유) 재실행 시 species_idx 재배정·ncbi_* 및 frozen pred 전면 탈정렬 clobber 위험. **가드 추가**(ADORE 마커 감지 시 build 거부·exit 3), 발화 확인.
-- SCOPE 제외 명시: v3/Yuan-lineage 스크립트(results/jcim_v3, 별개 데이터 계보) · CC-MPNN 패키지 내부(읽기전용 경계). ADORE 결론에 미유입.
+- SCOPE 제외 명시: v3/Yuan-lineage 스크립트(results/src, 별개 데이터 계보) · CC-MPNN 패키지 내부(읽기전용 경계). ADORE 결론에 미유입.
 - **결론**: NCBI 조인이 유일 결함(수정 완료). ADORE 파이프라인에 동종(키 불일치) 잠재결함 없음 — 실측 종결.
 
 ### Tier 4 SVD (CPU block A) 완료
@@ -752,7 +752,7 @@ tier 3a만 · genus/genus+family 2개 · warm·discovery·group만 · **main 통
 
 ### 집계 메타데이터 단일출처(SSOT) 가드 (director §2) — 위반 0, 가드 확정
 - **감사(직접 + 독립 워크플로 5-lens)**: ADORE 집계·층화·평가 스크립트 전부 예측 CSV에서 **화이트리스트 열만**(조인키+pred+true+compound_key) 읽고, 전 층화(abundance·cold·coverage·stratum·support)를 **데이터셋에서 유도**. 워크플로 verdict **NO_VIOLATIONS**. 유일한 forbidden read = 내가 만든 의도적 음성대조 회귀테스트(`regression_pred_metadata_ssot.py`). full-read-latent = tier1′ base-pred(러너, 화이트리스트 사용) + 내 QC 스크립트들.
-- **가드 확정**: `jcim_v3/prediction_io.py` — `load_prediction_csv`가 로드 시점에 화이트리스트 강제(기본 메타 드롭·forbidden 요청 시 `PredictionColumnViolation`). 5개 집계 진입점(bootstrap_q2_ladder δ경로·quantify_cost·abundance·cold_signtest·endpoint) 배선. 워크플로가 배선 정확성 재확인.
+- **가드 확정**: `src/prediction_io.py` — `load_prediction_csv`가 로드 시점에 화이트리스트 강제(기본 메타 드롭·forbidden 요청 시 `PredictionColumnViolation`). 5개 집계 진입점(bootstrap_q2_ladder δ경로·quantify_cost·abundance·cold_signtest·endpoint) 배선. 워크플로가 배선 정확성 재확인.
 - **회귀 PASS**: pre-fix null-ncbi CSV → 예측-CSV 방식 396/396 종 '미해상' 오분류, 데이터셋 방식 2/396(진짜 미해상만), 가드가 wrong 패턴 차단.
 
 ### TOST 판정규칙 사전기재 (director 작업 1·3)
@@ -817,7 +817,7 @@ tier 3a만 · genus/genus+family 2개 · warm·discovery·group만 · **main 통
 - **§3 비교스크립트 = 작성만(실행 금지)** 착수: 16항목 체크리스트 + 합성 단위테스트. director 실행 승인 후에만 실행.
 
 ### §3 비교 스크립트 작성·검증 (실행 금지) — Session 31 계속
-- `jcim_v3/gatekeeping.py`(코어: decide 3범주+4번째칸·paired_dd_bootstrap per-seed·bh_fdr·stage2_reached) + `scripts/run_q2_gatekeeping.py`(파이프라인, §4C 비교집합·2단게이트·3패밀리 FDR·confirmatory 해시·SSOT·frozen δ/δ′ 읽기).
+- `src/gatekeeping.py`(코어: decide 3범주+4번째칸·paired_dd_bootstrap per-seed·bh_fdr·stage2_reached) + `scripts/run_q2_gatekeeping.py`(파이프라인, §4C 비교집합·2단게이트·3패밀리 FDR·confirmatory 해시·SSOT·frozen δ/δ′ 읽기).
 - **합성 단위테스트**(`test_gatekeeping_synthetic.py`) **전체 통과**: 3범주 4케이스+4번째칸+경계·per-seed 부트스트랩(동등/유의/불확정/결정론)·2단게이트(동등만)·FDR 패밀리분리·frozen 부재 즉시실패.
 - 실행 가드: 무플래그=**REFUSE**(언블라인딩), `--dry-check`=파일/셀 해상만(Δ 미계산). dry-check 60/60 해상, missing 0.
 - **미완**: [C15] 결정론 tier 자체 block-bootstrap δ + det 비교집합, [C16] 앙상블 Δ′ 민감도(δ′·자체 FDR·게이트 불참) = scaffold만. 완성 후 실행 승인 요청 예정. **실행 금지 유지.**

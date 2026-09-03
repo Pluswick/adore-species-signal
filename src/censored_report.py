@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RAW_TOX_LEARN, RESULTS_ROOT
+from src.paths import CC_MPNN_DATA, RAW_TOX_LEARN, RESULTS_ROOT
 
 
 CENSOR_RE = re.compile(r"^\s*(<=|>=|<|>)\s*[-+]?\d")

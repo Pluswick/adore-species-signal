@@ -5,7 +5,7 @@ included. Resumable: skips a (baseline,split,seed) whose prediction file exists.
 """
 import sys, os, argparse
 sys.path.insert(0, r".")
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
+from src.rdkit_lgbm import RDKitLGBMConfig, run_rdkit_lgbm
 
 DATA = r".\results\q2_v4\data"
 OUT = r".\results\q2_v4\runs\replication"

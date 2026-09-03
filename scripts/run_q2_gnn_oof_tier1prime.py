@@ -20,14 +20,14 @@ import numpy as np, pandas as pd
 from sklearn.model_selection import KFold
 
 sys.path.insert(0, r".")
-from jcim_v3.runner import (
+from src.runner import (
     V3RunConfig, _setup_reproducible, _carve_val, _train, _predict, _species_lookup,
     model_spec_from_variant, build_v3_model, GraphDataset, StandardScaler,
     apply_species_control, fit_stratum_effect, stratum_remove, stratum_restore, ATOM_FDIM,
 )
-from jcim_v3.paths import CC_MPNN_DATA
-from jcim_v3.naive_species_baselines import _stratum_key  # identical stratum labelling as LightGBM rung
-from jcim_v3.tier_input_guard import TierInputDegenerate
+from src.paths import CC_MPNN_DATA
+from src.naive_species_baselines import _stratum_key  # identical stratum labelling as LightGBM rung
+from src.tier_input_guard import TierInputDegenerate
 
 DATA = Path(r".\results\q2_v4\data")
 PRED = Path(r".\results\q2_v4\runs\gnn\predictions")

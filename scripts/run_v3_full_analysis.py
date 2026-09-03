@@ -27,7 +27,7 @@ def _write_json(path: Path, payload: dict) -> None:
 
 
 def _output_root(config: dict) -> Path:
-    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "jcim_v3" / "full")
+    return Path(config.get("output_root") or config.get("out_root") or ROOT / "results" / "src" / "full")
 
 
 def _analysis_config(config: dict, out_root: Path) -> tuple[Path, Path]:
@@ -36,7 +36,7 @@ def _analysis_config(config: dict, out_root: Path) -> tuple[Path, Path]:
     bootstrap_root = Path(analysis.get("bootstrap_root", out_root / "bootstrap"))
     embedding_root = Path(analysis.get("embedding_analysis_root", out_root / "embedding_analysis"))
     stats_config = {
-        "official_env": config.get("official_env", "jcim_v3"),
+        "official_env": config.get("official_env", "src"),
         "dataset_path": config.get("dataset_path"),
         "prediction_root": str(out_root / "predictions"),
         "output_root": str(bootstrap_root),
@@ -54,7 +54,7 @@ def _analysis_config(config: dict, out_root: Path) -> tuple[Path, Path]:
     if comparisons:
         stats_config["comparisons"] = comparisons
     embedding_config = {
-        "official_env": config.get("official_env", "jcim_v3"),
+        "official_env": config.get("official_env", "src"),
         "dataset_path": config.get("dataset_path"),
         "prediction_root": str(out_root / "predictions"),
         "reference_prediction_root": str(out_root / "predictions"),

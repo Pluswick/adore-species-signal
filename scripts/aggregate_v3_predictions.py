@@ -9,8 +9,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
-from jcim_v3.stats import prediction_metrics
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.stats import prediction_metrics
 
 
 GROUP_COLUMNS = [
@@ -73,11 +73,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--prediction-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "injection_positions" / "predictions"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "injection_positions" / "predictions"),
     )
     parser.add_argument(
         "--out-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "stats_smoke"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "stats_smoke"),
     )
     parser.add_argument("--config")
     parser.add_argument("--data-dir", default=str(CC_MPNN_DATA))

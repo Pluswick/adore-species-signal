@@ -3,15 +3,15 @@ row counts of discovery_group) + SYNTHETIC pred/true. Two arms SHARE the compoun
 correlated errors; inject a true difference of k×margin (k=0,.25,.5,1,2) and record the decision.
 Detection threshold = smallest k whose decision leaves `동등`. Done for BOTH the deterministic path
 (δ_det, 1 seed, block-only) and the GNN path (δ, 10 seeds, seed×block). Split structure is design,
-not result -> NOT unblinding (no real pred/true). Env: conda run -n jcim_v3.
+not result -> NOT unblinding (no real pred/true). Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
-from jcim_v3.gatekeeping import paired_dd_bootstrap, decide
+from src.prediction_io import load_prediction_csv
+from src.gatekeeping import paired_dd_bootstrap, decide
 
 LGB = Path(r".\results\q2_v4\runs\replication\lgbm\predictions")
 DELTA = json.loads(Path("results/q2_v4/audit/delta_primary_frozen.json").read_text())["delta"]

@@ -7,8 +7,8 @@ import sys, json
 from pathlib import Path
 import pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.tier_input_guard import check_tier_input, TierInputDegenerate, _rank_stats, _idx_stats
-from jcim_v3.rdkit_lgbm import TAX_RANKS
+from src.tier_input_guard import check_tier_input, TierInputDegenerate, _rank_stats, _idx_stats
+from src.rdkit_lgbm import TAX_RANKS
 
 DATA = Path(r".\results\q2_v4\data")
 BK = DATA / "_backup_ncbifix"

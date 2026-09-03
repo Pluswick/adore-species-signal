@@ -11,8 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.paths import CC_MPNN_DATA, RESULTS_ROOT
-from jcim_v3.rdkit_features import (
+from src.paths import CC_MPNN_DATA, RESULTS_ROOT
+from src.rdkit_features import (
     build_feature_cache,
     write_data_audit_reports,
     write_standardized_split_features,

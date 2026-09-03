@@ -9,9 +9,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from jcim_v3.bootstrap import PAIR_MERGE_KEYS, align_predictions, block_bootstrap_metric_delta
-from jcim_v3.paths import RESULTS_ROOT
-from jcim_v3.stats import bh_fdr
+from src.bootstrap import PAIR_MERGE_KEYS, align_predictions, block_bootstrap_metric_delta
+from src.paths import RESULTS_ROOT
+from src.stats import bh_fdr
 
 
 DEFAULT_COMPARISONS = [
@@ -78,11 +78,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--prediction-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "injection_positions" / "predictions"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "injection_positions" / "predictions"),
     )
     parser.add_argument(
         "--out-dir",
-        default=str(RESULTS_ROOT / "smoke" / "jcim_v3_env" / "stats_smoke"),
+        default=str(RESULTS_ROOT / "smoke" / "src_env" / "stats_smoke"),
     )
     parser.add_argument("--config")
     parser.add_argument("--split", default="scaffold")

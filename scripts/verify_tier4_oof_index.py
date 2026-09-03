@@ -4,7 +4,7 @@ Not a statistical test (which has a sensitivity floor at the species-identity ef
 STRUCTURAL proof: extract the actual fold ledger from build_factor and verify by set operations
 that every train row's assigned SVD factor was computed from data EXCLUDING that row, at BOTH the
 inner (base-residual) and outer (SVD-factor) OOF layers; and that no test row is ever used in
-factor construction. Any violation -> immediate stop. 8 warm splits. Env: conda run -n jcim_v3.
+factor construction. Any violation -> immediate stop. 8 warm splits. Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json
@@ -13,7 +13,7 @@ import numpy as np, pandas as pd
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 from run_q2_lgbm_tier4 import build_factor, K, DATA
-from jcim_v3.rdkit_lgbm import RDKitLGBMConfig
+from src.rdkit_lgbm import RDKitLGBMConfig
 
 SPLITS = [f"{p}_{s}" for p in ("discovery", "replication")
           for s in ("group", "scaffold", "scaffold_generic", "designed_leaky")]

@@ -61,7 +61,7 @@ def _species_index(df: pd.DataFrame) -> pd.DataFrame:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default="<USER_HOME>/Desktop/CCLABS/CC-MPNN/data/lc50_96_consolidated.csv")
-    parser.add_argument("--out-dir", default="results/jcim_v3/clean_splits")
+    parser.add_argument("--out-dir", default="results/src/clean_splits")
     parser.add_argument("--split-name", default="compound_random")
     parser.add_argument("--key", default="smiles")
     parser.add_argument("--test-frac", type=float, default=0.2)

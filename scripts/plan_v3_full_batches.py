@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "configs" / "v3_full_experiment.json"
-DEFAULT_OUT_DIR = ROOT / "results" / "jcim_v3" / "full_run_plan"
+DEFAULT_OUT_DIR = ROOT / "results" / "src" / "full_run_plan"
 
 
 def _read_json(path: Path) -> dict:
@@ -63,12 +63,12 @@ def _run_command(config_path: Path, split: str, seed: int, action: str) -> str:
 
 
 def _validation_command(split: str, seed: int) -> str:
-    return f"python scripts\\validate_v3_full_batch.py --root results\\jcim_v3\\full --split {split} --seed {seed}"
+    return f"python scripts\\validate_v3_full_batch.py --root results\\src\\full --split {split} --seed {seed}"
 
 
 def _write_batch_plan_md(path: Path, rows: list[dict], generated_at: str) -> None:
     lines = [
-        "# JCIM v3 Full Batch Plan",
+        "# Full Batch Plan",
         "",
         f"- Generated at UTC: `{generated_at}`",
         f"- Total batches: `{len(rows)}`",
@@ -88,19 +88,19 @@ def _write_batch_plan_md(path: Path, rows: list[dict], generated_at: str) -> Non
 def _write_commands_md(path: Path, rows: list[dict], config_path: Path, scaffold_seed0_reused: bool) -> None:
     executable_rows = [row for row in rows if row["status"] == "planned"]
     lines = [
-        "# JCIM v3 Full Batch Commands",
+        "# Full Batch Commands",
         "",
-        "Run these commands in Windows PowerShell from the JCIM repository root.",
+        "Run these commands in Windows PowerShell from the repository root.",
         "",
         "## A. Common Pre-Run Checks",
         "",
         "```powershell",
-        "conda activate jcim_v3",
+        "conda activate src",
         "python scripts\\run_v3_clean_preflight.py",
         f"python scripts\\run_v3_full_experiment.py --config {_ps_path(config_path)} --dry-run",
         "```",
         "",
-        "If PowerShell prints OpenCL, DLL, or conda activation warnings during a real batch, append the warning text to `results\\jcim_v3\\full\\environment_warnings.log` before running batch validation.",
+        "If PowerShell prints OpenCL, DLL, or conda activation warnings during a real batch, append the warning text to `results\\src\\full\\environment_warnings.log` before running batch validation.",
         "",
     ]
     if scaffold_seed0_reused:
@@ -113,7 +113,7 @@ def _write_commands_md(path: Path, rows: list[dict], config_path: Path, scaffold
                 "```powershell",
                 "python scripts\\check_v3_pilot_reuse.py",
                 "python scripts\\register_v3_pilot_as_full.py --execute",
-                "python scripts\\validate_v3_full_batch.py --root results\\jcim_v3\\full --split scaffold --seed 0",
+                "python scripts\\validate_v3_full_batch.py --root results\\src\\full --split scaffold --seed 0",
                 "```",
                 "",
             ]
@@ -165,12 +165,12 @@ def _write_commands_md(path: Path, rows: list[dict], config_path: Path, scaffold
 
 def _write_analysis_commands_md(path: Path, config_path: Path) -> None:
     lines = [
-        "# JCIM v3 Full Analysis Commands",
+        "# Full Analysis Commands",
         "",
         "Run this only after all full training batches and batch validations have passed.",
         "",
         "```powershell",
-        "conda activate jcim_v3",
+        "conda activate src",
         f"python scripts\\run_v3_full_analysis.py --config {_ps_path(config_path)}",
         "```",
         "",

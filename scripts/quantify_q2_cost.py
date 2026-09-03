@@ -9,7 +9,7 @@
 Bootstrap here resamples COMPOUND blocks within each support bin (GNN seeds averaged;
 per-bin n is small so the CI is the honest limiter -- reported explicitly).
 
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jcim_v3.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
+from src.prediction_io import load_prediction_csv  # pred CSV = keys/pred/true only; strata from dataset
 
 GNN = Path(r".\results\q2_v4\runs\gnn")
 LGB = Path(r".\results\q2_v4\runs\replication")

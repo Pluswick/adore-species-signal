@@ -6,7 +6,7 @@ director 요청 2026-08-05, `gatekeeping_results.json` 언블라인딩 **이후*
 - FDR = **이 4건 내부에서만** BH. 기존 패밀리와 미혼합.
 - 기존 산출물(`gatekeeping_results.json`·`REPORT_2-0_to_2-9.txt`) **불변**. 신규 파일에만 기록.
 동일 절차 보장을 위해 동결 파이프라인(run_q2_gatekeeping)의 load_arm/run_comparison/GVAR/δ 로더를 그대로 import.
-Env: conda run -n jcim_v3.
+Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, os, json
@@ -14,7 +14,7 @@ from pathlib import Path
 sys.path.insert(0, r".")
 sys.path.insert(0, r".\scripts")
 from run_q2_gatekeeping import load_arm, run_comparison, load_frozen, GVAR, R   # 동일 절차 재사용
-from jcim_v3.gatekeeping import bh_fdr
+from src.gatekeeping import bh_fdr
 
 DELTA = load_frozen("delta")["delta"]                                           # 파일에서 읽음 (재계산 금지)
 # cand=t2, ref=t1, within-backbone; base = 각 backbone 자기 t0 (공유 → 4항 DD가 직접차로 축약)

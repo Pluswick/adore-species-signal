@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 from rdkit import Chem, RDLogger
 
-from jcim_v3.paths import add_ccmpnn_to_path
+from src.paths import add_ccmpnn_to_path
 
 add_ccmpnn_to_path()
 

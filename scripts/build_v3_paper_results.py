@@ -11,9 +11,9 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ROOT = ROOT / "results" / "jcim_v3" / "full"
+DEFAULT_ROOT = ROOT / "results" / "src" / "full"
 DEFAULT_OUT = DEFAULT_ROOT / "paper_results"
-os.environ.setdefault("MPLCONFIGDIR", str(ROOT / "results" / "jcim_v3" / ".matplotlib_cache"))
+os.environ.setdefault("MPLCONFIGDIR", str(ROOT / "results" / "src" / ".matplotlib_cache"))
 
 import matplotlib.pyplot as plt
 
@@ -343,7 +343,7 @@ def _write_figures(out_dir: Path, main_perf: pd.DataFrame, claim_audit: pd.DataF
 
 def _write_markdown(path: Path, payload: dict, table_paths: dict[str, str], figure_manifest: list[dict]) -> None:
     lines = [
-        "# JCIM v3 Full Result Interpretation Pack",
+        "# Full Result Interpretation Pack",
         "",
         f"- Generated at UTC: `{payload['generated_at_utc']}`",
         f"- Full result root: `{payload['full_root']}`",
@@ -445,7 +445,7 @@ def _write_claim_summary(
         .reset_index()
     )
     lines = [
-        "# JCIM v3 Claim Summary",
+        "# Claim Summary",
         "",
         "This summary is generated from the full 380-run result set and the global BH-FDR corrected bootstrap outputs.",
         "It is intended for manuscript planning, not as final wording.",

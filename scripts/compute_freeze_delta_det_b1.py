@@ -3,7 +3,7 @@
 Per LightGBM main-tier condition: block bootstrap 2000 (block=compound_key) of the final-metric RMSE
 -> s_c = SD of the bootstrap RMSEs. δ_det = √(mean(s_c²)) (equal replicates -> equal weight). naive
 EXCLUDED. SSOT loader (pred/true/compound_key). DEFAULT = dry-run; --freeze needs director approval
-AND a resolved pooling-set count. Env: conda run -n jcim_v3.
+AND a resolved pooling-set count. Env: conda run -n src.
 """
 from __future__ import annotations
 import sys, json, argparse
@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, r".")
-from jcim_v3.prediction_io import load_prediction_csv
+from src.prediction_io import load_prediction_csv
 
 R = Path(r".\results\q2_v4")
 LGB = R / "runs_b1" / "lgbm" / "predictions"

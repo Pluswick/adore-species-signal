@@ -4,14 +4,14 @@ Re-run already-completed t3a/t3b (+ a control) cells with the CURRENT (refactore
 scratch dir and compare against the frozen block-A predictions. Training is deterministic, so if
 the refactor is behavior-preserving the predictions must be byte-identical. MUST run on the SAME
 GPU the originals used (GPU determinism is per-architecture): seeds 7-9 -> 4090 (VD=1). Any
-mismatch -> exit 2 (stop). Env: conda run -n jcim_v3, CUDA_VISIBLE_DEVICES=1.
+mismatch -> exit 2 (stop). Env: conda run -n src, CUDA_VISIBLE_DEVICES=1.
 """
 from __future__ import annotations
 import sys, hashlib
 from pathlib import Path
 import numpy as np, pandas as pd
 sys.path.insert(0, r".")
-from jcim_v3.runner import V3RunConfig, run_v3_smoke
+from src.runner import V3RunConfig, run_v3_smoke
 
 DATA = r".\results\q2_v4\data"
 REAL = Path(r".\results\q2_v4\runs\gnn\predictions")

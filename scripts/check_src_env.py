@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUT = ROOT / "results" / "jcim_v3" / "env_diagnostics" / "jcim_v3_import_check.json"
+DEFAULT_OUT = ROOT / "results" / "src" / "env_diagnostics" / "src_import_check.json"
 
 TESTS = {
     "rdkit_Chem": "from rdkit import Chem; print('ok')",

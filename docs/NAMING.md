@@ -66,8 +66,8 @@ belong to that earlier numbering and were not used in this study.
 
 ## Project labels with no scientific meaning
 
-`q2`, `v3`, `v4`, `jcim_v3`, `s4_*`, `s5_*`, `s6_*`, `s7_s8`, `GAP`, `blockA`, `blockB`,
-`director`. These are internal project, revision, and section labels. `jcim_v3` in particular is
+`q2`, `v3`, `v4`, `src`, `s4_*`, `s5_*`, `s6_*`, `s7_s8`, `GAP`, `blockA`, `blockB`,
+`director`. These are internal project, revision, and section labels. `src` in particular is
 a package name inherited from an earlier submission target and does not indicate the venue of
 this work.
 
@@ -85,8 +85,8 @@ the results reported in the paper.
 | `perf_metrics`, `species_binned_rmse` | **used** — evaluation metrics |
 | `CCMPNNContext` | **not used** — message-level conditioning; the mechanism the package is named after |
 | `FiLMContext` | **not used** — corresponds to the `film` injection |
-| `experiment`, `train`, `gbdt`, `split`, `data` modules | **not used** — `jcim_v3` has its own runner and splits |
+| `experiment`, `train`, `gbdt`, `split`, `data` modules | **not used** — `src` has its own runner and splits |
 
 The corresponding injection variants `film`, `early_injection`, and `message_level` are likewise
-present in `jcim_v3/models.py` but were not trained; the seven representations evaluated in the
+present in `src/models.py` but were not trained; the seven representations evaluated in the
 paper are the ones listed at the top of this document.

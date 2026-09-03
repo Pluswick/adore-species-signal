@@ -7,19 +7,19 @@
 경로 표기 (셋업 완료):
 - **`EXP = <REPO_ROOT>`** — 이 실험의 **자족적 작업 공간**. 코드·스크립트·config·이 HANDOFF가 여기 복사됨. **새 세션은 여기서 작업.**
 - `ADORE = <ECOTOX_DATA_DIR>` — 원본 데이터(외부, 읽기 전용).
-- `CC-MPNN = <USER_HOME>\Desktop\CCLABS\CC-MPNN` — read-only 인코더(외부; `EXP\jcim_v3\paths.py`가 형제 경로로 자동 해결).
-- `TOXLEARN_REF = <USER_HOME>\Desktop\CCLABS\JCIM\results\q2_v4` — 기존 tox-learn 산출물·원고(비교 참조용, **읽기 전용·수정 금지**). 원고 working 사본은 `<USER_HOME>\Desktop\CCLABS\Q2\working\`.
+- `CC-MPNN = <USER_HOME>\Desktop\CCLABS\CC-MPNN` — read-only 인코더(외부; `EXP\src\paths.py`가 형제 경로로 자동 해결).
+- `TOXLEARN_REF = <USER_HOME>\Desktop\CCLABS\reference\results\q2_v4` — 기존 tox-learn 산출물·원고(비교 참조용, **읽기 전용·수정 금지**). 원고 working 사본은 `<USER_HOME>\Desktop\CCLABS\Q2\working\`.
 
-> **아래 §D–§H에서 "JC\scripts…", "JC\jcim_v3…"로 표기된 재사용 코드는 이제 `EXP\scripts\`, `EXP\jcim_v3\`에 있음**(복사·경로 이동 완료). 실행 경로만 EXP로 읽으면 됨.
+> **아래 §D–§H에서 "JC\scripts…", "JC\src…"로 표기된 재사용 코드는 이제 `EXP\scripts\`, `EXP\src\`에 있음**(복사·경로 이동 완료). 실행 경로만 EXP로 읽으면 됨.
 
 ---
 
 ## §0. 작업 공간 상태 (이미 셋업됨 — 검증 완료)
 
-- `EXP\jcim_v3\`(15 py)·`EXP\scripts\`·`EXP\configs\`(14) 복사 완료. 스크립트의 하드코딩 절대경로를 **JCIM → adore_experiment로 이동**(JC 원본 무변경), stale `__pycache__` 정리.
-- **검증됨**: `import jcim_v3.runner` OK → **ccmpnn 자동 해결**(`CC_MPNN_ROOT = CCLABS\CC-MPNN`, 존재 확인). `paths.py` RESULTS_ROOT = `EXP\results\jcim_v3`. run 스크립트 DATA/OUT/PRED = `EXP\results\q2_v4\…`.
+- `EXP\src\`(15 py)·`EXP\scripts\`·`EXP\configs\`(14) 복사 완료. 스크립트의 하드코딩 절대경로를 **reference → adore_experiment로 이동**(JC 원본 무변경), stale `__pycache__` 정리.
+- **검증됨**: `import src.runner` OK → **ccmpnn 자동 해결**(`CC_MPNN_ROOT = CCLABS\CC-MPNN`, 존재 확인). `paths.py` RESULTS_ROOT = `EXP\results\src`. run 스크립트 DATA/OUT/PRED = `EXP\results\q2_v4\…`.
 - `EXP\results\q2_v4\{data, runs\gnn\predictions, runs\replication\predictions, runs\bootstrap, audit\logs}` **빈 골격 생성됨** — ADORE 산출물 저장 위치.
-- 실행 규약: `cd EXP` 후 `conda run --no-capture-output -n jcim_v3 python scripts\<name>.py` (스크립트가 `sys.path.insert`로 `EXP\jcim_v3`를 잡음).
+- 실행 규약: `cd EXP` 후 `conda run --no-capture-output -n src python scripts\<name>.py` (스크립트가 `sys.path.insert`로 `EXP\src`를 잡음).
 - **아직 없는 것(정상 — §D/§H에서 새 세션이 생성)**: ADORE 로더(`build_adore_datasets.py`), `configs\q2_dataset_adore.json`, Tier 5/6 주입, 그리고 `EXP\results\q2_v4\data\*`(ADORE 재구축 전엔 비어 있음). tox-learn `vendor/`·`data/`·기존 `runs/`는 **의도적으로 미포함**(ADORE는 새로 빌드).
 
 ---
@@ -27,7 +27,7 @@
 ## A. 역할·규칙 (기존 HANDOFF.md 승계)
 
 - **Claude Code** = 실행·파일시스템·원본 수치 검증. **director(claude.ai)** = 전략·판단·프롬프트. 결과를 서사에 맞추지 말 것(원본 CSV 인용).
-- **`conda run --no-capture-output -n jcim_v3 python …` 필수** — 직접 `python.exe`는 Windows BLAS DLL 로딩 실패로 세그폴트. `conda run python -c`는 인자에 개행 있으면 실패 → 스크립트를 파일로 쓰고 실행.
+- **`conda run --no-capture-output -n src python …` 필수** — 직접 `python.exe`는 Windows BLAS DLL 로딩 실패로 세그폴트. `conda run python -c`는 인자에 개행 있으면 실패 → 스크립트를 파일로 쓰고 실행.
 - **CC-MPNN/ccmpnn 인코더 read-only** → D-MPNN taxonomy/신규-tier 주입은 불가할 수 있음(§B/§E에서 확인). GraphConv·LightGBM 위주.
 - **무삭제·resumable**(완료 `runs/<id>.json` 또는 예측 파일 있으면 skip)·**백업 후 편집**. 장시간 잡은 harness-tracked 백그라운드(`run_in_background:true`) — nohup 체인은 셸 teardown에서 죽음.
 - **단일 GPU 직렬** 전제였음 → 이제 2 GPU(RTX 5060 Ti + 4090) 병렬화가 첫 과제(§F).
@@ -104,9 +104,9 @@
 - `JC\scripts\run_q2_gnn_oof_tier1prime.py` — GNN-native Tier 1′ 5-fold OOF. **SPEC 4-0b stratum purge/re-add 수정 반영됨**(lgbm `_species_offsets` 미러링; `_stratum_key` import). 버그 재도입 금지.
 - `JC\scripts\run_q2_replication_ladder.py` — naive+LightGBM Tier 0/1′/2 + control.
 - `JC\scripts\bootstrap_q2_ladder.py` — `load_gnn/load_lgb`, `dd_bootstrap`, `bh_fdr`, `strength()`, N_BOOT=2000.
-- `JC\jcim_v3\species_controls.py`(shuffled/dummy/zero), `stratum.py`(residualization fit/remove/restore), `naive_species_baselines.py`(naive + `run_naive_taxonomy_baselines` 계층 backoff), `rdkit_lgbm.py`(RDKit-6 descriptor from SMILES; `TAX_RANKS`).
-- `JC\jcim_v3\models.py` — 기존 주입 모드(late_fusion/categorical/fixed_proj/taxonomy_original/taxonomy_ncbi), `build_v3_model`, `count_trainable_params`.
-- `JC\jcim_v3\runner.py` — `run_v3_smoke`(featurize→scale→build→train→predict), `_train`, `_setup_reproducible`.
+- `JC\src\species_controls.py`(shuffled/dummy/zero), `stratum.py`(residualization fit/remove/restore), `naive_species_baselines.py`(naive + `run_naive_taxonomy_baselines` 계층 backoff), `rdkit_lgbm.py`(RDKit-6 descriptor from SMILES; `TAX_RANKS`).
+- `JC\src\models.py` — 기존 주입 모드(late_fusion/categorical/fixed_proj/taxonomy_original/taxonomy_ncbi), `build_v3_model`, `count_trainable_params`.
+- `JC\src\runner.py` — `run_v3_smoke`(featurize→scale→build→train→predict), `_train`, `_setup_reproducible`.
 - `JC\results\q2_v4\audit\run_final_analysis_v3.py`(통합 122-대비 FDR 골격), `build_execution_matrix.py`.
 
 **신규 구현:**
@@ -180,4 +180,4 @@
 - `results\q2_v4\provenance\source_provenance.md` : tox-learn 출처·SHA·재현성 R-2(파생 split 예치 권고).
 - 원고: `Q2\working\manuscript\Manuscript_master.{docx,md}`(tox-learn 기반 재프레임 완료본; ADORE 전환 시 전면 재도출). **원고는 director 지시 없이 수정 금지.**
 
-*(이 문서는 읽기 전용 감사로 작성 — 실행·학습·다른 파일 수정 없음. 모든 경로·수치는 파일시스템에서 재확인. conda run -n jcim_v3.)*
+*(이 문서는 읽기 전용 감사로 작성 — 실행·학습·다른 파일 수정 없음. 모든 경로·수치는 파일시스템에서 재확인. conda run -n src.)*
